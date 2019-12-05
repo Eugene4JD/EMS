@@ -38,6 +38,10 @@ public class ExamList
       }
     }
   }
+  public Exam getExam(int index)
+  {
+    return exams.get(index);
+  }
   public int getNumberOfExams()
   {
     return exams.size();

@@ -4,18 +4,10 @@ import java.io.File;
 
 public interface ExaminationManagementSystemModel
 {
+   void addStudent (String name, int id, int Semester);
+   void addTeacher (String name, int id, String subject);
+   void addRoom (String roomName, boolean isThereProjector, int maxNumberOfStudents);
    void addExam(Exam exam);
+   void addClass(String ClassName, TeacherList Teachers, StudentList Students);
    void removeExam(DateAndTimePeriod period);
-   void addNewPeriodToTheFile(File file);
-   void makePeriodFree(DateAndTimePeriod period);
-   void addNewExamToTheSchedule(File file);
-   void addNewRoomToTheRooms(File file);
-   void addNewClassToTheClasses(File file);
-   String AllExamsInString();
-   void removeClassFromEveryWhere(String className);
-   void addStudentToTheStudentList(File file);
-   void removeStudentFromTheEveryWhere(int id);
-   void addTeacherToTheTeacherList(File file);
-   void removeTeacherFromEveryWhere(int id);
-
 }
