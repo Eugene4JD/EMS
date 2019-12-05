@@ -38,4 +38,8 @@ public class ExamList
       }
     }
   }
+  public int getNumberOfExams()
+  {
+    return exams.size();
+  }
 }
