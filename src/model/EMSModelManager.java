@@ -20,6 +20,8 @@ public class EMSModelManager implements EMSModel
     for (int i =0; i< Students.getNumberOfStudents();i++)
     {
       newClass.addStudent(Students.getStudentById(i));
+
+      
     }
   }
 
