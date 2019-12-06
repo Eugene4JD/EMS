@@ -20,7 +20,6 @@ public class ExaminationManagementSystemModelManager implements ExaminationManag
     for (int i =0; i< Students.getNumberOfStudents();i++)
     {
       newClass.addStudent(Students.getStudentById(i));
-      //something
     }
   }
 
