@@ -1,6 +1,6 @@
-package Model;
+package model;
 
-public class ExaminationManagementSystemModelManager implements ExaminationManagementSystemModel
+public class EMSModelManager implements EMSModel
 {
 
   private StudentList students;
