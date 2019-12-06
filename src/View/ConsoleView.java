@@ -34,10 +34,12 @@ public class ConsoleView
       switch (choice)
       {
         case 1:
-
+          System.out.println("Enter the Student Name:");
+          String name = input.nextLine();
+          System.out.println("Enter the valid id:");
+          int Id = input.nextInt();
           break;
         case 2:
-
           break;
         case 3:
           break;
