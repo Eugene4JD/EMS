@@ -3,13 +3,13 @@ package model;
 public class Teacher
 {
   private String name;
-  private int id;
+  private String initials;
   private String subject;
 
-  public Teacher(String name, int id, String subject)
+  public Teacher(String name, String initials, String subject)
   {
     this.name = name;
-    this.id = id;
+    this.initials = initials;
     this.subject = subject;
   }
 
@@ -18,9 +18,9 @@ public class Teacher
     return name;
   }
 
-  public int getId()
+  public String getInitials()
   {
-    return id;
+    return initials;
   }
 
   public String getSubject()
@@ -33,9 +33,9 @@ public class Teacher
     this.name = name;
   }
 
-  public void setId(int id)
+  public void setId(String initials)
   {
-    this.id = id;
+    this.initials = initials;
   }
 
   public void setSubject(String subject)
@@ -45,14 +45,16 @@ public class Teacher
 
   public String toString()
   {
-    return getName()+" Subject: "+getSubject()+" id: " + getId();
+    return getName() + " Subject: " + getSubject() + " Initials: "
+        + getInitials();
   }
+
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Teacher))
       return false;
-    Teacher other =(Teacher) obj;
-    return other.getId() == this.getId()
-        && other.getName().equals(this.getName());
+    Teacher other = (Teacher) obj;
+    return other.getInitials().equals(this.initials) && other.getName()
+        .equals(this.getName()) && other.getSubject().equals(this.getSubject());
   }
 }
