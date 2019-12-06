@@ -46,4 +46,15 @@ public class ExamList
   {
     return exams.size();
   }
+  public String toString()
+  {
+    String str = "";
+    for (int i = 0; i < exams.size(); i++)
+    {
+      str+=exams.get(i).showScheduleElement();
+      if (i!=exams.size()-1)
+        str+="\n";
+    }
+    return str;
+  }
 }

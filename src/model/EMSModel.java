@@ -10,4 +10,5 @@ public interface EMSModel
   void addExam(Exam exam);
   void addClass(String ClassName, TeacherList Teachers, StudentList Students);
   void removeExam(DateAndTimePeriod period);
+  String showSchedule();
 }
