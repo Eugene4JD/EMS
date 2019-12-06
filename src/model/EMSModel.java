@@ -3,7 +3,7 @@ package model;
 public interface EMSModel
 {
   void addStudent(String name, int id, int Semester);
-  void addTeacher(String name, int id, String subject);
+  void addTeacher(String name, String initials, String subject);
   void addRoom(String roomName, String typesOfConnectorsAvailable,
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
       boolean canBeMerged);
