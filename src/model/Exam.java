@@ -84,6 +84,12 @@ public class Exam
   {
     return this.periodOExam;
   }
+  public String showScheduleElement()
+  {
+    String str = "";
+    str+= this.examName+" "+this.examRooms + " " + this.periodOExam.toString();
+    return str;
+  }
 
 
 }

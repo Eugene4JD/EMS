@@ -60,4 +60,9 @@ public class EMSModelManager implements model.EMSModel
   {
     exams.removeExam(period);
   }
+
+  @Override public String showSchedule()
+  {
+    return exams.toString();
+  }
 }
