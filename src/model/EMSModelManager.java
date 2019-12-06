@@ -1,6 +1,6 @@
-package Model;
+package model;
 
-public class EMSModelManager implements Model.EMSModel
+public class EMSModelManager implements model.EMSModel
 {
 
   private StudentList students;
