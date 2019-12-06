@@ -1,6 +1,5 @@
-package Model;
+package model;
 
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class TeacherList

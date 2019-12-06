@@ -1,13 +1,12 @@
-package View;
-import Model.ExaminationManagementSystemModel;
+package view;
+import model.EMSModel;
 
-import java.io.File;
 import java.util.Scanner;
 public class ConsoleView
 {
-  private ExaminationManagementSystemModel model;
+  private EMSModel model;
 
-  public ConsoleView(ExaminationManagementSystemModel model){this.model = model;}
+  public ConsoleView(EMSModel model){this.model = model;}
   public void start()
   {
     Scanner input = new Scanner(System.in);

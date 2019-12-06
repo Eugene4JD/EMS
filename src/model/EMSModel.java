@@ -1,8 +1,6 @@
-package Model;
+package model;
 
-import java.io.File;
-
-public interface ExaminationManagementSystemModel
+public interface EMSModel
 {
    void addStudent (String name, int id, int Semester);
    void addTeacher (String name, int id, String subject);
