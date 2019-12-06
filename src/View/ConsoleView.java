@@ -38,6 +38,9 @@ public class ConsoleView
           String name = input.nextLine();
           System.out.println("Enter the valid id:");
           int Id = input.nextInt();
+          System.out.println("Enter the valid semester:");
+          int semester = input.nextInt();
+          model.addStudent(name,Id,semester);
           break;
         case 2:
           break;
