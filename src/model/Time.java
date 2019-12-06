@@ -45,25 +45,6 @@ public class Time
     this.second = (TotalSeconds % 3600) % 60;
   }
 
-  public void tic()
-  {
-    second += 1;
-    if (second == 60)
-    {
-      minute += 1;
-      second = 0;
-    }
-    if (minute == 60)
-    {
-      hour += 1;
-      hour = 0;
-    }
-    if (hour == 24)
-    {
-      hour = 0;
-    }
-  }
-
   public int getHour()
   {
     return hour;
@@ -103,7 +84,7 @@ public class Time
     return lne;
   }
 
-  public String getSipmpleTime()
+  public String getSimpleTime()
   {
     String lne = "";
     if (hour < 10)
@@ -126,7 +107,7 @@ public class Time
   {
     int seconds;
     seconds = Math.abs(clock2.getTimeInSeconds() - this.getTimeInSeconds());
-    Time clock3 = new Time (seconds);
+    Time clock3 = new Time(seconds);
     return clock3;
   }
 
