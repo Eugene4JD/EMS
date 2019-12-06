@@ -50,10 +50,10 @@ public class EMSModelManager implements model.EMSModel
       students.addStudent(new Student(name, id, Semester));
   }
 
-  @Override public void addTeacher(String name, int id, String subject)
+  @Override public void addTeacher(String name, String initials, String subject)
   {
-    if (!teachers.isTeacherExist(new Teacher(name, id, subject)))
-      teachers.addTeacher(new Teacher(name, id, subject));
+    if (!teachers.isTeacherExist(new Teacher(name, initials, subject)))
+      teachers.addTeacher(new Teacher(name, initials, subject));
   }
 
   @Override public void removeExam(DateAndTimePeriod period)
