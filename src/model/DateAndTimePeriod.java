@@ -1,4 +1,5 @@
 package model;
+
 public class DateAndTimePeriod
 {
   private Date myDate;
@@ -11,15 +12,21 @@ public class DateAndTimePeriod
     this.startTime = startTime;
     this.endTime = endTime;
   }
-  public boolean onConflict (DateAndTimePeriod other)
+
+  public boolean onConflict(DateAndTimePeriod other)
   {
     if (other.myDate.equals(this.myDate))
     {
-      if ((this.startTime.isBefore(other.startTime) && other.endTime.isBefore(this.startTime)) || (other.startTime.isBefore(this.startTime) && (this.endTime.isBefore(other.endTime))))
+      if ((this.startTime.isBefore(other.startTime) && other.endTime
+          .isBefore(this.startTime)) || (
+          other.startTime.isBefore(this.startTime) && (this.endTime
+              .isBefore(other.endTime))))
         return true;
-      else if (this.startTime.equals(other.startTime) || other.endTime.equals(this.endTime))
+      else if (this.startTime.equals(other.startTime) || other.endTime
+          .equals(this.endTime))
         return true;
-      else return false;
+      else
+        return false;
     }
     return false;
   }
