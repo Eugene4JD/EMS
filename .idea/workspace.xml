@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/ExaminationManagementSystemModelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ExamList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ExamList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ExaminationManagementSystemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ExaminationManagementSystemModel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +26,7 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -64,7 +62,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
