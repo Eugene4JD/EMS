@@ -10,9 +10,10 @@ public class TeacherList
   {
     teachers = new ArrayList<>();
   }
+
   public boolean isTeacherExist(Teacher teacher)
   {
-    for (int i = 0 ; i< teachers.size(); i++)
+    for (int i = 0; i < teachers.size(); i++)
     {
       if (teachers.get(i).equals(teacher))
       {
@@ -21,47 +22,82 @@ public class TeacherList
     }
     return false;
   }
+
   public void addTeacher(Teacher teacher)
   {
     if (!(isTeacherExist(teacher)))
       teachers.add(teacher);
   }
-  public int getIndexOfTeacherById(int id)
+
+  public int getIndexOfTeacherByInitials(String initials)
   {
-    for (int i = 0 ; i<teachers.size();i++)
+    for (int i = 0; i < teachers.size(); i++)
     {
-      if (teachers.get(i).getId() == id)
+      if (teachers.get(i).getInitials().equals(initials))
         return i;
     }
-    return -1;
+    return Integer.MIN_VALUE;
   }
-  public void removeTeacherByIndex (int index)
+
+  public void removeTeacherByIndex(int index)
   {
     teachers.remove(index);
   }
-  public void removeTeacherById (int id)
+
+  public void removeTeacherByInitials(String initials)
   {
-    if (getIndexOfTeacherById(id) != -1)
+    if (getIndexOfTeacherByInitials(initials) != Integer.MIN_VALUE)
     {
-      teachers.remove(getIndexOfTeacherById(id));
+      teachers.remove(getIndexOfTeacherByInitials(initials));
     }
   }
-  public Teacher getTeacherById(int id)
+
+  public Teacher getTeacherByInitials(String initials)
   {
-    return teachers.get(getIndexOfTeacherById(id));
+    return teachers.get(getIndexOfTeacherByInitials(initials));
   }
+
   public Teacher getTeacherByIndex(int index)
   {
     return teachers.get(index);
   }
+
   public int getNumberOfTeachers()
   {
     return teachers.size();
   }
+
   public ArrayList<Teacher> getTeachers()
   {
     return teachers;
   }
+
+  public ArrayList<Teacher> getFreeTeachers()
+  {
+    ArrayList<Teacher> buffer = new ArrayList<>();
+    for (int i = 0; i < teachers.size(); i++)
+    {
+      if (teachers.get(i).getIsBusy() == false)
+      {
+        buffer.add(teachers.get(i));
+      }
+    }
+    return buffer;
+  }
+
+  public ArrayList<Teacher> getBusyTeachers()
+  {
+    ArrayList<Teacher> buffer = new ArrayList<>();
+    for (int i = 0; i < teachers.size(); i++)
+    {
+      if (teachers.get(i).getIsBusy() == true)
+      {
+        buffer.add(teachers.get(i));
+      }
+    }
+    return buffer;
+  }
+
   public boolean equals(Object object)
   {
     if (!(object instanceof TeacherList))
@@ -69,9 +105,9 @@ public class TeacherList
     TeacherList other = (TeacherList) object;
     if (other.getNumberOfTeachers() != this.getNumberOfTeachers())
       return false;
-    for (int i = 0; i<this.getNumberOfTeachers(); i++)
+    for (int i = 0; i < this.getNumberOfTeachers(); i++)
     {
-      if (!(this.getTeacherByIndex(i)).equals(other.getTeacherById(i)))
+      if (!(this.getTeacherByIndex(i)).equals(other.getTeacherByIndex(i)))
         return false;
     }
     return true;

@@ -20,7 +20,7 @@ public class ConsoleView
     while (running)
     {
       System.out.println("1) Add Student"); //done
-      System.out.println("2) Add Teacher");
+      System.out.println("2) Add Teacher"); //done
       System.out.println("3) Add Room"); //done
       System.out.println("4) Add Class");
       System.out.println("5) Add Exam");
@@ -46,6 +46,13 @@ public class ConsoleView
           model.addStudent(name, Id, semester);
           break;
         case 2:
+          System.out.println("teacherName?");
+          String name2 = input.nextLine();
+          System.out.println("initials?");
+          String initials = input.nextLine();
+          System.out.println("subject?");
+          String subject = input.nextLine();
+          model.addTeacher(name2, initials, subject);
           break;
         case 3:
           System.out.println("roomName?");

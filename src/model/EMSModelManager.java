@@ -10,12 +10,12 @@ public class EMSModelManager implements model.EMSModel
   private RoomList rooms;
 
   @Override public void addClass(String ClassName, TeacherList Teachers,
-      StudentList Students)
+      StudentList Students) //????/////
   {
     Class newClass = new Class(ClassName);
     for (int i = 0; i < Teachers.getNumberOfTeachers(); i++)
     {
-      newClass.addTeacher(Teachers.getTeacherById(i));
+      newClass.addTeacher(Teachers.getTeacherByIndex(i));
     }
     for (int i = 0; i < Students.getNumberOfStudents(); i++)
     {
