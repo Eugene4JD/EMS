@@ -17,6 +17,17 @@ public class ConsoleView
   public void start()
   {
     Scanner input = new Scanner(System.in);
+    File Classes_bin = new File("Classes.bin");
+    File Exams_bin = new File ("Exams.bin");
+    File Rooms_bin = new File ("Rooms.bin");
+    File Students_bin = new File("Students.bin");
+    File Teachers_bin = new File("Teachers.bin");
+
+    model.readFromBinary(Classes_bin);
+    model.readFromBinary(Exams_bin);
+    model.readFromBinary(Rooms_bin);
+    model.readFromBinary(Students_bin);
+    model.readFromBinary(Teachers_bin);
     boolean running = true;
     while (running)
     {
@@ -28,10 +39,10 @@ public class ConsoleView
       System.out.println("203) Remove Room"); //done       //REMOVE
       System.out.println("301) Write to binary"); //done   //WRITE
       System.out.println("401) Read from binary"); //done  //READ
-      System.out.println("8) Show all grades");
-      System.out.println("9) read from text File");
-      System.out.println("10) write to the text File");
-      System.out.println("11) remove from memory all the grades");
+      System.out.println("501) Show all exams");
+      System.out.println("601) Show all students");
+      System.out.println("701) Show all teachers");
+      System.out.println("801) Show all rooms");
       System.out.println("0) QUIT");
 
       System.out.print("\nEnter choice: ");
@@ -106,7 +117,22 @@ public class ConsoleView
           model.readFromBinary(file401);
           System.out.println("............Done");
           break;
+        case 501:
+          System.out.println(model.showSchedule());
+          break;
+        case 601:
+          System.out.println(model.showStudents());
+          break;
+        case 701:
+          System.out.println(model.showTeachers());
+        case 801:
+          System.out.println(model.showRooms());
         case 0:
+          model.writeToBinary(Classes_bin);
+          model.writeToBinary(Exams_bin);
+          model.writeToBinary(Rooms_bin);
+          model.writeToBinary(Students_bin);
+          model.writeToBinary(Teachers_bin);
           running = false;
           break;
         default:
