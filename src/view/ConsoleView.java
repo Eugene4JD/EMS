@@ -69,7 +69,6 @@ public class ConsoleView
           input.nextLine();
           String name = input.nextLine();
           System.out.println("Enter the valid id:");
-          input.nextLine();
           int Id = input.nextInt();
           System.out.println("Enter the valid semester:");
           int semester = input.nextInt();
