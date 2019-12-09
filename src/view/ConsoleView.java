@@ -18,18 +18,18 @@ public class ConsoleView
   {
     Scanner input = new Scanner(System.in);
     File Classes_bin = new File("Classes.bin");
-    File Exams_bin = new File ("Exams.bin");
-    File Rooms_bin = new File ("Rooms.bin");
+    File Exams_bin = new File("Exams.bin");
+    File Rooms_bin = new File("Rooms.bin");
     File Students_bin = new File("Students.bin");
     File Teachers_bin = new File("Teachers.bin");
 
-    if (Classes_bin.length() !=0)
+    if (Classes_bin.length() != 0)
     {
       model.readFromBinary(Classes_bin);
     }
-    if (Exams_bin.length() !=0)
+    if (Exams_bin.length() != 0)
     {
-     model.readFromBinary(Exams_bin);
+      model.readFromBinary(Exams_bin);
     }
     if (Rooms_bin.length() != 0)
     {
@@ -141,8 +141,10 @@ public class ConsoleView
           break;
         case 701:
           System.out.println(model.showTeachers());
+          break;
         case 801:
           System.out.println(model.showRooms());
+          break;
         case 0:
           model.writeToBinary(Classes_bin);
           model.writeToBinary(Exams_bin);
