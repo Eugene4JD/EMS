@@ -1,9 +1,6 @@
 package model;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class EMSModelManager implements model.EMSModel
 {
@@ -85,20 +82,19 @@ public class EMSModelManager implements model.EMSModel
   {
     rooms.removeRoomByRoomName(roomName);
   }
-}
   @Override public void writeToBinary(File file)
   {
     ObjectOutputStream out = null;
     switch (file.getName())
     {
-      case("Classes.bin"):
+      case ("Classes.bin"):
         try
         {
           FileOutputStream fos = new FileOutputStream(file);
           out = new ObjectOutputStream(fos);
 
           out.writeInt(classes.getNumberOfClasses());
-          for (int i = 0; i<classes.getNumberOfClasses(); i++)
+          for (int i = 0; i < classes.getNumberOfClasses(); i++)
           {
             out.writeObject(classes.getClassByIndex(i));
           }
@@ -109,24 +105,24 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-        }
-        try
-        {
-          out.close();
-        }
-        catch (IOException e)
-        {
-          e.printStackTrace();
+          try
+          {
+            out.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
         }
         break;
-      case("Exams.bin"):
+      case ("Exams.bin"):
         try
         {
           FileOutputStream fos = new FileOutputStream(file);
           out = new ObjectOutputStream(fos);
 
           out.writeInt(exams.getNumberOfExams());
-          for (int i = 0; i<exams.getNumberOfExams(); i++)
+          for (int i = 0; i < exams.getNumberOfExams(); i++)
           {
             out.writeObject(exams.getExam(i));
           }
@@ -137,24 +133,24 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-        }
-        try
-        {
-          out.close();
-        }
-        catch (IOException e)
-        {
-          e.printStackTrace();
+          try
+          {
+            out.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
         }
         break;
-      case("Rooms.bin"):
+      case ("Rooms.bin"):
         try
         {
           FileOutputStream fos = new FileOutputStream(file);
           out = new ObjectOutputStream(fos);
 
           out.writeInt(rooms.numberOfRooms());
-          for (int i = 0; i<rooms.numberOfRooms(); i++)
+          for (int i = 0; i < rooms.numberOfRooms(); i++)
           {
             out.writeObject(rooms.getRoomByIndex(i));
           }
@@ -165,14 +161,14 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-        }
-        try
-        {
-          out.close();
-        }
-        catch (IOException e)
-        {
-          e.printStackTrace();
+          try
+          {
+            out.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
         }
         break;
       case ("Students.bin"):
@@ -182,7 +178,7 @@ public class EMSModelManager implements model.EMSModel
           out = new ObjectOutputStream(fos);
 
           out.writeInt(students.getNumberOfStudents());
-          for (int i = 0; i<students.getNumberOfStudents(); i++)
+          for (int i = 0; i < students.getNumberOfStudents(); i++)
           {
             out.writeObject(students.getStudentByIndex(i));
           }
@@ -193,24 +189,25 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
+          try
+          {
+            out.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
         }
-        try
-        {
-          out.close();
-        }
-        catch (IOException e)
-        {
-          e.printStackTrace();
-        }
+
         break;
-      case("Teachers.bin"):
+      case ("Teachers.bin"):
         try
         {
           FileOutputStream fos = new FileOutputStream(file);
           out = new ObjectOutputStream(fos);
 
           out.writeInt(teachers.getNumberOfTeachers());
-          for (int i = 0; i<teachers.getNumberOfTeachers(); i++)
+          for (int i = 0; i < teachers.getNumberOfTeachers(); i++)
           {
             out.writeObject(teachers.getTeacherByIndex(i));
           }
@@ -221,19 +218,168 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-        }
-        try
-        {
-          out.close();
-        }
-        catch (IOException e)
-        {
-          e.printStackTrace();
+          try
+          {
+            out.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
         }
         break;
-      default: System.out.println("error");
+      default: System.out.println("Such File is No existing");
     }
     }
 
+  @Override public void readFromBinary(File file)
+  {
+    ObjectInputStream in = null;
+    switch (file.getName())
+    {
+      case ("Classes.bin"):
+        try
+        {
+          FileInputStream fis = new FileInputStream(file);
+          in = new ObjectInputStream(fis);
+
+          int count = in.readInt();
+          for (int i = 0; i<count; i++)
+          {
+            classes.addClass((Class) in.readObject());
+          }
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+          e.printStackTrace();
+        }
+        finally
+        {
+          try
+          {
+            in.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
+        }
+        break;
+      case ("Exams.bin"):
+        try
+        {
+          FileInputStream fis = new FileInputStream(file);
+          in = new ObjectInputStream(fis);
+
+          int count = in.readInt();
+          for (int i = 0; i<count; i++)
+          {
+            exams.addExam((Exam) in.readObject());
+          }
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+          e.printStackTrace();
+        }
+        finally
+        {
+          try
+          {
+            in.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
+        }
+        break;
+      case ("Rooms.bin"):
+        try
+        {
+          FileInputStream fis = new FileInputStream(file);
+          in = new ObjectInputStream(fis);
+
+          int count = in.readInt();
+          for (int i = 0; i<count; i++)
+          {
+            rooms.addRoom((Room)in.readObject());
+          }
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+          e.printStackTrace();
+        }
+        finally
+        {
+          try
+          {
+            in.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
+        }
+        break;
+      case ("Students.bin"):
+        try
+        {
+          FileInputStream fis = new FileInputStream(file);
+          in = new ObjectInputStream(fis);
+
+          int count = in.readInt();
+          for (int i = 0; i<count; i++)
+          {
+            students.addStudent((Student) in.readObject());
+          }
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+          e.printStackTrace();
+        }
+        finally
+        {
+          try
+          {
+            in.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
+        }
+        break;
+      case ("Teachers.bin"):
+        try
+        {
+          FileInputStream fis = new FileInputStream(file);
+          in = new ObjectInputStream(fis);
+
+          int count = in.readInt();
+          for (int i = 0; i<count; i++)
+          {
+            teachers.addTeacher((Teacher) in.readObject());
+          }
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+          e.printStackTrace();
+        }
+        finally
+        {
+          try
+          {
+            in.close();
+          }
+          catch (IOException e)
+          {
+            e.printStackTrace();
+          }
+        }
+        break;
+      default: System.out.println("Such file is not existing");
+
+    }
   }
+}
 
