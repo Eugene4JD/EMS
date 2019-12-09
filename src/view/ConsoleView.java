@@ -76,6 +76,7 @@ public class ConsoleView
           break;
         case 102:
           System.out.println("teacherName?");
+          input.nextLine();
           String name2 = input.nextLine();
           System.out.println("initials?");
           String initials = input.nextLine();
