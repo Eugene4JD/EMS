@@ -97,4 +97,14 @@ public class ClassList
     return classes.size();
   }
 
+  public String showAllClasses()
+  {
+    String str = "";
+    for (int i =0; i< classes.size(); i++)
+    {
+      str+= classes.get(i).toString()+"\n";
+    }
+    return str;
+  }
+
 }

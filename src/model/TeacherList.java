@@ -112,4 +112,13 @@ public class TeacherList
     }
     return true;
   }
+  public String showAllTeachers()
+  {
+    String str ="";
+    for (int i =0; i<teachers.size(); i++)
+    {
+      str+= teachers.get(i).toString() + "\n";
+    }
+    return str;
+  }
 }

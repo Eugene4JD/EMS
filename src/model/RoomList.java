@@ -72,4 +72,13 @@ public class RoomList
       rooms.remove(0);
     }
   }
+  public String showAllRooms()
+  {
+    String str ="";
+    for (int i =0 ; i<rooms.size(); i++)
+    {
+      str += rooms.get(i).toString()+"\n";
+    }
+    return str;
+  }
 }

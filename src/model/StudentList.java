@@ -77,4 +77,13 @@ public class StudentList
     }
     return true;
   }
+  public String showAllStudents()
+  {
+    String str = "";
+    for (int i = 0; i< students.size(); i++)
+    {
+      str += students.get(i).toString()+"\n";
+    }
+    return str;
+  }
 }
