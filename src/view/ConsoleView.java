@@ -132,10 +132,6 @@ public class ConsoleView
           break;
         case 301:
           System.out.println("binNameW?");
-          String binNameW = input.nextLine();
-          File file301 = new File(binNameW);
-          model.writeToBinary(file301);
-          System.out.println("...........Done");
           break;
         case 401:
           System.out.println("binNameR?");

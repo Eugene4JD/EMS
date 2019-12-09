@@ -2,9 +2,12 @@ package model;
 
 import java.io.*;
 
+import mediator.Binary;
+import mediator.Persistence;
+
 public class EMSModelManager implements EMSModel,Serializable
 {
-
+  private Persistence preModel;
   private StudentList students;
   private TeacherList teachers;
   private ClassList classes;
@@ -18,6 +21,7 @@ public class EMSModelManager implements EMSModel,Serializable
     classes = new ClassList();
     exams = new ExamList();
     rooms = new RoomList();
+    preModel = new Binary();
   }
 
   @Override public void addClass(String ClassName, TeacherList Teachers,
@@ -92,304 +96,44 @@ public class EMSModelManager implements EMSModel,Serializable
   }
   @Override public void writeToBinary(File file)
   {
-    ObjectOutputStream out = null;
     switch (file.getName())
     {
       case ("Classes.bin"):
-        try
-        {
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-
-          out.writeInt(classes.getNumberOfClasses());
-          for (int i = 0; i < classes.getNumberOfClasses(); i++)
-          {
-            out.writeObject(classes.getClassByIndex(i));
-          }
-        }
-        catch (IOException e)
-        {
-          System.out.println("Exception: " + file.getName());
-        }
-        finally
-        {
-          try
-          {
-            out.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
-          }
-        }
+        preModel.save(file,classes);
         break;
       case ("Exams.bin"):
-        try
-        {
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-
-          out.writeInt(exams.getNumberOfExams());
-          for (int i = 0; i < exams.getNumberOfExams(); i++)
-          {
-            out.writeObject(exams.getExam(i));
-          }
-        }
-        catch (IOException e)
-        {
-          System.out.println("Exception: " + file.getName());
-        }
-        finally
-        {
-          try
-          {
-            out.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
-          }
-        }
+        preModel.save(file,exams);
         break;
       case ("Rooms.bin"):
-        try
-        {
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-
-          out.writeInt(rooms.numberOfRooms());
-          for (int i = 0; i < rooms.numberOfRooms(); i++)
-          {
-            out.writeObject(rooms.getRoomByIndex(i));
-          }
-        }
-        catch (IOException e)
-        {
-          System.out.println("Exception: " + file.getName());
-        }
-        finally
-        {
-          try
-          {
-            out.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
-          }
-        }
+        preModel.save(file,rooms);
         break;
       case ("Students.bin"):
-        try
-        {
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-
-          out.writeInt(students.getNumberOfStudents());
-          for (int i = 0; i < students.getNumberOfStudents(); i++)
-          {
-            out.writeObject(students.getStudentByIndex(i));
-          }
-        }
-        catch (IOException e)
-        {
-          System.out.println("Exception: " + file.getName());
-        }
-        finally
-        {
-          try
-          {
-            out.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
-          }
-        }
-
+        preModel.save(file,students);
         break;
       case ("Teachers.bin"):
-        try
-        {
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-
-          out.writeInt(teachers.getNumberOfTeachers());
-          for (int i = 0; i < teachers.getNumberOfTeachers(); i++)
-          {
-            out.writeObject(teachers.getTeacherByIndex(i));
-          }
-        }
-        catch (IOException e)
-        {
-          System.out.println("Exception: " + file.getName());
-        }
-        finally
-        {
-          try
-          {
-            out.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
-          }
-        }
-        break;
-      default: System.out.println("Such File is No existing");
+        preModel.save(file,teachers);
     }
-    }
-
+  }
   @Override public void readFromBinary(File file)
   {
-    ObjectInputStream in = null;
     switch (file.getName())
     {
       case ("Classes.bin"):
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
-          {
-            classes.addClass((Class) in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          System.out.println("Error is here");
-          e.printStackTrace();
-
-        }
-        finally
-        {
-            try {
-              if (in != null) {
-               in.close();
-            }
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
-          }
-        }
+        this.classes = (ClassList) preModel.update(file);
         break;
       case ("Exams.bin"):
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
-          {
-            exams.addExam((Exam) in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
-            }
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
-          }
-        }
+        this.exams = (ExamList) preModel.update(file);
         break;
       case ("Rooms.bin"):
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
-          {
-            rooms.addRoom((Room)in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
-            }
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
-          }
-        }
+        this.rooms = (RoomList) preModel.update(file);
         break;
       case ("Students.bin"):
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
-          {
-            students.addStudent((Student) in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
-            }
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
-          }
-        }
+        this.students = (StudentList) preModel.update(file);
         break;
       case ("Teachers.bin"):
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
-          {
-            teachers.addTeacher((Teacher) in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
-            }
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
-          }
-        }
-        break;
-      default: System.out.println("Such file is not existing");
-
+        this.teachers = (TeacherList) preModel.update(file);
     }
+
   }
 
   @Override public String showStudents()
@@ -412,92 +156,21 @@ public class EMSModelManager implements EMSModel,Serializable
     switch (file.getName())
     {
       case ("Classes.bin"):
-        int maxC = classes.getNumberOfClasses();
-        for (int i =0; i < maxC ;i++)
-        {
-          classes.removeClassByIndex(0);
-        }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+        this.classes = (ClassList) preModel.delete(file,classes);
         break;
-      case("Exams.bin"):
-
-        int maxE = exams.getNumberOfExams();
-        for (int i =0; i < maxE ;i++)
-        {
-          exams.removeExamByIndex(0);
-        }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+      case ("Exams.bin"):
+        this.exams = (ExamList) preModel.delete(file,exams);
         break;
       case ("Rooms.bin"):
-        int maxR = rooms.numberOfRooms();
-        for (int i =0; i < maxR ;i++)
-        {
-          rooms.removeRoom(0);
-        }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+        this.rooms = (RoomList) preModel.delete(file,rooms);
         break;
-      case("Students.bin"):
-        int maxS = students.getNumberOfStudents();
-        for (int i =0; i < maxS ;i++)
-        {
-          students.removeStudentByIndex(0);
-        }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+      case ("Students.bin"):
+        this.students = (StudentList) preModel.delete(file,students);
         break;
       case ("Teachers.bin"):
-        int max = teachers.getNumberOfTeachers();
-        for (int i =0; i < max ;i++)
-        {
-          teachers.removeTeacherByIndex(0);
-        }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
-      default: System.out.println("no such file");
+        this.teachers = (TeacherList) preModel.delete(file,teachers);
     }
+   
   }
 }
 
