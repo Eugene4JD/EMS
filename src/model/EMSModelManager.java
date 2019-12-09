@@ -2,7 +2,7 @@ package model;
 
 import java.io.*;
 
-public class EMSModelManager implements model.EMSModel
+public class EMSModelManager implements EMSModel,Serializable
 {
 
   private StudentList students;
@@ -10,6 +10,15 @@ public class EMSModelManager implements model.EMSModel
   private ClassList classes;
   private ExamList exams;
   private RoomList rooms;
+
+  public EMSModelManager()
+  {
+    students = new StudentList();
+    teachers = new TeacherList();
+    classes = new ClassList();
+    exams = new ExamList();
+    rooms = new RoomList();
+  }
 
   @Override public void addClass(String ClassName, TeacherList Teachers,
       StudentList Students) //????/////
@@ -46,9 +55,9 @@ public class EMSModelManager implements model.EMSModel
     }
   }
 
-  @Override public void addStudent(String name, int id, int Semester)
+  @Override public void addStudent(String name, int id, int semester)
   {
-      students.addStudent(new Student(name, id, Semester));
+      students.addStudent(new Student(name, id, semester));
   }
 
   @Override public void addTeacher(String name, String initials, String subject)

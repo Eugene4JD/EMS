@@ -23,13 +23,13 @@ public class ConsoleView
     File Students_bin = new File("Students.bin");
     File Teachers_bin = new File("Teachers.bin");
 
-    if (Classes_bin.length() !=0)
+    if (Classes_bin.length() != 0)
     {
       model.readFromBinary(Classes_bin);
     }
-    if (Exams_bin.length() !=0)
+    if (Exams_bin.length() != 0)
     {
-     model.readFromBinary(Exams_bin);
+      model.readFromBinary(Exams_bin);
     }
     if (Rooms_bin.length() != 0)
     {
@@ -68,9 +68,7 @@ public class ConsoleView
           System.out.println("Enter the Student Name:");
           input.nextLine();
           String name = input.nextLine();
-          input.nextLine();
           System.out.println("Enter the valid id:");
-          input.nextLine();
           int Id = input.nextInt();
           System.out.println("Enter the valid semester:");
           int semester = input.nextInt();

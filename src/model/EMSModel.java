@@ -4,7 +4,7 @@ import java.io.File;
 
 public interface EMSModel
 {
-  void addStudent(String name, int id, int Semester);
+  void addStudent(String name, int id, int semester);
   void addTeacher(String name, String initials, String subject);
   void addRoom(String roomName, String typesOfConnectorsAvailable,
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
