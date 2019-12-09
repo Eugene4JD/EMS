@@ -60,9 +60,9 @@ public class Class
     teachers.removeTeacherByIndex(index);
   }
 
-  public void removeTeacherById(int id)
+  public void removeTeacherById(String initials)
   {
-    teachers.removeTeacherById(id);
+    teachers.removeTeacherByInitials(initials);
   }
 
   public String getClassName()
