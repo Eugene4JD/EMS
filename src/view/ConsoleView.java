@@ -52,6 +52,9 @@ public class ConsoleView
       System.out.println("201) Remove Student"); //done    //REMOVE
       System.out.println("202) Remove Teacher"); //done    //REMOVE
       System.out.println("203) Remove Room"); //done       //REMOVE
+      System.out.println("204) Remove exam");
+      System.out.println("205) Remove all rooms");
+      System.out.println("210) Remove all");
       System.out.println("301) Write to binary"); //done   //WRITE
       System.out.println("401) Read from binary"); //done  //READ
       System.out.println("501) Show all exams");
@@ -76,6 +79,7 @@ public class ConsoleView
           break;
         case 102:
           System.out.println("teacherName?");
+          input.nextLine();
           String name2 = input.nextLine();
           System.out.println("initials?");
           String initials = input.nextLine();
@@ -118,6 +122,13 @@ public class ConsoleView
           System.out.println("roomName?");
           String roomName6 = input.nextLine();
           model.removeRoom(roomName6);
+          break;
+        case 210:
+          model.clearFile(Classes_bin);
+          model.clearFile(Exams_bin);
+          model.clearFile(Rooms_bin);
+          model.clearFile(Students_bin);
+          model.clearFile(Teachers_bin);
           break;
         case 301:
           System.out.println("binNameW?");

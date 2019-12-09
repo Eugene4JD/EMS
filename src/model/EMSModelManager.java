@@ -406,5 +406,98 @@ public class EMSModelManager implements EMSModel,Serializable
   {
     return teachers.showAllTeachers();
   }
+
+  @Override public void clearFile(File file)
+  {
+    switch (file.getName())
+    {
+      case ("Classes.bin"):
+        int maxC = classes.getNumberOfClasses();
+        for (int i =0; i < maxC ;i++)
+        {
+          classes.removeClassByIndex(0);
+        }
+        try
+        {
+          ObjectOutputStream out = null;
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+        }
+        catch (IOException e)
+        {
+          System.out.println("Error");
+        }
+        break;
+      case("Exams.bin"):
+
+        int maxE = exams.getNumberOfExams();
+        for (int i =0; i < maxE ;i++)
+        {
+          exams.removeExamByIndex(0);
+        }
+        try
+        {
+          ObjectOutputStream out = null;
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+        }
+        catch (IOException e)
+        {
+          System.out.println("Error");
+        }
+        break;
+      case ("Rooms.bin"):
+        int maxR = rooms.numberOfRooms();
+        for (int i =0; i < maxR ;i++)
+        {
+          rooms.removeRoom(0);
+        }
+        try
+        {
+          ObjectOutputStream out = null;
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+        }
+        catch (IOException e)
+        {
+          System.out.println("Error");
+        }
+        break;
+      case("Students.bin"):
+        int maxS = students.getNumberOfStudents();
+        for (int i =0; i < maxS ;i++)
+        {
+          students.removeStudentByIndex(0);
+        }
+        try
+        {
+          ObjectOutputStream out = null;
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+        }
+        catch (IOException e)
+        {
+          System.out.println("Error");
+        }
+        break;
+      case ("Teachers.bin"):
+        int max = teachers.getNumberOfTeachers();
+        for (int i =0; i < max ;i++)
+        {
+          teachers.removeTeacherByIndex(0);
+        }
+        try
+        {
+          ObjectOutputStream out = null;
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+        }
+        catch (IOException e)
+        {
+          System.out.println("Error");
+        }
+      default: System.out.println("no such file");
+    }
+  }
 }
 

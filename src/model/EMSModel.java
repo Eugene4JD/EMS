@@ -21,4 +21,5 @@ public interface EMSModel
   String showStudents();
   String showTeachers();
   String showRooms();
+  void clearFile (File file);
 }

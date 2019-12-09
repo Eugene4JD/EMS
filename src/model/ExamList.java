@@ -39,6 +39,10 @@ public class ExamList implements Serializable
       }
     }
   }
+  public void removeExamByIndex(int index)
+  {
+    exams.remove(index);
+  }
   public Exam getExam(int index)
   {
     return exams.get(index);
