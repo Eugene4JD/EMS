@@ -18,4 +18,7 @@ public interface EMSModel
   String showSchedule();
   void writeToBinary(File file);
   void readFromBinary(File file);
+  String showStudents();
+  String showTeachers();
+  String showRooms();
 }

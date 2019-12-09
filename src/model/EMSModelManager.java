@@ -381,5 +381,20 @@ public class EMSModelManager implements model.EMSModel
 
     }
   }
+
+  @Override public String showStudents()
+  {
+    return students.showAllStudents();
+  }
+
+  @Override public String showRooms()
+  {
+    return rooms.showAllRooms();
+  }
+
+  @Override public String showTeachers()
+  {
+    return teachers.showAllTeachers();
+  }
 }
 
