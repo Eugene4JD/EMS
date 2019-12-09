@@ -2,20 +2,20 @@ package model;
 
 public class DateAndTimePeriod
 {
-  private Date myDate;
+  private Date dateOfTheExam;
   private Time startTime;
   private Time endTime;
 
-  public DateAndTimePeriod(Date myDate, Time startTime, Time endTime)
+  public DateAndTimePeriod(Date dateOfTheExam, Time startTime, Time endTime)
   {
-    this.myDate = myDate;
+    this.dateOfTheExam = dateOfTheExam;
     this.startTime = startTime;
     this.endTime = endTime;
   }
 
   public boolean onConflict(DateAndTimePeriod other)
   {
-    if (other.myDate.equals(this.myDate))
+    if (other.dateOfTheExam.equals(this.dateOfTheExam))
     {
       if ((this.startTime.isBefore(other.startTime) && other.endTime
           .isBefore(this.startTime)) || (
@@ -29,5 +29,10 @@ public class DateAndTimePeriod
         return false;
     }
     return false;
+  }
+  public DateAndTimePeriod copy()
+  {
+    DateAndTimePeriod copyObject = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);
+    return copyObject;
   }
 }
