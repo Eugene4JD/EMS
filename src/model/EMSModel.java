@@ -14,4 +14,5 @@ public interface EMSModel
   void removeExam(DateAndTimePeriod period);
   String showSchedule();
   void writeToBinary(File file);
+  void readFromBinary(File file);
 }
