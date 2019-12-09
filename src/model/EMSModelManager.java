@@ -48,7 +48,6 @@ public class EMSModelManager implements model.EMSModel
 
   @Override public void addStudent(String name, int id, int Semester)
   {
-    if (!students.isStudentExist(new Student(name, id, Semester)))
       students.addStudent(new Student(name, id, Semester));
   }
 

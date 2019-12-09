@@ -18,16 +18,12 @@ public class ConsoleView
   {
     Scanner input = new Scanner(System.in);
     File Classes_bin = new File("Classes.bin");
-    File Exams_bin = new File ("Exams.bin");
-    File Rooms_bin = new File ("Rooms.bin");
+    File Exams_bin = new File("Exams.bin");
+    File Rooms_bin = new File("Rooms.bin");
     File Students_bin = new File("Students.bin");
     File Teachers_bin = new File("Teachers.bin");
 
-    model.readFromBinary(Classes_bin);
-    model.readFromBinary(Exams_bin);
-    model.readFromBinary(Rooms_bin);
-    model.readFromBinary(Students_bin);
-    model.readFromBinary(Teachers_bin);
+
     boolean running = true;
     while (running)
     {
@@ -52,6 +48,7 @@ public class ConsoleView
         case 101:
           System.out.println("Enter the Student Name:");
           String name = input.nextLine();
+          input.nextLine();
           System.out.println("Enter the valid id:");
           int Id = input.nextInt();
           System.out.println("Enter the valid semester:");
@@ -125,8 +122,10 @@ public class ConsoleView
           break;
         case 701:
           System.out.println(model.showTeachers());
+          break;
         case 801:
           System.out.println(model.showRooms());
+          break;
         case 0:
           model.writeToBinary(Classes_bin);
           model.writeToBinary(Exams_bin);

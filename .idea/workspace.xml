@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="" />
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/model/EMSModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/RoomList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/RoomList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/StudentList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/StudentList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/TeacherList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/TeacherList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ConsoleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ConsoleView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/EMSModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleView.java" afterDir="false" />
     </list>
@@ -52,6 +59,20 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="StartUP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StartUP" />
+      <module name="ExaminationManagementSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StartUP" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
