@@ -2,6 +2,7 @@ package view;
 
 import model.EMSModel;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class ConsoleView
@@ -19,13 +20,14 @@ public class ConsoleView
     boolean running = true;
     while (running)
     {
-      System.out.println("1) Add Student"); //done
-      System.out.println("2) Add Teacher"); //done
-      System.out.println("3) Add Room"); //done
-      System.out.println("4) Remove Student"); //done
-      System.out.println("5) Remove Teacher"); //done
-      System.out.println("6) Remove Room"); //done
-      System.out.println("7) Get size");
+      System.out.println("101) Add Student"); //done       //ADD
+      System.out.println("102) Add Teacher"); //done       //ADD
+      System.out.println("103) Add Room"); //done          //ADD
+      System.out.println("201) Remove Student"); //done    //REMOVE
+      System.out.println("202) Remove Teacher"); //done    //REMOVE
+      System.out.println("203) Remove Room"); //done       //REMOVE
+      System.out.println("301) Write to binary"); //done   //WRITE
+      System.out.println("401) Read from binary"); //done  //READ
       System.out.println("8) Show all grades");
       System.out.println("9) read from text File");
       System.out.println("10) write to the text File");
@@ -36,7 +38,7 @@ public class ConsoleView
       int choice = input.nextInt();
       switch (choice)
       {
-        case 1:
+        case 101:
           System.out.println("Enter the Student Name:");
           String name = input.nextLine();
           System.out.println("Enter the valid id:");
@@ -45,7 +47,7 @@ public class ConsoleView
           int semester = input.nextInt();
           model.addStudent(name, Id, semester);
           break;
-        case 2:
+        case 102:
           System.out.println("teacherName?");
           String name2 = input.nextLine();
           System.out.println("initials?");
@@ -54,7 +56,7 @@ public class ConsoleView
           String subject = input.nextLine();
           model.addTeacher(name2, initials, subject);
           break;
-        case 3:
+        case 103:
           System.out.println("roomName?");
           String roomName = input.nextLine();
           System.out.println("connectorsAvailable?");
@@ -75,20 +77,34 @@ public class ConsoleView
           model.addRoom(roomName, typesOfConnectorsAvailable,
               maxNumberOfStudents, numberOfChairs, numberOfTables, canBeMerged);
           break;
-        case 4:
+        case 201:
           System.out.println("id?");
           int id4 = input.nextInt();
           model.removeStudent(id4);
           break;
-        case 5:
+        case 202:
           System.out.println("initials?");
           String initials5 = input.nextLine();
           model.removeTeacher(initials5);
           break;
-        case 6:
+        case 203:
           System.out.println("roomName?");
           String roomName6 = input.nextLine();
           model.removeRoom(roomName6);
+          break;
+        case 301:
+          System.out.println("binNameW?");
+          String binNameW = input.nextLine();
+          File file301 = new File(binNameW);
+          model.writeToBinary(file301);
+          System.out.println("...........Done");
+          break;
+        case 401:
+          System.out.println("binNameR?");
+          String binNameR = input.nextLine();
+          File file401 = new File(binNameR);
+          model.readFromBinary(file401);
+          System.out.println("............Done");
           break;
         case 0:
           running = false;
