@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="JavaFX12.swing" level="application" />
+    <orderEntry type="library" name="JavaFX12" level="application" />
   </component>
 </module>

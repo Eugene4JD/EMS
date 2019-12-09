@@ -2,9 +2,9 @@ package model;
 
 import java.io.*;
 
-public class EMSModelManager implements EMSModel,Serializable
+public class EMSModelManager implements EMSModel, Serializable
 {
-
+  private boolean loggedIn;
   private StudentList students;
   private TeacherList teachers;
   private ClassList classes;
@@ -13,11 +13,29 @@ public class EMSModelManager implements EMSModel,Serializable
 
   public EMSModelManager()
   {
+    loggedIn = false;
     students = new StudentList();
     teachers = new TeacherList();
     classes = new ClassList();
     exams = new ExamList();
     rooms = new RoomList();
+  }
+
+  @Override public boolean isLoggedIn()
+  {
+    return loggedIn;
+  }
+
+  @Override public void validateSecretCode(String secretCode)
+  {
+    if (secretCode.equals("qwerty123"))
+    {
+      loggedIn = true;
+    }
+    else
+    {
+      throw new IllegalArgumentException("Wrong secret code!");
+    }
   }
 
   @Override public void addClass(String ClassName, TeacherList Teachers,
@@ -57,7 +75,7 @@ public class EMSModelManager implements EMSModel,Serializable
 
   @Override public void addStudent(String name, int id, int semester)
   {
-      students.addStudent(new Student(name, id, semester));
+    students.addStudent(new Student(name, id, semester));
   }
 
   @Override public void addTeacher(String name, String initials, String subject)
@@ -90,6 +108,7 @@ public class EMSModelManager implements EMSModel,Serializable
   {
     rooms.removeRoomByRoomName(roomName);
   }
+
   @Override public void writeToBinary(File file)
   {
     ObjectOutputStream out = null;
@@ -236,9 +255,10 @@ public class EMSModelManager implements EMSModel,Serializable
           }
         }
         break;
-      default: System.out.println("Such File is No existing");
+      default:
+        System.out.println("Such File is No existing");
     }
-    }
+  }
 
   @Override public void readFromBinary(File file)
   {
@@ -252,7 +272,7 @@ public class EMSModelManager implements EMSModel,Serializable
           in = new ObjectInputStream(fis);
 
           int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          for (int i = 0; i < count; i++)
           {
             classes.addClass((Class) in.readObject());
           }
@@ -265,11 +285,15 @@ public class EMSModelManager implements EMSModel,Serializable
         }
         finally
         {
-            try {
-              if (in != null) {
-               in.close();
+          try
+          {
+            if (in != null)
+            {
+              in.close();
             }
-          } catch (IOException exception) {
+          }
+          catch (IOException exception)
+          {
             // Output unexpected IOExceptions.
             exception.printStackTrace();
           }
@@ -282,7 +306,7 @@ public class EMSModelManager implements EMSModel,Serializable
           in = new ObjectInputStream(fis);
 
           int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          for (int i = 0; i < count; i++)
           {
             exams.addExam((Exam) in.readObject());
           }
@@ -293,11 +317,15 @@ public class EMSModelManager implements EMSModel,Serializable
         }
         finally
         {
-          try {
-            if (in != null) {
+          try
+          {
+            if (in != null)
+            {
               in.close();
             }
-          } catch (IOException exception) {
+          }
+          catch (IOException exception)
+          {
             // Output unexpected IOExceptions.
             exception.printStackTrace();
           }
@@ -310,9 +338,9 @@ public class EMSModelManager implements EMSModel,Serializable
           in = new ObjectInputStream(fis);
 
           int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          for (int i = 0; i < count; i++)
           {
-            rooms.addRoom((Room)in.readObject());
+            rooms.addRoom((Room) in.readObject());
           }
         }
         catch (IOException | ClassNotFoundException e)
@@ -321,11 +349,15 @@ public class EMSModelManager implements EMSModel,Serializable
         }
         finally
         {
-          try {
-            if (in != null) {
+          try
+          {
+            if (in != null)
+            {
               in.close();
             }
-          } catch (IOException exception) {
+          }
+          catch (IOException exception)
+          {
             // Output unexpected IOExceptions.
             exception.printStackTrace();
           }
@@ -338,7 +370,7 @@ public class EMSModelManager implements EMSModel,Serializable
           in = new ObjectInputStream(fis);
 
           int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          for (int i = 0; i < count; i++)
           {
             students.addStudent((Student) in.readObject());
           }
@@ -349,11 +381,15 @@ public class EMSModelManager implements EMSModel,Serializable
         }
         finally
         {
-          try {
-            if (in != null) {
+          try
+          {
+            if (in != null)
+            {
               in.close();
             }
-          } catch (IOException exception) {
+          }
+          catch (IOException exception)
+          {
             // Output unexpected IOExceptions.
             exception.printStackTrace();
           }
@@ -366,7 +402,7 @@ public class EMSModelManager implements EMSModel,Serializable
           in = new ObjectInputStream(fis);
 
           int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          for (int i = 0; i < count; i++)
           {
             teachers.addTeacher((Teacher) in.readObject());
           }
@@ -377,17 +413,22 @@ public class EMSModelManager implements EMSModel,Serializable
         }
         finally
         {
-          try {
-            if (in != null) {
+          try
+          {
+            if (in != null)
+            {
               in.close();
             }
-          } catch (IOException exception) {
+          }
+          catch (IOException exception)
+          {
             // Output unexpected IOExceptions.
             exception.printStackTrace();
           }
         }
         break;
-      default: System.out.println("Such file is not existing");
+      default:
+        System.out.println("Such file is not existing");
 
     }
   }
@@ -413,7 +454,7 @@ public class EMSModelManager implements EMSModel,Serializable
     {
       case ("Classes.bin"):
         int maxC = classes.getNumberOfClasses();
-        for (int i =0; i < maxC ;i++)
+        for (int i = 0; i < maxC; i++)
         {
           classes.removeClassByIndex(0);
         }
@@ -428,10 +469,10 @@ public class EMSModelManager implements EMSModel,Serializable
           System.out.println("Error");
         }
         break;
-      case("Exams.bin"):
+      case ("Exams.bin"):
 
         int maxE = exams.getNumberOfExams();
-        for (int i =0; i < maxE ;i++)
+        for (int i = 0; i < maxE; i++)
         {
           exams.removeExamByIndex(0);
         }
@@ -448,7 +489,7 @@ public class EMSModelManager implements EMSModel,Serializable
         break;
       case ("Rooms.bin"):
         int maxR = rooms.numberOfRooms();
-        for (int i =0; i < maxR ;i++)
+        for (int i = 0; i < maxR; i++)
         {
           rooms.removeRoom(0);
         }
@@ -463,9 +504,9 @@ public class EMSModelManager implements EMSModel,Serializable
           System.out.println("Error");
         }
         break;
-      case("Students.bin"):
+      case ("Students.bin"):
         int maxS = students.getNumberOfStudents();
-        for (int i =0; i < maxS ;i++)
+        for (int i = 0; i < maxS; i++)
         {
           students.removeStudentByIndex(0);
         }
@@ -482,7 +523,7 @@ public class EMSModelManager implements EMSModel,Serializable
         break;
       case ("Teachers.bin"):
         int max = teachers.getNumberOfTeachers();
-        for (int i =0; i < max ;i++)
+        for (int i = 0; i < max; i++)
         {
           teachers.removeTeacherByIndex(0);
         }
@@ -496,7 +537,8 @@ public class EMSModelManager implements EMSModel,Serializable
         {
           System.out.println("Error");
         }
-      default: System.out.println("no such file");
+      default:
+        System.out.println("no such file");
     }
   }
 }
