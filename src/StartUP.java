@@ -2,6 +2,7 @@ import model.*;
 import  view.ConsoleView;
 
 import java.io.File;
+import java.io.IOException;
 
 public class StartUP
 {
