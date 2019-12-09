@@ -250,17 +250,19 @@ public class EMSModelManager implements model.EMSModel
         }
         catch (IOException | ClassNotFoundException e)
         {
+          System.out.println("Error is here");
           e.printStackTrace();
+
         }
         finally
         {
-          try
-          {
-            in.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
+            try {
+              if (in != null) {
+               in.close();
+            }
+          } catch (IOException exception) {
+            // Output unexpected IOExceptions.
+            exception.printStackTrace();
           }
         }
         break;
@@ -282,13 +284,13 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-          try
-          {
-            in.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
+          try {
+            if (in != null) {
+              in.close();
+            }
+          } catch (IOException exception) {
+            // Output unexpected IOExceptions.
+            exception.printStackTrace();
           }
         }
         break;
@@ -310,13 +312,13 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-          try
-          {
-            in.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
+          try {
+            if (in != null) {
+              in.close();
+            }
+          } catch (IOException exception) {
+            // Output unexpected IOExceptions.
+            exception.printStackTrace();
           }
         }
         break;
@@ -338,13 +340,13 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-          try
-          {
-            in.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
+          try {
+            if (in != null) {
+              in.close();
+            }
+          } catch (IOException exception) {
+            // Output unexpected IOExceptions.
+            exception.printStackTrace();
           }
         }
         break;
@@ -366,13 +368,13 @@ public class EMSModelManager implements model.EMSModel
         }
         finally
         {
-          try
-          {
-            in.close();
-          }
-          catch (IOException e)
-          {
-            e.printStackTrace();
+          try {
+            if (in != null) {
+              in.close();
+            }
+          } catch (IOException exception) {
+            // Output unexpected IOExceptions.
+            exception.printStackTrace();
           }
         }
         break;
