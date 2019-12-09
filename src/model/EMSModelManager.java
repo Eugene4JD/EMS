@@ -82,7 +82,6 @@ public class EMSModelManager implements model.EMSModel
   {
     rooms.removeRoomByRoomName(roomName);
   }
-}
   @Override public void writeToBinary(File file)
   {
     ObjectOutputStream out = null;
