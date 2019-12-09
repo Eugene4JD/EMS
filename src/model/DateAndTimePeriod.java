@@ -30,9 +30,41 @@ public class DateAndTimePeriod
     }
     return false;
   }
+
+  public Date getDateOfTheExam()
+  {
+    return dateOfTheExam;
+  }
+
+  public Time getStartTime()
+  {
+    return startTime;
+  }
+
+  public Time getEndTime()
+  {
+    return endTime;
+  }
+
+  public void setDateOfTheExam(Date dateOfTheExam)
+  {
+    this.dateOfTheExam = dateOfTheExam;
+  }
+
+  public void setStartTime(Time startTime)
+  {
+    this.startTime = startTime;
+  }
+
+  public void setEndTime(Time endTime)
+  {
+    this.endTime = endTime;
+  }
+
   public DateAndTimePeriod copy()
   {
-    DateAndTimePeriod copyObject = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);
+    DateAndTimePeriod copyObject = new DateAndTimePeriod(dateOfTheExam,
+        startTime, endTime);
     return copyObject;
   }
 }
