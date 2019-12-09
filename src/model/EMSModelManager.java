@@ -13,6 +13,7 @@ public class EMSModelManager implements EMSModel,Serializable
   private ClassList classes;
   private ExamList exams;
   private RoomList rooms;
+  private boolean loggedIn;
 
   public EMSModelManager()
   {
