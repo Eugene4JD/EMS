@@ -16,12 +16,30 @@ public class EMSModelManager implements EMSModel,Serializable
 
   public EMSModelManager()
   {
+    loggedIn = false;
     students = new StudentList();
     teachers = new TeacherList();
     classes = new ClassList();
     exams = new ExamList();
     rooms = new RoomList();
     preModel = new Binary();
+  }
+
+  @Override public boolean isLoggedIn()
+  {
+    return loggedIn;
+  }
+
+  @Override public void validateSecretCode(String secretCode)
+  {
+    if (secretCode.equals("qwerty123"))
+    {
+      loggedIn = true;
+    }
+    else
+    {
+      throw new IllegalArgumentException("Wrong secret code!");
+    }
   }
 
   @Override public void addClass(String ClassName, TeacherList Teachers,
@@ -61,7 +79,7 @@ public class EMSModelManager implements EMSModel,Serializable
 
   @Override public void addStudent(String name, int id, int semester)
   {
-      students.addStudent(new Student(name, id, semester));
+    students.addStudent(new Student(name, id, semester));
   }
 
   @Override public void addTeacher(String name, String initials, String subject)
@@ -94,6 +112,7 @@ public class EMSModelManager implements EMSModel,Serializable
   {
     rooms.removeRoomByRoomName(roomName);
   }
+
   @Override public void writeToBinary(File file)
   {
     switch (file.getName())
