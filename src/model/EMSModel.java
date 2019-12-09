@@ -1,5 +1,7 @@
 package model;
 
+import java.io.File;
+
 public interface EMSModel
 {
   void addStudent(String name, int id, int Semester);
@@ -14,4 +16,5 @@ public interface EMSModel
   void addClass(String ClassName, TeacherList Teachers, StudentList Students);
   void removeExam(DateAndTimePeriod period);
   String showSchedule();
+  void writeToBinary(File file);
 }

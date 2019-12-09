@@ -1,5 +1,10 @@
 package model;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 public class EMSModelManager implements model.EMSModel
 {
 
@@ -81,3 +86,154 @@ public class EMSModelManager implements model.EMSModel
     rooms.removeRoomByRoomName(roomName);
   }
 }
+  @Override public void writeToBinary(File file)
+  {
+    ObjectOutputStream out = null;
+    switch (file.getName())
+    {
+      case("Classes.bin"):
+        try
+        {
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+
+          out.writeInt(classes.getNumberOfClasses());
+          for (int i = 0; i<classes.getNumberOfClasses(); i++)
+          {
+            out.writeObject(classes.getClassByIndex(i));
+          }
+        }
+        catch (IOException e)
+        {
+          System.out.println("Exception: " + file.getName());
+        }
+        finally
+        {
+        }
+        try
+        {
+          out.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+        break;
+      case("Exams.bin"):
+        try
+        {
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+
+          out.writeInt(exams.getNumberOfExams());
+          for (int i = 0; i<exams.getNumberOfExams(); i++)
+          {
+            out.writeObject(exams.getExam(i));
+          }
+        }
+        catch (IOException e)
+        {
+          System.out.println("Exception: " + file.getName());
+        }
+        finally
+        {
+        }
+        try
+        {
+          out.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+        break;
+      case("Rooms.bin"):
+        try
+        {
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+
+          out.writeInt(rooms.numberOfRooms());
+          for (int i = 0; i<rooms.numberOfRooms(); i++)
+          {
+            out.writeObject(rooms.getRoomByIndex(i));
+          }
+        }
+        catch (IOException e)
+        {
+          System.out.println("Exception: " + file.getName());
+        }
+        finally
+        {
+        }
+        try
+        {
+          out.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+        break;
+      case ("Students.bin"):
+        try
+        {
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+
+          out.writeInt(students.getNumberOfStudents());
+          for (int i = 0; i<students.getNumberOfStudents(); i++)
+          {
+            out.writeObject(students.getStudentByIndex(i));
+          }
+        }
+        catch (IOException e)
+        {
+          System.out.println("Exception: " + file.getName());
+        }
+        finally
+        {
+        }
+        try
+        {
+          out.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+        break;
+      case("Teachers.bin"):
+        try
+        {
+          FileOutputStream fos = new FileOutputStream(file);
+          out = new ObjectOutputStream(fos);
+
+          out.writeInt(teachers.getNumberOfTeachers());
+          for (int i = 0; i<teachers.getNumberOfTeachers(); i++)
+          {
+            out.writeObject(teachers.getTeacherByIndex(i));
+          }
+        }
+        catch (IOException e)
+        {
+          System.out.println("Exception: " + file.getName());
+        }
+        finally
+        {
+        }
+        try
+        {
+          out.close();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+        break;
+      default: System.out.println("error");
+    }
+    }
+
+  }
+
