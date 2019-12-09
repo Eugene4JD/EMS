@@ -7,6 +7,9 @@ public interface EMSModel
   void addRoom(String roomName, String typesOfConnectorsAvailable,
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
       boolean canBeMerged);
+  void removeStudent(int id);
+  void removeTeacher(String initials);
+  void removeRoom(String roomName);
   void addExam(Exam exam);
   void addClass(String ClassName, TeacherList Teachers, StudentList Students);
   void removeExam(DateAndTimePeriod period);

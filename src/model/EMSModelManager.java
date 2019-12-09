@@ -65,4 +65,19 @@ public class EMSModelManager implements model.EMSModel
   {
     return exams.toString();
   }
+
+  @Override public void removeStudent(int id)
+  {
+    students.removeStudentById(id);
+  }
+
+  @Override public void removeTeacher(String initials)
+  {
+    teachers.removeTeacherByInitials(initials);
+  }
+
+  @Override public void removeRoom(String roomName)
+  {
+    rooms.removeRoomByRoomName(roomName);
+  }
 }

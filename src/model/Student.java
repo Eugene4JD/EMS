@@ -5,24 +5,24 @@ import java.io.Serializable;
 public class Student implements Serializable
 {
   private String name;
-  private int Id;
-  private int Semester;
+  private int id;
+  private int semester;
 
-  public Student(String name, int Id, int Semester)
+  public Student(String name, int id, int semester)
   {
     this.name = name;
-    this.Id = Id;
-    this.Semester = Semester;
+    this.id = id;
+    this.semester = semester;
   }
 
   public int getId()
   {
-    return Id;
+    return id;
   }
 
   public int getSemester()
   {
-    return Semester;
+    return semester;
   }
 
   public String getName()
@@ -32,8 +32,9 @@ public class Student implements Serializable
 
   public void setId(int id)
   {
-    Id = id;
+    this.id = id;
   }
+
   public void setName(String name)
   {
     this.name = name;
@@ -41,21 +42,20 @@ public class Student implements Serializable
 
   public void setSemester(int semester)
   {
-    Semester = semester;
+    this.semester = semester;
   }
 
   public String toString()
   {
-    return getName()+" id: "+getId()+" semester: "+getSemester();
+    return getName() + " ID: " + getId() + " semester: " + getSemester();
   }
 
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Student))
       return false;
-    Student other =(Student) obj;
-    return other.getSemester() == this.getSemester()
-        && other.getId() == this.getId()
-        && other.getName().equals(this.getName());
+    Student other = (Student) obj;
+    return (other.getSemester() == this.getSemester() && other.getId() == this
+        .getId() && other.getName().equals(this.getName()));
   }
 }
