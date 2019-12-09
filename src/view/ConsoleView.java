@@ -22,9 +22,9 @@ public class ConsoleView
       System.out.println("1) Add Student"); //done
       System.out.println("2) Add Teacher"); //done
       System.out.println("3) Add Room"); //done
-      System.out.println("4) Add Class");
-      System.out.println("5) Add Exam");
-      System.out.println("6) Get grade");
+      System.out.println("4) Remove Student"); //done
+      System.out.println("5) Remove Teacher"); //done
+      System.out.println("6) Remove Room"); //done
       System.out.println("7) Get size");
       System.out.println("8) Show all grades");
       System.out.println("9) read from text File");
@@ -76,6 +76,19 @@ public class ConsoleView
               maxNumberOfStudents, numberOfChairs, numberOfTables, canBeMerged);
           break;
         case 4:
+          System.out.println("id?");
+          int id4 = input.nextInt();
+          model.removeStudent(id4);
+          break;
+        case 5:
+          System.out.println("initials?");
+          String initials5 = input.nextLine();
+          model.removeTeacher(initials5);
+          break;
+        case 6:
+          System.out.println("roomName?");
+          String roomName6 = input.nextLine();
+          model.removeRoom(roomName6);
           break;
         case 0:
           running = false;
