@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="860.0" userData="settingsView" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SettingsViewController">
+    <children>
+        <HBox prefHeight="86.0" prefWidth="860.0" style="-fx-background-color: #FAFAFA;">
+            <children>
+                <Label prefHeight="52.0" prefWidth="124.0" text="Settings">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="40.0" top="18.0" />
+                    </HBox.margin>
+                </Label>
+                <ImageView fitHeight="42.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets left="470.0" top="22.0" />
+                    </HBox.margin>
+                </ImageView>
+                <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="54.0" text="Back">
+                    <HBox.margin>
+                        <Insets left="5.0" top="28.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <HBox prefHeight="472.0" prefWidth="860.0">
+            <children>
+                <VBox prefHeight="533.0" prefWidth="280.0">
+                    <children>
+                        <Label fx:id="errorLabel" text="Label" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="533.0" prefWidth="280.0" />
+                <VBox prefHeight="533.0" prefWidth="280.0" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

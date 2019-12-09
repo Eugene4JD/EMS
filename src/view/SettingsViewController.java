@@ -5,16 +5,16 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import model.EMSModel;
 
-public class FirstPageController
+public class SettingsViewController
 {
   @FXML private Label errorLabel;
   private Region root;
   private EMSModel model;
   private ViewHandler viewHandler;
 
-  public FirstPageController()
+  public SettingsViewController()
   {
-    // init
+    //init
   }
 
   public void init(ViewHandler viewHandler, EMSModel model, Region root)
@@ -34,9 +34,6 @@ public class FirstPageController
     return root;
   }
 
-  public void exitButtonPressed()
-  {
-    viewHandler.closeView();
-  }
-  public void settingsButtonPressed() {viewHandler.openView("settingsPage");}
+  public void backButtonPressed() {viewHandler.openView("firstPage");}
 }
+

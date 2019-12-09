@@ -190,7 +190,7 @@
                 <HBox prefHeight="71.0" prefWidth="570.0">
                     <children>
                         <Button mnemonicParsing="false" prefHeight="52.0"
-                                prefWidth="47.0">
+                                prefWidth="47.0" onAction="#settingsButtonPressed">
                             <graphic>
                                 <ImageView fitHeight="44.0" fitWidth="36.0"
                                            pickOnBounds="true"

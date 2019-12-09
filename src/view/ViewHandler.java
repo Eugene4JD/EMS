@@ -14,6 +14,7 @@ public class ViewHandler
   private EMSModel model;
   private SecretCodeController secretCodeController;
   private FirstPageController firstPageController;
+  private SettingsViewController settingsViewController;
 
   public ViewHandler(EMSModel model)
   {
@@ -38,13 +39,17 @@ public class ViewHandler
       case "firstPage":
         root = loadFirstPageView("FirstPageView.fxml");
         break;
+      case "settingsPage":
+        root = loadSettingsView("settingsView.fxml");
+        break;
     }
     currentScene.setRoot(root);
     String title = "EMS";
     primaryScene.setScene(currentScene);
     primaryScene.setWidth(root.getPrefWidth());
     primaryScene.setHeight(root.getPrefHeight());
-    primaryScene.getIcons().add(new Image(getClass().getResourceAsStream("logo_icon.png")));
+    primaryScene.getIcons()
+        .add(new Image(getClass().getResourceAsStream("logo_icon.png")));
     primaryScene.show();
     if (root.getUserData() != null)
     {
@@ -104,5 +109,29 @@ public class ViewHandler
       firstPageController.reset();
     }
     return firstPageController.getRoot();
+  }
+
+  private Region loadSettingsView(String fxmlFile)
+  {
+    if (settingsViewController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        settingsViewController = loader.getController();
+        settingsViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      settingsViewController.reset();
+    }
+    return settingsViewController.getRoot();
   }
 }
