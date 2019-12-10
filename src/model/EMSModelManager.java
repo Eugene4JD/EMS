@@ -3,11 +3,14 @@ package model;
 import java.io.*;
 
 import mediator.Binary;
-import mediator.Persistence;
+import mediator.PersistenceBinary;
+import mediator.PersistenceXML;
+import mediator.XML;
 
 public class EMSModelManager implements EMSModel,Serializable
 {
-  private Persistence preModel;
+  private PersistenceXML xmlModel;
+  private PersistenceBinary BinaryModel;
   private StudentList students;
   private TeacherList teachers;
   private ClassList classes;
@@ -23,7 +26,8 @@ public class EMSModelManager implements EMSModel,Serializable
     classes = new ClassList();
     exams = new ExamList();
     rooms = new RoomList();
-    preModel = new Binary();
+    BinaryModel = new Binary();
+    xmlModel = new XML();
   }
 
   @Override public boolean isLoggedIn()
@@ -116,19 +120,19 @@ public class EMSModelManager implements EMSModel,Serializable
     switch (file.getName())
     {
       case ("Classes.bin"):
-        preModel.save(file,classes);
+        BinaryModel.save(file,classes);
         break;
       case ("Exams.bin"):
-        preModel.save(file,exams);
+        BinaryModel.save(file,exams);
         break;
       case ("Rooms.bin"):
-        preModel.save(file,rooms);
+        BinaryModel.save(file,rooms);
         break;
       case ("Students.bin"):
-        preModel.save(file,students);
+        BinaryModel.save(file,students);
         break;
       case ("Teachers.bin"):
-        preModel.save(file,teachers);
+        BinaryModel.save(file,teachers);
     }
   }
   @Override public void readFromBinary(File file)
@@ -136,26 +140,36 @@ public class EMSModelManager implements EMSModel,Serializable
     switch (file.getName())
     {
       case ("Classes.bin"):
-        this.classes = (ClassList) preModel.update(file);
+        this.classes = (ClassList) BinaryModel.update(file);
         break;
       case ("Exams.bin"):
-        this.exams = (ExamList) preModel.update(file);
+        this.exams = (ExamList) BinaryModel.update(file);
         break;
       case ("Rooms.bin"):
-        this.rooms = (RoomList) preModel.update(file);
+        this.rooms = (RoomList) BinaryModel.update(file);
         break;
       case ("Students.bin"):
-        this.students = (StudentList) preModel.update(file);
+        this.students = (StudentList) BinaryModel.update(file);
         break;
       case ("Teachers.bin"):
-        this.teachers = (TeacherList) preModel.update(file);
+        this.teachers = (TeacherList) BinaryModel.update(file);
     }
 
+  }
+
+  @Override public Class getClassByClassName(String name)
+  {
+    return classes.getClassByClassName(name);
   }
 
   @Override public String showStudents()
   {
     return students.showAllStudents();
+  }
+
+  @Override public String showAllClasses()
+  {
+    return classes.showAllClasses();
   }
 
   @Override public String showRooms()
@@ -173,21 +187,26 @@ public class EMSModelManager implements EMSModel,Serializable
     switch (file.getName())
     {
       case ("Classes.bin"):
-        this.classes = (ClassList) preModel.delete(file,classes);
+        this.classes = (ClassList) BinaryModel.delete(file,classes);
         break;
       case ("Exams.bin"):
-        this.exams = (ExamList) preModel.delete(file,exams);
+        this.exams = (ExamList) BinaryModel.delete(file,exams);
         break;
       case ("Rooms.bin"):
-        this.rooms = (RoomList) preModel.delete(file,rooms);
+        this.rooms = (RoomList) BinaryModel.delete(file,rooms);
         break;
       case ("Students.bin"):
-        this.students = (StudentList) preModel.delete(file,students);
+        this.students = (StudentList) BinaryModel.delete(file,students);
         break;
       case ("Teachers.bin"):
-        this.teachers = (TeacherList) preModel.delete(file,teachers);
+        this.teachers = (TeacherList) BinaryModel.delete(file,teachers);
     }
    
+  }
+
+  @Override public void writeToXMl(File XMLFile)
+  {
+    xmlModel.save(XMLFile,exams);
   }
 }
 

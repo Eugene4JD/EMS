@@ -17,11 +17,14 @@ public interface EMSModel
   void addExam(Exam exam);
   void addClass(String ClassName, TeacherList Teachers, StudentList Students);
   void removeExam(DateAndTimePeriod period);
+  Class getClassByClassName(String name);
   String showSchedule();
-  void writeToBinary(File file );
-  void readFromBinary(File file);
+  void writeToBinary(File BinaryFile);
+  void readFromBinary(File BinaryFile);
+  String showAllClasses();
   String showStudents();
   String showTeachers();
   String showRooms();
-  void clearFile(File file);
+  void clearFile(File BinaryFile);
+  void writeToXMl(File XMLFile);
 }

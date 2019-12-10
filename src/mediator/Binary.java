@@ -5,7 +5,7 @@ import model.Class;
 
 import java.io.*;
 
-public class Binary implements Persistence
+public class Binary implements PersistenceBinary
 {
   @Override public Object update(File file)
   {

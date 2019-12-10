@@ -17,7 +17,18 @@ public class Exam implements Serializable
     periodOfExam = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);
     examRooms = new RoomList();
   }
-
+  public String getExamName()
+  {
+    return examName;
+  }
+  public String getDescription()
+  {
+    return description;
+  }
+  public void setDescription(String description)
+  {
+    this.description = description;
+  }
   public void addClasses(ClassList examClasses)
   {
     this.examClasses = examClasses;

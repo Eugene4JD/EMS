@@ -1,6 +1,7 @@
 package view;
 
-import model.EMSModel;
+import model.*;
+import model.Class;
 
 import java.io.File;
 import java.util.Scanner;
@@ -22,6 +23,7 @@ public class ConsoleView
     File Rooms_bin = new File("Rooms.bin");
     File Students_bin = new File("Students.bin");
     File Teachers_bin = new File("Teachers.bin");
+    File examsXML = new File("exams.xml");
 
     if (Classes_bin.length() != 0)
     {
@@ -49,6 +51,8 @@ public class ConsoleView
       System.out.println("101) Add Student"); //done       //ADD
       System.out.println("102) Add Teacher"); //done       //ADD
       System.out.println("103) Add Room"); //done          //ADD
+      System.out.println("104) Add Class");
+      System.out.println("105) Add exam");
       System.out.println("201) Remove Student"); //done    //REMOVE
       System.out.println("202) Remove Teacher"); //done    //REMOVE
       System.out.println("203) Remove Room"); //done       //REMOVE
@@ -56,6 +60,7 @@ public class ConsoleView
       System.out.println("205) Remove all rooms");
       System.out.println("210) Remove all");
       System.out.println("301) Write to binary"); //done   //WRITE
+      System.out.println("302) Write to XML");
       System.out.println("401) Read from binary"); //done  //READ
       System.out.println("501) Show all exams");
       System.out.println("601) Show all students");
@@ -75,7 +80,20 @@ public class ConsoleView
           int Id = input.nextInt();
           System.out.println("Enter the valid semester:");
           int semester = input.nextInt();
+          Student newStudent = new Student(name, Id ,semester);
           model.addStudent(name, Id, semester);
+          int k = 0;
+          while( k == 0 )
+          {
+            System.out.println(model.showAllClasses());
+            System.out.println("Enter the name of the class, to add student to:");
+            String className = input.nextLine();
+            if (model.getClassByClassName(className) != null)
+            {
+              model.getClassByClassName(className).addStudent(newStudent);
+              k = 1;
+            }
+          }
           break;
         case 102:
           System.out.println("teacherName?");
@@ -85,7 +103,20 @@ public class ConsoleView
           String initials = input.nextLine();
           System.out.println("subject?");
           String subject = input.nextLine();
+          Teacher newTeacher = new Teacher (name2, initials, subject);
           model.addTeacher(name2, initials, subject);
+          int l = 0;
+          while( l == 0 )
+          {
+            System.out.println(model.showAllClasses());
+            System.out.println("Enter the name of the class, to add Teacher to:");
+            String className = input.nextLine();
+            if (model.getClassByClassName(className) != null)
+            {
+              model.getClassByClassName(className).addTeacher(newTeacher);
+              l = 1;
+            }
+          }
           break;
         case 103:
           System.out.println("roomName?");
@@ -109,6 +140,44 @@ public class ConsoleView
           model.addRoom(roomName, typesOfConnectorsAvailable,
               maxNumberOfStudents, numberOfChairs, numberOfTables, canBeMerged);
           break;
+        case 104:
+          System.out.println("Class Name:");
+          input.nextLine();
+          String className = input.nextLine();
+          model.addClass(className,new TeacherList(), new StudentList());
+        case 105:
+          System.out.println("Enter the date year:");
+          input.nextLine();
+          System.out.println("Day:");
+          int startDay = input.nextInt();
+          System.out.println("Month:");
+          int startMonth = input.nextInt();
+          System.out.println("Year:");
+          int startYear = input.nextInt();
+          Date startDate = new Date(startDay,startMonth , startYear);
+          System.out.println("Enter the start time:");
+          System.out.println("Hour:");
+          int startHour = input.nextInt();
+          System.out.println("Minute:");
+          int startMinute = input.nextInt();
+          System.out.println("Second:");
+          int startSecond = input.nextInt();
+          Time startTime = new Time(startHour,startMinute,startSecond);
+          System.out.println("Enter the end time:");
+          System.out.println("Hour:");
+          int endHour = input.nextInt();
+          System.out.println("Minute:");
+          int endMinute = input.nextInt();
+          System.out.println("Second:");
+          int endSecond = input.nextInt();
+          Time endTime = new Time(endHour,endMinute,endSecond);
+          input.nextLine();
+          System.out.println("enter Exam Name: ");
+          String examName = input.nextLine();
+          model.addExam(new Exam(examName,startDate,startTime,endTime));
+          model.writeToXMl(examsXML);
+          break;
+
         case 201:
           System.out.println("id?");
           int id4 = input.nextInt();
@@ -134,6 +203,8 @@ public class ConsoleView
         case 301:
           System.out.println("binNameW?");
           break;
+        case 302:
+          model.writeToXMl(examsXML);
         case 401:
           System.out.println("binNameR?");
           String binNameR = input.nextLine();
@@ -156,6 +227,7 @@ public class ConsoleView
         case 0:
           model.writeToBinary(Classes_bin);
           model.writeToBinary(Exams_bin);
+          model.writeToXMl(examsXML);
           model.writeToBinary(Rooms_bin);
           model.writeToBinary(Students_bin);
           model.writeToBinary(Teachers_bin);
