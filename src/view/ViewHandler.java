@@ -15,6 +15,8 @@ public class ViewHandler
   private SecretCodeController secretCodeController;
   private FirstPageController firstPageController;
   private SettingsViewController settingsViewController;
+  private AddStudentController addStudentController;
+  private AddTeacherController addTeacherController;
 
   public ViewHandler(EMSModel model)
   {
@@ -41,6 +43,12 @@ public class ViewHandler
         break;
       case "settingsPage":
         root = loadSettingsView("settingsView.fxml");
+        break;
+      case "addStudentPage":
+        root = loadAddStudentView("AddStudentView.fxml");
+        break;
+      case "addTeacherPage":
+        root = loadAddTeacherView("AddTeacherView.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -133,5 +141,53 @@ public class ViewHandler
       settingsViewController.reset();
     }
     return settingsViewController.getRoot();
+  }
+
+  private Region loadAddStudentView(String fxmlFile)
+  {
+    if (addStudentController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        addStudentController = loader.getController();
+        addStudentController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      addStudentController.reset();
+    }
+    return addStudentController.getRoot();
+  }
+
+  private Region loadAddTeacherView(String fxmlFile)
+  {
+    if (addTeacherController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        addTeacherController = loader.getController();
+        addTeacherController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      addTeacherController.reset();
+    }
+    return addTeacherController.getRoot();
   }
 }

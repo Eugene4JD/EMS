@@ -34,6 +34,19 @@ public class SettingsViewController
     return root;
   }
 
-  public void backButtonPressed() {viewHandler.openView("firstPage");}
+  @FXML private void backButtonPressed()
+  {
+    viewHandler.openView("firstPage");
+  }
+
+  @FXML private void addStudentButtonPressed()
+  {
+    viewHandler.openView("addStudentPage");
+  }
+
+  @FXML private void addTeacherButtonPressed()
+  {
+    viewHandler.openView("addTeacherPage");
+  }
 }
 
