@@ -2,7 +2,7 @@ package mediator;
 
 import java.io.File;
 
-public interface Persistence
+public interface PersistenceBinary
 {
    void save(File file, Object object);
    Object update(File file);

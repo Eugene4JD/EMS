@@ -61,7 +61,10 @@ public class ClassList implements Serializable
 
   public Class getClassByClassName(String className)
   {
-    return classes.get(getIndexOfClassByClassName(className));
+    if (getIndexOfClassByClassName(className) == -1)
+      return null;
+    else
+      return classes.get(getIndexOfClassByClassName(className));
   }
 
 

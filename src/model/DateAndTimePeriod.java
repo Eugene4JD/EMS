@@ -1,6 +1,8 @@
 package model;
 
-public class DateAndTimePeriod
+import java.io.Serializable;
+
+public class DateAndTimePeriod implements Serializable
 {
   private Date dateOfTheExam;
   private Time startTime;
@@ -66,5 +68,12 @@ public class DateAndTimePeriod
     DateAndTimePeriod copyObject = new DateAndTimePeriod(dateOfTheExam,
         startTime, endTime);
     return copyObject;
+  }
+
+  public String toString()
+  {
+    String str ="";
+    str+=dateOfTheExam.toString()+"  |  "+ startTime.toString()+" - " + endTime.toString();
+    return str;
   }
 }
