@@ -68,7 +68,7 @@ public class EMSModelManager implements EMSModel,Serializable
   }
   @Override public void addRoom(String roomName,
       String typesOfConnectorsAvailable, int maxNumberOfStudents,
-      int numberOfChairs, int numberOfTables, boolean canBeMerged)
+      int numberOfChairs, int numberOfTables, String canBeMerged)
   {
     if (!rooms.isRoomExists(
         new Room(roomName, typesOfConnectorsAvailable, maxNumberOfStudents,

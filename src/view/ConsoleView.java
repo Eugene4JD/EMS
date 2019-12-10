@@ -132,11 +132,11 @@ public class ConsoleView
           int numberOfTables = input.nextInt();
           System.out.println("canBeMerged? (0 or 1)");
           int buffer = input.nextInt();
-          boolean canBeMerged;
+          String canBeMerged;
           if (buffer == 0)
-            canBeMerged = false;
+            canBeMerged = "false";
           else
-            canBeMerged = true;
+            canBeMerged = "true";
           model.addRoom(roomName, typesOfConnectorsAvailable,
               maxNumberOfStudents, numberOfChairs, numberOfTables, canBeMerged);
           break;
