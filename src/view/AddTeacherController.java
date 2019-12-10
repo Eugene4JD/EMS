@@ -6,18 +6,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.EMSModel;
 
-public class AddStudentController
+public class AddTeacherController
 {
   @FXML private TextField nameTextField;
-  @FXML private TextField idTextField;
-  @FXML private TextField semesterTextField;
+  @FXML private TextField initialsTextField;
+  @FXML private TextField subjectTextField;
   @FXML private Label errorLabel;
 
   private Region root;
   private EMSModel model;
   private ViewHandler viewHandler;
 
-  public AddStudentController()
+  public AddTeacherController()
   {
     //init
   }
@@ -34,8 +34,8 @@ public class AddStudentController
   {
     this.errorLabel.setText("");
     this.nameTextField.setText("");
-    this.idTextField.setText("");
-    this.semesterTextField.setText("");
+    this.initialsTextField.setText("");
+    this.subjectTextField.setText("");
   }
 
   public Region getRoot()
@@ -43,7 +43,7 @@ public class AddStudentController
     return root;
   }
 
-  @FXML private void addStudentButtonPressed()
+  @FXML private void addTeacherButtonPressed()
   {
     System.out.println("addPressed");
     viewHandler.openView("settingsPage");

@@ -22,6 +22,7 @@ public class FirstPageController
     this.viewHandler = viewHandler;
     this.model = model;
     this.root = root;
+    reset();
   }
 
   public void reset()
