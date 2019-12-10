@@ -61,19 +61,19 @@ public class Date implements Serializable
   public void set(int day, int month, int year)
   {
     if (year < 0)
-      this.year = -year;
+      throw new IllegalArgumentException("Wrong year");
     else
       this.year = year;
     if (month < 1)
-      this.month = 1;
+      throw new IllegalArgumentException("Wrong month");
     else if (month > 12)
-      this.month = 12;
+      throw  new IllegalArgumentException("Wrong month");
     else
       this.month = month;
     if (day < 1)
-      this.day = 1;
+      throw new IllegalArgumentException("Wrong day");
     else if (day > this.numberOfDaysInMonth())
-      this.day = this.numberOfDaysInMonth();
+      throw new IllegalArgumentException("Wrong day");
     else
       this.day = day;
   }

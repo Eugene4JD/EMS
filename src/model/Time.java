@@ -10,27 +10,29 @@ public class Time implements Serializable
 
   public Time(int hour, int minute, int second)
   {
+    if ((hour <0 && hour > 24) ||(minute<0 && minute>59) || (second<0 && second>59))
+      throw new IllegalArgumentException("Wrong Time");
     set(hour, minute, second);
   }
 
   public void set(int hour, int minute, int second)
   {
     if (hour > 23)
-      this.hour = 0;
+      throw new IllegalArgumentException("Wrong Time");
     else if (hour < 0)
-      this.hour = 0;
+      throw new IllegalArgumentException("Wrong Time");
     else
       this.hour = hour;
     if (minute > 59)
-      this.minute = 59;
+      throw new IllegalArgumentException("Wrong Time");
     else if (minute < 0)
-      this.minute = 0;
+      throw new IllegalArgumentException("Wrong Time");
     else
       this.minute = minute;
     if (second > 59)
-      this.second = 59;
+      throw new IllegalArgumentException("Wrong Time");
     else if (second < 0)
-      this.second = 0;
+      throw new IllegalArgumentException("Wrong Time");
     else
       this.second = second;
   }

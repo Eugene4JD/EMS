@@ -13,14 +13,34 @@ public class Room implements Serializable
 
   public Room(String roomName, String typesOfConnectorsAvailable,
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
-      boolean canBeMerged)
+      String canBeMerged)
   {
-    this.roomName = roomName;
-    this.typesOfConnectorsAvailable = typesOfConnectorsAvailable;
-    this.maxNumberOfStudents = maxNumberOfStudents;
-    this.numberOfChairs = numberOfChairs;
-    this.numberOfTables = numberOfTables;
-    this.canBeMerged = canBeMerged;
+    if (roomName == "")
+      throw new IllegalArgumentException("the wrong Room name");
+    else
+      this.roomName = roomName;
+    if (typesOfConnectorsAvailable == "")
+      throw new IllegalArgumentException("the wrong type connectors");
+    else
+      this.typesOfConnectorsAvailable = typesOfConnectorsAvailable;
+    if (maxNumberOfStudents < 1)
+      throw new IllegalArgumentException("the wrong number of Students");
+    else
+      this.maxNumberOfStudents = maxNumberOfStudents;
+    if (numberOfChairs < 1)
+      throw new IllegalArgumentException("the wrong number of chairs");
+    else
+      this.numberOfChairs = numberOfChairs;
+    if (numberOfTables < 1)
+      throw new IllegalArgumentException("the wrong number of tables");
+    else
+      this.numberOfTables = numberOfTables;
+    if (canBeMerged == "true")
+      this.canBeMerged = true;
+    else if (canBeMerged == "false")
+      this.canBeMerged = false;
+    else
+      throw new IllegalArgumentException("Wrong state of merge");
   }
 
   public String getRoomName()

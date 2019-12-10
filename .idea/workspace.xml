@@ -2,33 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/exams.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mediator/PersistenceXML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mediator/XML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exams.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exams.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rooms.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Rooms.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Students.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/mediator/Binary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/mediator/Binary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/mediator/Persistence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Date.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Date.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/DateAndTimePeriod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/DateAndTimePeriod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Time.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ConsoleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ConsoleView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mediator/Binary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mediator/Binary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mediator/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mediator/PersistenceBinary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ClassList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClassList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Class.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DateAndTimePeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DateAndTimePeriod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/EMSModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/EMSModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Exam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

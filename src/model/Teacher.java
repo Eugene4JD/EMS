@@ -11,10 +11,18 @@ public class Teacher implements Serializable
 
   public Teacher(String name, String initials, String subject)
   {
-    this.name = name;
-    this.initials = initials;
-    this.subject = subject;
-    this.isBusy = false;
+    if (name == "")
+      throw new IllegalArgumentException("wrong name");
+    else
+      this.name = name;
+    if (initials == "")
+      throw new IllegalArgumentException("Wrong initials");
+    else
+      this.initials = initials;
+    if (subject == "")
+      throw  new IllegalArgumentException("Wrong subject");
+    else
+      this.subject = subject;
   }
 
   public String getName()
