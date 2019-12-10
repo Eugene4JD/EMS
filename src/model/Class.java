@@ -13,7 +13,10 @@ public class Class implements Serializable
   {
     this.students = new StudentList();
     this.teachers = new TeacherList();
-    this.className = className;
+    if (className == "")
+      throw  new IllegalArgumentException("wrong class name");
+    else
+      this.className = className;
   }
 
   public void addStudent(Student student)

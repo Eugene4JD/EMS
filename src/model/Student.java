@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.control.SeparatorMenuItem;
+
 import java.io.Serializable;
 
 public class Student implements Serializable
@@ -10,9 +12,18 @@ public class Student implements Serializable
 
   public Student(String name, int id, int semester)
   {
-    this.name = name;
-    this.id = id;
-    this.semester = semester;
+    if (name != "")
+      throw new IllegalArgumentException("wrong name");
+    else
+      this.name = name;
+    if (id < 0)
+      throw new IllegalArgumentException("Wrong Id");
+    else
+      this.id = id;
+    if (semester < 1 || semester > 7)
+      throw new IllegalArgumentException("Wrong semester");
+    else
+      this.semester = semester;
   }
 
   public int getId()

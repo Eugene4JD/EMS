@@ -12,6 +12,8 @@ public class Exam implements Serializable
 
   public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime)
   {
+    if (examName == "")
+      throw new IllegalArgumentException("wrong Exam name");
     this.examName = examName;
     examClasses = new ClassList();
     periodOfExam = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);
