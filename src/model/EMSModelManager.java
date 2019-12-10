@@ -57,13 +57,11 @@ public class EMSModelManager implements EMSModel,Serializable
 
     }
   }
-
   @Override public void addExam(Exam exam)
   {
     if (exams.isExamLegitToBeCreated(exam))
       exams.addExam(exam);
   }
-
   @Override public void addRoom(String roomName,
       String typesOfConnectorsAvailable, int maxNumberOfStudents,
       int numberOfChairs, int numberOfTables, boolean canBeMerged)
@@ -77,7 +75,6 @@ public class EMSModelManager implements EMSModel,Serializable
               numberOfChairs, numberOfTables, canBeMerged));
     }
   }
-
   @Override public void addStudent(String name, int id, int semester)
   {
     students.addStudent(new Student(name, id, semester));

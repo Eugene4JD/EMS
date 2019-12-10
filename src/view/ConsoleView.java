@@ -89,6 +89,7 @@ public class ConsoleView
           break;
         case 103:
           System.out.println("roomName?");
+          input.nextLine();
           String roomName = input.nextLine();
           System.out.println("connectorsAvailable?");
           String typesOfConnectorsAvailable = input.nextLine();
