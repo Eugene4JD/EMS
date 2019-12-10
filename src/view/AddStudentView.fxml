@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="241.0" prefWidth="292.0"
+      xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.AddStudentController"
+      userData="addStudent">
+    <children>
+        <HBox prefHeight="59.0" prefWidth="466.0"
+              style="-fx-background-color: #FAFAFA;">
+            <children>
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="213.0"
+                       text="Adding a student">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="30.0" top="15.0"/>
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+        <HBox prefHeight="43.0" prefWidth="390.0">
+            <children>
+                <Label alignment="CENTER_RIGHT" prefHeight="26.0"
+                       prefWidth="64.0" text="Name:">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="30.0" top="6.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="nameTextField">
+                    <HBox.margin>
+                        <Insets left="15.0" top="7.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox prefHeight="43.0" prefWidth="390.0">
+            <children>
+                <Label alignment="CENTER_RIGHT" prefHeight="26.0"
+                       prefWidth="64.0" text="ID:">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="30.0" top="6.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="idTextField">
+                    <HBox.margin>
+                        <Insets left="15.0" top="7.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox prefHeight="43.0" prefWidth="390.0">
+            <children>
+                <Label alignment="CENTER_RIGHT" prefHeight="26.0"
+                       prefWidth="64.0" text="Semester:">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="30.0" top="6.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="semesterTextField">
+                    <HBox.margin>
+                        <Insets left="15.0" top="7.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox prefHeight="37.0" prefWidth="276.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="18.0" prefWidth="142.0"
+                       textFill="RED" fx:id="errorLabel">
+                    <HBox.margin>
+                        <Insets left="10.0" top="3.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Italic" size="10.0"/>
+                    </font>
+                </Label>
+                <Button mnemonicParsing="false" text="Add" onAction="#addStudentButtonPressed">
+                    <HBox.margin>
+                        <Insets left="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" text="Cancel" onAction="#cancelButtonPressed">
+                    <HBox.margin>
+                        <Insets left="5.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>
