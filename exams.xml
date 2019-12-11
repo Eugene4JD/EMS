@@ -12,4 +12,16 @@
     <Exam_name>SDJ1X</Exam_name>
     <Period>15/01/2020  |  12:00:00 - 14:00:00</Period>
   </Exam>
+  <Exam>
+    <Exam_name>MSE1Y</Exam_name>
+    <Period>18/01/2020  |  12:00:00 - 14:00:00</Period>
+  </Exam>
+  <Exam>
+    <Exam_name>RWD1X</Exam_name>
+    <Period>20/01/2020  |  12:00:00 - 14:00:00</Period>
+  </Exam>
+  <Exam>
+    <Exam_name>RWD1Z</Exam_name>
+    <Period>30/01/2020  |  12:00:00 - 14:00:00</Period>
+  </Exam>
 </ExamList>
