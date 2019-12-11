@@ -48,5 +48,10 @@ public class SettingsViewController
   {
     viewHandler.openView("addTeacherPage");
   }
+
+  @FXML private void addRoomButtonPressed()
+  {
+    viewHandler.openView("addRoomPage");
+  }
 }
 
