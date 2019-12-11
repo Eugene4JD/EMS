@@ -37,7 +37,7 @@ public class EMSModelManager implements EMSModel,Serializable
 
   @Override public void validateSecretCode(String secretCode)
   {
-    if (secretCode.equals("qwerty123"))
+    if (secretCode.equals("123"))
     {
       loggedIn = true;
     }
