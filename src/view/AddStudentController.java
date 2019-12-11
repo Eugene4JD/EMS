@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.EMSModel;
 
+import java.io.IOException;
+
 public class AddStudentController
 {
   @FXML private TextField nameTextField;
@@ -45,8 +47,24 @@ public class AddStudentController
 
   @FXML private void addStudentButtonPressed()
   {
-    System.out.println("addPressed");
-    viewHandler.openView("settingsPage");
+    errorLabel.setText("");
+    try
+    {
+      System.out.println("addPressed");
+      int id = Integer.parseInt(idTextField.getText());
+      String name = nameTextField.getText();
+      int semester = Integer.parseInt(semesterTextField.getText());
+      model.addStudent(name,id,semester);
+      viewHandler.openView("settingsPage");
+    }
+    catch (NumberFormatException e)
+    {
+      errorLabel.setText("Illegal "+e.getMessage());
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText(e.getMessage());
+    }
   }
 
   @FXML private void cancelButtonPressed()

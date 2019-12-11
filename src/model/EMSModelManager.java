@@ -82,6 +82,7 @@ public class EMSModelManager implements EMSModel,Serializable
   @Override public void addStudent(String name, int id, int semester)
   {
     students.addStudent(new Student(name, id, semester));
+    writeToBinary(new File("Students.bin"));
   }
 
   @Override public void addTeacher(String name, String initials, String subject)

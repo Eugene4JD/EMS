@@ -12,7 +12,7 @@ public class Student implements Serializable
 
   public Student(String name, int id, int semester)
   {
-    if (name != "")
+    if (name.equals(""))
       throw new IllegalArgumentException("wrong name");
     else
       this.name = name;

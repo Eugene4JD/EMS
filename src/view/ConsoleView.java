@@ -175,6 +175,7 @@ public class ConsoleView
           System.out.println("enter Exam Name: ");
           String examName = input.nextLine();
           model.addExam(new Exam(examName,startDate,startTime,endTime));
+          model.writeToBinary(Exams_bin);
           model.writeToXMl(examsXML);
           break;
 
