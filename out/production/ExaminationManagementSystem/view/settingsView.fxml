@@ -95,13 +95,13 @@
                                                    prefWidth="432.0">
                                             <columns>
                                                 <TableColumn
-                                                        prefWidth="180.0000228881836"
+                                                        prefWidth="180.0000228881836" fx:id="studentNameColumn"
                                                         text="Name"/>
                                                 <TableColumn
-                                                        prefWidth="105.5999755859375"
+                                                        prefWidth="105.5999755859375" fx:id="studentIdColumn"
                                                         text="ID"/>
                                                 <TableColumn
-                                                        prefWidth="128.79998779296875"
+                                                        prefWidth="128.79998779296875" fx:id="studentSemesterColumn"
                                                         text="Semester"/>
                                             </columns>
                                         </TableView>
