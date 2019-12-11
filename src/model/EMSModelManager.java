@@ -47,25 +47,21 @@ public class EMSModelManager implements EMSModel,Serializable
     }
   }
 
-  @Override public void addClass(String ClassName, TeacherList Teachers,
-      StudentList Students) //????/////
+  @Override public void addClass(String ClassName) //????/////
   {
     Class newClass = new Class(ClassName);
-    for (int i = 0; i < Teachers.getNumberOfTeachers(); i++)
-    {
-      newClass.addTeacher(Teachers.getTeacherByIndex(i));
-    }
-    for (int i = 0; i < Students.getNumberOfStudents(); i++)
-    {
-      newClass.addStudent(Students.getStudentById(i));
-
-    }
+    classes.addClass(newClass);
+    writeToBinary(new File("Classes.bin"));
   }
+
   @Override public void addExam(Exam exam)
   {
     if (exams.isExamLegitToBeCreated(exam))
       exams.addExam(exam);
+    writeToBinary(new File("Exams.bin"));
+    writeToXMl(new File("exams.xml"));
   }
+
   @Override public void addRoom(String roomName,
       String typesOfConnectorsAvailable, int maxNumberOfStudents,
       int numberOfChairs, int numberOfTables, String canBeMerged)
@@ -78,7 +74,9 @@ public class EMSModelManager implements EMSModel,Serializable
           new Room(roomName, typesOfConnectorsAvailable, maxNumberOfStudents,
               numberOfChairs, numberOfTables, canBeMerged));
     }
+    writeToBinary(new File("Rooms.bin"));
   }
+
   @Override public void addStudent(String name, int id, int semester)
   {
     students.addStudent(new Student(name, id, semester));
@@ -89,11 +87,13 @@ public class EMSModelManager implements EMSModel,Serializable
   {
     if (!teachers.isTeacherExist(new Teacher(name, initials, subject)))
       teachers.addTeacher(new Teacher(name, initials, subject));
+    writeToBinary(new File("Teachers.bin"));
   }
 
   @Override public void removeExam(DateAndTimePeriod period)
   {
     exams.removeExam(period);
+    writeToBinary(new File("Exams.bin"));
   }
 
   @Override public String showSchedule()
@@ -104,16 +104,19 @@ public class EMSModelManager implements EMSModel,Serializable
   @Override public void removeStudent(int id)
   {
     students.removeStudentById(id);
+    writeToBinary(new File("Students.bin"));
   }
 
   @Override public void removeTeacher(String initials)
   {
     teachers.removeTeacherByInitials(initials);
+    writeToBinary(new File("Teachers.bin"));
   }
 
   @Override public void removeRoom(String roomName)
   {
     rooms.removeRoomByRoomName(roomName);
+    writeToBinary(new File("Rooms.bin"));
   }
 
   @Override public void writeToBinary(File file)
@@ -121,39 +124,43 @@ public class EMSModelManager implements EMSModel,Serializable
     switch (file.getName())
     {
       case ("Classes.bin"):
-        BinaryModel.save(file,classes);
+        BinaryModel.save(file, classes);
         break;
       case ("Exams.bin"):
-        BinaryModel.save(file,exams);
+        BinaryModel.save(file, exams);
         break;
       case ("Rooms.bin"):
-        BinaryModel.save(file,rooms);
+        BinaryModel.save(file, rooms);
         break;
       case ("Students.bin"):
-        BinaryModel.save(file,students);
+        BinaryModel.save(file, students);
         break;
       case ("Teachers.bin"):
-        BinaryModel.save(file,teachers);
+        BinaryModel.save(file, teachers);
     }
   }
+
   @Override public void readFromBinary(File file)
   {
-    switch (file.getName())
+    if ( BinaryModel.update(file) != null)
     {
-      case ("Classes.bin"):
-        this.classes = (ClassList) BinaryModel.update(file);
-        break;
-      case ("Exams.bin"):
-        this.exams = (ExamList) BinaryModel.update(file);
-        break;
-      case ("Rooms.bin"):
-        this.rooms = (RoomList) BinaryModel.update(file);
-        break;
-      case ("Students.bin"):
-        this.students = (StudentList) BinaryModel.update(file);
-        break;
-      case ("Teachers.bin"):
-        this.teachers = (TeacherList) BinaryModel.update(file);
+      switch (file.getName())
+      {
+        case ("Classes.bin"):
+          this.classes = (ClassList) BinaryModel.update(file);
+          break;
+        case ("Exams.bin"):
+          this.exams = (ExamList) BinaryModel.update(file);
+          break;
+        case ("Rooms.bin"):
+          this.rooms = (RoomList) BinaryModel.update(file);
+          break;
+        case ("Students.bin"):
+          this.students = (StudentList) BinaryModel.update(file);
+          break;
+        case ("Teachers.bin"):
+          this.teachers = (TeacherList) BinaryModel.update(file);
+      }
     }
 
   }
@@ -188,26 +195,100 @@ public class EMSModelManager implements EMSModel,Serializable
     switch (file.getName())
     {
       case ("Classes.bin"):
-        this.classes = (ClassList) BinaryModel.delete(file,classes);
+        this.classes = (ClassList) BinaryModel.delete(file, classes);
         break;
       case ("Exams.bin"):
-        this.exams = (ExamList) BinaryModel.delete(file,exams);
+        this.exams = (ExamList) BinaryModel.delete(file, exams);
         break;
       case ("Rooms.bin"):
-        this.rooms = (RoomList) BinaryModel.delete(file,rooms);
+        this.rooms = (RoomList) BinaryModel.delete(file, rooms);
         break;
       case ("Students.bin"):
-        this.students = (StudentList) BinaryModel.delete(file,students);
+        this.students = (StudentList) BinaryModel.delete(file, students);
         break;
       case ("Teachers.bin"):
-        this.teachers = (TeacherList) BinaryModel.delete(file,teachers);
+        this.teachers = (TeacherList) BinaryModel.delete(file, teachers);
     }
-   
+
   }
 
   @Override public void writeToXMl(File XMLFile)
   {
-    xmlModel.save(XMLFile,exams);
+    xmlModel.save(XMLFile, exams);
+  }
+
+  @Override public void removeAllClasses()
+  {
+    clearFile(new File("Classes.bin"));
+  }
+
+  @Override public void removeAllExams()
+  {
+    clearFile(new File("Exams.bin"));
+    writeToXMl(new File("exams.xml"));
+  }
+
+  @Override public void removeAllRooms()
+  {
+    clearFile(new File("Rooms.bin"));
+  }
+
+  @Override public void removeAllStudents()
+  {
+    clearFile(new File("Students.bin"));
+  }
+
+  @Override public void removeAllTeachers()
+  {
+    clearFile(new File("Teachers.bin"));
+  }
+
+  @Override public void setAllUpToDate()
+  {
+    File Classes_bin = new File("Classes.bin");
+    File Exams_bin = new File("Exams.bin");
+    File Rooms_bin = new File("Rooms.bin");
+    File Students_bin = new File("Students.bin");
+    File Teachers_bin = new File("Teachers.bin");
+    File examsXML = new File("exams.xml");
+
+    if (checkUpdateState(Classes_bin))
+    {
+      readFromBinary(Classes_bin);
+    }
+    if (checkUpdateState(Exams_bin))
+    {
+      readFromBinary(Exams_bin);
+    }
+    if (checkUpdateState(Rooms_bin))
+    {
+      readFromBinary(Rooms_bin);
+    }
+    if (checkUpdateState(Students_bin))
+    {
+      readFromBinary(Students_bin);
+    }
+    if (checkUpdateState(Teachers_bin))
+    {
+      readFromBinary(Teachers_bin);
+    }
+  }
+
+  @Override public void removeAll()
+  {
+    removeAllRooms();
+    removeAllExams();
+    removeAllClasses();
+    removeAllStudents();
+    removeAllTeachers();
+  }
+
+  @Override public boolean checkUpdateState(File file)
+  {
+    if (file.length() > 0)
+      return true;
+    else
+      return false;
   }
 }
 
