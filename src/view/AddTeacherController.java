@@ -45,8 +45,20 @@ public class AddTeacherController
 
   @FXML private void addTeacherButtonPressed()
   {
-    System.out.println("addPressed");
-    viewHandler.openView("settingsPage");
+    errorLabel.setText("");
+    try
+    {
+      String name = this.nameTextField.getText();
+      String initials = this.initialsTextField.getText();
+      String subject = this.subjectTextField.getText();
+      model.addTeacher(name, initials, subject);
+      System.out.println("addTeacherPressed");
+      viewHandler.openView("settingsPage");
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText(e.getMessage());
+    }
   }
 
   @FXML private void cancelButtonPressed()

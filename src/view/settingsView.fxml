@@ -72,7 +72,8 @@
                                         <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add" onAction="#addStudentButtonPressed">
+                                <Button mnemonicParsing="false" text="Add"
+                                        onAction="#addStudentButtonPressed">
                                     <HBox.margin>
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
@@ -94,13 +95,13 @@
                                                    prefWidth="432.0">
                                             <columns>
                                                 <TableColumn
-                                                        prefWidth="180.0000228881836"
+                                                        prefWidth="180.0000228881836" fx:id="studentNameColumn"
                                                         text="Name"/>
                                                 <TableColumn
-                                                        prefWidth="105.5999755859375"
+                                                        prefWidth="105.5999755859375" fx:id="studentIdColumn"
                                                         text="ID"/>
                                                 <TableColumn
-                                                        prefWidth="128.79998779296875"
+                                                        prefWidth="128.79998779296875" fx:id="studentSemesterColumn"
                                                         text="Semester"/>
                                             </columns>
                                         </TableView>
@@ -134,7 +135,8 @@
                                         <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add" onAction="#addTeacherButtonPressed">
+                                <Button mnemonicParsing="false" text="Add"
+                                        onAction="#addTeacherButtonPressed">
                                     <HBox.margin>
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
@@ -203,7 +205,8 @@
                                         <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add">
+                                <Button mnemonicParsing="false" text="Add"
+                                        onAction="#addRoomButtonPressed">
                                     <HBox.margin>
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
