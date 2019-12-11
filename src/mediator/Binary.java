@@ -359,6 +359,15 @@ public class Binary implements PersistenceBinary
           classes.removeClassByIndex(0);
         }
         file.delete();
+        File fileC = new File("Classes.bin");
+        try
+        {
+          fileC.createNewFile();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
         return classes;
       case("Exams.bin"):
         ExamList exams = (ExamList) object;
@@ -368,6 +377,15 @@ public class Binary implements PersistenceBinary
           exams.removeExamByIndex(0);
         }
         file.delete();
+        File fileE = new File("Exams.bin");
+        try
+        {
+          fileE.createNewFile();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
         return exams;
       case ("Rooms.bin"):
         RoomList rooms = (RoomList) object;
@@ -377,6 +395,16 @@ public class Binary implements PersistenceBinary
           rooms.removeRoom(0);
         }
         file.delete();
+        File fileR = new File("Rooms.bin");
+        try
+        {
+          fileR.createNewFile();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+
         return rooms;
       case("Students.bin"):
         StudentList students = (StudentList) object;
@@ -386,6 +414,15 @@ public class Binary implements PersistenceBinary
           students.removeStudentByIndex(0);
         }
         file.delete();
+        File fileS = new File("Students.bin");
+        try
+        {
+          fileS.createNewFile();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
         return students;
       case ("Teachers.bin"):
         TeacherList teachers = (TeacherList) object;
@@ -395,6 +432,15 @@ public class Binary implements PersistenceBinary
           teachers.removeTeacherByIndex(0);
         }
         file.delete();
+        File fileT = new File("Teachers.bin");
+        try
+        {
+          fileT.createNewFile();
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
         return teachers;
       default: System.out.println("no such file");
     }
