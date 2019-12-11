@@ -170,6 +170,8 @@ public class ConsoleView
           String roomName6 = input.nextLine();
           model.removeRoom(roomName6);
           break;
+        case 209:
+          model.removeAllExams();
         case 210:
           model.removeAll();
           break;
