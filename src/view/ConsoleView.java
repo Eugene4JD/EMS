@@ -24,8 +24,6 @@ public class ConsoleView
     boolean running = true;
     while (running)
     {
-      System.out.println(new File("Classes.bin").length());
-
       System.out.println("101) Add Student"); //done       //ADD
       System.out.println("102) Add Teacher"); //done       //ADD
       System.out.println("103) Add Room"); //done          //ADD
