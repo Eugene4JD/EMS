@@ -15,7 +15,7 @@ public interface EMSModel
   void removeTeacher(String initials);
   void removeRoom(String roomName);
   void addExam(Exam exam);
-  void addClass(String ClassName, TeacherList Teachers, StudentList Students);
+  void addClass(String ClassName);
   void removeExam(DateAndTimePeriod period);
   Class getClassByClassName(String name);
   String showSchedule();
@@ -27,4 +27,12 @@ public interface EMSModel
   String showRooms();
   void clearFile(File BinaryFile);
   void writeToXMl(File XMLFile);
+  void removeAllStudents();
+  void removeAllRooms();
+  void removeAllTeachers();
+  void removeAllClasses();
+  void removeAllExams();
+  void setAllUpToDate();
+  void removeAll();
+  boolean checkUpdateState(File file);
 }

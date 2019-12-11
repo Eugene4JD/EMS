@@ -9,164 +9,185 @@ public class Binary implements PersistenceBinary
 {
   @Override public Object update(File file)
   {
-
-    ObjectInputStream in = null;
-    switch (file.getName())
+    if (file.length() != 0)
     {
-      case ("Classes.bin"):
-        ClassList classes = new ClassList();
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
+      ObjectInputStream in = null;
+      switch (file.getName())
+      {
+        case ("Classes.bin"):
+          ClassList classes = new ClassList();
+          try
           {
-            classes.addClass((Class) in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          System.out.println("Error is here");
-          e.printStackTrace();
+            FileInputStream fis = new FileInputStream(file);
+            in = new ObjectInputStream(fis);
 
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
+            int count = in.readInt();
+            for (int i = 0; i < count; i++)
+            {
+              classes.addClass((Class) in.readObject());
             }
-            return classes;
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
           }
-        }
-        break;
-      case ("Exams.bin"):
-        ExamList exams = new ExamList();
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          catch (IOException | ClassNotFoundException e)
           {
-            exams.addExam((Exam) in.readObject());
+            e.printStackTrace();
           }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
-            }
-            return exams;
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
-          }
-        }
-        break;
-      case ("Rooms.bin"):
-        RoomList rooms = new RoomList();
-        try
-        {
-
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          finally
           {
-            rooms.addRoom((Room)in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
+            try
+            {
+              if (in != null)
+              {
+                in.close();
+              }
+              return classes;
             }
-            return rooms;
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
+            catch (IOException exception)
+            {
+              // Output unexpected IOExceptions.
+              exception.printStackTrace();
+            }
           }
-        }
-        break;
-      case ("Students.bin"):
-        StudentList students = new StudentList();
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
-
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
+          break;
+        case ("Exams.bin"):
+          ExamList exams = new ExamList();
+          try
           {
-            students.addStudent((Student) in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
-            }
-            return students;
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
-          }
-        }
-        break;
-      case ("Teachers.bin"):
-        TeacherList teachers = new TeacherList();
-        try
-        {
-          FileInputStream fis = new FileInputStream(file);
-          in = new ObjectInputStream(fis);
+            FileInputStream fis = new FileInputStream(file);
+            in = new ObjectInputStream(fis);
 
-          int count = in.readInt();
-          for (int i = 0; i<count; i++)
-          {
-            teachers.addTeacher((Teacher) in.readObject());
-          }
-        }
-        catch (IOException | ClassNotFoundException e)
-        {
-          e.printStackTrace();
-        }
-        finally
-        {
-          try {
-            if (in != null) {
-              in.close();
+            int count = in.readInt();
+            for (int i = 0; i < count; i++)
+            {
+              exams.addExam((Exam) in.readObject());
             }
-            return teachers;
-          } catch (IOException exception) {
-            // Output unexpected IOExceptions.
-            exception.printStackTrace();
           }
-        }
-        break;
-      default: System.out.println("Such file is not existing");
+          catch (IOException | ClassNotFoundException e)
+          {
+            e.printStackTrace();
+          }
+          finally
+          {
+            try
+            {
+              if (in != null)
+              {
+                in.close();
+              }
+              return exams;
+            }
+            catch (IOException exception)
+            {
+              // Output unexpected IOExceptions.
+              exception.printStackTrace();
+            }
+          }
+          break;
+        case ("Rooms.bin"):
+          RoomList rooms = new RoomList();
+          try
+          {
+
+            FileInputStream fis = new FileInputStream(file);
+            in = new ObjectInputStream(fis);
+
+            int count = in.readInt();
+            for (int i = 0; i < count; i++)
+            {
+              rooms.addRoom((Room) in.readObject());
+            }
+          }
+          catch (IOException | ClassNotFoundException e)
+          {
+            e.printStackTrace();
+          }
+          finally
+          {
+            try
+            {
+              if (in != null)
+              {
+                in.close();
+              }
+              return rooms;
+            }
+            catch (IOException exception)
+            {
+              // Output unexpected IOExceptions.
+              exception.printStackTrace();
+            }
+          }
+          break;
+        case ("Students.bin"):
+          StudentList students = new StudentList();
+          try
+          {
+            FileInputStream fis = new FileInputStream(file);
+            in = new ObjectInputStream(fis);
+
+            int count = in.readInt();
+            for (int i = 0; i < count; i++)
+            {
+              students.addStudent((Student) in.readObject());
+            }
+          }
+          catch (IOException | ClassNotFoundException e)
+          {
+            e.printStackTrace();
+          }
+          finally
+          {
+            try
+            {
+              if (in != null)
+              {
+                in.close();
+              }
+              return students;
+            }
+            catch (IOException exception)
+            {
+              // Output unexpected IOExceptions.
+              exception.printStackTrace();
+            }
+          }
+          break;
+        case ("Teachers.bin"):
+          TeacherList teachers = new TeacherList();
+          try
+          {
+            FileInputStream fis = new FileInputStream(file);
+            in = new ObjectInputStream(fis);
+
+            int count = in.readInt();
+            for (int i = 0; i < count; i++)
+            {
+              teachers.addTeacher((Teacher) in.readObject());
+            }
+          }
+          catch (IOException | ClassNotFoundException e)
+          {
+            e.printStackTrace();
+          }
+          finally
+          {
+            try
+            {
+              if (in != null)
+              {
+                in.close();
+              }
+              return teachers;
+            }
+            catch (IOException exception)
+            {
+              // Output unexpected IOExceptions.
+              exception.printStackTrace();
+            }
+          }
+          break;
+        default:
+          System.out.println("Such file is not existing");
+      }
     }
     return null;
   }
@@ -337,16 +358,7 @@ public class Binary implements PersistenceBinary
         {
           classes.removeClassByIndex(0);
         }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+        file.delete();
         return classes;
       case("Exams.bin"):
         ExamList exams = (ExamList) object;
@@ -355,16 +367,7 @@ public class Binary implements PersistenceBinary
         {
           exams.removeExamByIndex(0);
         }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+        file.delete();
         return exams;
       case ("Rooms.bin"):
         RoomList rooms = (RoomList) object;
@@ -373,16 +376,7 @@ public class Binary implements PersistenceBinary
         {
           rooms.removeRoom(0);
         }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+        file.delete();
         return rooms;
       case("Students.bin"):
         StudentList students = (StudentList) object;
@@ -391,16 +385,7 @@ public class Binary implements PersistenceBinary
         {
           students.removeStudentByIndex(0);
         }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+        file.delete();
         return students;
       case ("Teachers.bin"):
         TeacherList teachers = (TeacherList) object;
@@ -409,16 +394,7 @@ public class Binary implements PersistenceBinary
         {
           teachers.removeTeacherByIndex(0);
         }
-        try
-        {
-          ObjectOutputStream out = null;
-          FileOutputStream fos = new FileOutputStream(file);
-          out = new ObjectOutputStream(fos);
-        }
-        catch (IOException e)
-        {
-          System.out.println("Error");
-        }
+        file.delete();
         return teachers;
       default: System.out.println("no such file");
     }

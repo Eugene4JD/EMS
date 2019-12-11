@@ -1,9 +1,11 @@
 package view;
 
+import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
 import model.*;
 import model.Class;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.util.Scanner;
 
 public class ConsoleView
@@ -18,33 +20,7 @@ public class ConsoleView
   public void start()
   {
     Scanner input = new Scanner(System.in);
-    File Classes_bin = new File("Classes.bin");
-    File Exams_bin = new File("Exams.bin");
-    File Rooms_bin = new File("Rooms.bin");
-    File Students_bin = new File("Students.bin");
-    File Teachers_bin = new File("Teachers.bin");
-    File examsXML = new File("exams.xml");
-
-    if (Classes_bin.length() != 0)
-    {
-      model.readFromBinary(Classes_bin);
-    }
-    if (Exams_bin.length() != 0)
-    {
-      model.readFromBinary(Exams_bin);
-    }
-    if (Rooms_bin.length() != 0)
-    {
-      model.readFromBinary(Rooms_bin);
-    }
-    if (Students_bin.length() != 0)
-    {
-      model.readFromBinary(Students_bin);
-    }
-    if (Teachers_bin.length() != 0)
-    {
-      model.readFromBinary(Teachers_bin);
-    }
+    model.setAllUpToDate();
     boolean running = true;
     while (running)
     {
@@ -63,6 +39,7 @@ public class ConsoleView
       System.out.println("302) Write to XML");
       System.out.println("401) Read from binary"); //done  //READ
       System.out.println("501) Show all exams");
+      System.out.println("502) Show all classes");
       System.out.println("601) Show all students");
       System.out.println("701) Show all teachers");
       System.out.println("801) Show all rooms");
@@ -144,7 +121,8 @@ public class ConsoleView
           System.out.println("Class Name:");
           input.nextLine();
           String className = input.nextLine();
-          model.addClass(className,new TeacherList(), new StudentList());
+          model.addClass(className);
+          break;
         case 105:
           System.out.println("Enter the date year:");
           input.nextLine();
@@ -175,8 +153,6 @@ public class ConsoleView
           System.out.println("enter Exam Name: ");
           String examName = input.nextLine();
           model.addExam(new Exam(examName,startDate,startTime,endTime));
-          model.writeToBinary(Exams_bin);
-          model.writeToXMl(examsXML);
           break;
 
         case 201:
@@ -195,17 +171,8 @@ public class ConsoleView
           model.removeRoom(roomName6);
           break;
         case 210:
-          model.clearFile(Classes_bin);
-          model.clearFile(Exams_bin);
-          model.clearFile(Rooms_bin);
-          model.clearFile(Students_bin);
-          model.clearFile(Teachers_bin);
+          model.removeAll();
           break;
-        case 301:
-          System.out.println("binNameW?");
-          break;
-        case 302:
-          model.writeToXMl(examsXML);
         case 401:
           System.out.println("binNameR?");
           String binNameR = input.nextLine();
@@ -215,6 +182,9 @@ public class ConsoleView
           break;
         case 501:
           System.out.println(model.showSchedule());
+          break;
+        case 502:
+          System.out.println(model.showAllClasses());
           break;
         case 601:
           System.out.println(model.showStudents());
@@ -226,12 +196,6 @@ public class ConsoleView
           System.out.println(model.showRooms());
           break;
         case 0:
-          model.writeToBinary(Classes_bin);
-          model.writeToBinary(Exams_bin);
-          model.writeToXMl(examsXML);
-          model.writeToBinary(Rooms_bin);
-          model.writeToBinary(Students_bin);
-          model.writeToBinary(Teachers_bin);
           running = false;
           break;
         default:
