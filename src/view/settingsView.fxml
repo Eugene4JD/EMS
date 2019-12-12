@@ -78,7 +78,8 @@
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" text="Remove">
+                                <Button mnemonicParsing="false" text="Remove"
+                                        onAction="#removeStudentButtonPressed">
                                     <HBox.margin>
                                         <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
@@ -92,16 +93,20 @@
                                             prefWidth="200.0">
                                     <content>
                                         <TableView prefHeight="200.0"
-                                                   prefWidth="432.0">
+                                                   prefWidth="432.0"
+                                                   fx:id="studentListTable">
                                             <columns>
                                                 <TableColumn
-                                                        prefWidth="180.0000228881836" fx:id="studentNameColumn"
+                                                        prefWidth="180.0000228881836"
+                                                        fx:id="studentNameColumn"
                                                         text="Name"/>
                                                 <TableColumn
-                                                        prefWidth="105.5999755859375" fx:id="studentIdColumn"
+                                                        prefWidth="105.5999755859375"
+                                                        fx:id="studentIdColumn"
                                                         text="ID"/>
                                                 <TableColumn
-                                                        prefWidth="128.79998779296875" fx:id="studentSemesterColumn"
+                                                        prefWidth="128.79998779296875"
+                                                        fx:id="studentSemesterColumn"
                                                         text="Semester"/>
                                             </columns>
                                         </TableView>
