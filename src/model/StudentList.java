@@ -41,6 +41,10 @@ public class StudentList implements Serializable
   {
     students.remove(index);
   }
+  public int size()
+  {
+    return students.size();
+  }
   public void removeStudentById (int id)
   {
     if (getIndexOfStudentById(id) != -1)
@@ -51,6 +55,10 @@ public class StudentList implements Serializable
   public Student getStudentById(int id)
   {
     return students.get(getIndexOfStudentById(id));
+  }
+  public void removeStudentByObject(Student student)
+  {
+    students.remove(student);
   }
   public Student getStudentByIndex(int index)
   {

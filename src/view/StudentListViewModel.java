@@ -14,7 +14,7 @@ public class StudentListViewModel
 
   public StudentListViewModel(EMSModel model)
   {
-    this.model=model;
+    this.model = model;
     list = FXCollections.observableArrayList();
   }
 
@@ -26,6 +26,34 @@ public class StudentListViewModel
   public ObservableList<StudentViewModel> update()
   {
     ArrayList<Student> students = new ArrayList<>();
-    for (int i=0; i<model.)
+    for (int i = 0; i < model.studentListSize(); i++)
+    {
+      students.add(model.getStudent(i));
+    }
+    list.clear();
+    for (int i = 0; i < students.size(); i++)
+    {
+      list.add(new StudentViewModel(students.get(i)));
+    }
+    return list;
+  }
+
+  public void remove(Student student)
+  {
+    for (int i = 0; i < list.size(); i++)
+    {
+      if (list.get(i).getNameProperty().get().equals(student.getName())
+          && list.get(i).getIdProperty().get() == (student.getId())
+          && list.get(i).getSemesterProperty().get() == (student.getSemester()))
+      {
+        list.remove(i);
+        break;
+      }
+    }
+  }
+
+  public void add(Student student)
+  {
+    list.add(new StudentViewModel(student));
   }
 }

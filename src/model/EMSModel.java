@@ -12,6 +12,8 @@ public interface EMSModel
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
       String canBeMerged);
   void removeStudent(int id);
+  void removeStudentByObject (Student student);
+  Student getStudent(int index);
   void removeTeacher(String initials);
   void removeRoom(String roomName);
   void addExam(Exam exam);
@@ -35,4 +37,5 @@ public interface EMSModel
   void setAllUpToDate();
   void removeAll();
   boolean checkUpdateState(File file);
+  int studentListSize();
 }

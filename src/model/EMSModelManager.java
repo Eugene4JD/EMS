@@ -107,6 +107,15 @@ public class EMSModelManager implements EMSModel,Serializable
     writeToBinary(new File("Students.bin"));
   }
 
+  @Override public void removeStudentByObject(Student student)
+  {
+    students.removeStudentByObject(student);
+  }
+  @Override public Student getStudent(int index)
+  {
+    Student buffer = students.getStudentByIndex(index);
+    return buffer;
+  }
   @Override public void removeTeacher(String initials)
   {
     teachers.removeTeacherByInitials(initials);
@@ -289,6 +298,11 @@ public class EMSModelManager implements EMSModel,Serializable
       return true;
     else
       return false;
+  }
+
+  @Override public int studentListSize()
+  {
+    return students.size();
   }
 }
 
