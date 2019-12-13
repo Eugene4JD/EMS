@@ -322,5 +322,17 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     return teachers.size();
   }
+  @Override public int roomListSize()
+  {
+    return rooms.size();
+  }
+  @Override public Room getRoom(int index)
+  {
+    return rooms.getRoomByIndex(index);
+  }
+  @Override public void removeRoomByObject(Room room)
+  {
+    rooms.removeRoomByObject(room);
+  }
 }
 

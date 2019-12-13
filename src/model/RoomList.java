@@ -82,4 +82,12 @@ public class RoomList implements Serializable
     }
     return str;
   }
+  public int size()
+  {
+    return rooms.size();
+  }
+  public void removeRoomByObject(Room room)
+  {
+    rooms.remove(room);
+  }
 }

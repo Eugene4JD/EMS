@@ -18,6 +18,8 @@ public interface EMSModel
   void removeTeacher(String initials);
   void removeTeacherByObject(Teacher teacher);
   void removeRoom(String roomName);
+  void removeRoomByObject(Room room);
+  Room getRoom(int index);
   void addExam(Exam exam);
   void addClass(String ClassName);
   void removeExam(DateAndTimePeriod period);
@@ -41,4 +43,5 @@ public interface EMSModel
   boolean checkUpdateState(File file);
   int studentListSize();
   int teacherListSize();
+  int roomListSize();
 }

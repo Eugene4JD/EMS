@@ -240,7 +240,8 @@
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" text="Remove">
+                                <Button mnemonicParsing="false" text="Remove"
+                                        onAction="#removeRoomButtonPressed">
                                     <HBox.margin>
                                         <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
@@ -261,26 +262,26 @@
                                             prefWidth="200.0">
                                     <content>
                                         <TableView prefHeight="200.0"
-                                                   prefWidth="432.0">
+                                                   prefWidth="432.0" fx:id="roomListTable">
                                             <columns>
                                                 <TableColumn
                                                         prefWidth="70.40002477169037"
-                                                        text="Name"/>
+                                                        text="Name" fx:id="roomNameColumn"/>
                                                 <TableColumn
                                                         prefWidth="77.59994506835938"
-                                                        text="Conectors"/>
+                                                        text="Connectors" fx:id="roomConnectorsColumn"/>
                                                 <TableColumn
                                                         prefWidth="76.80001831054688"
-                                                        text="max Students"/>
+                                                        text="max Students" fx:id="roomMaxStudentsColumn"/>
                                                 <TableColumn
                                                         prefWidth="52.79998779296875"
-                                                        text="Tables"/>
+                                                        text="Tables" fx:id="roomTablesColumn"/>
                                                 <TableColumn
                                                         prefWidth="51.20001220703125"
-                                                        text="Chairs"/>
+                                                        text="Chairs" fx:id="roomChairsColumn"/>
                                                 <TableColumn
                                                         prefWidth="83.20001220703125"
-                                                        text="Mergeable"/>
+                                                        text="Can be merged" fx:id="roomCanBeMergedTableColumn"/>
                                             </columns>
                                         </TableView>
                                     </content>

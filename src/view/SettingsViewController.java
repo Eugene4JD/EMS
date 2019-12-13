@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.EMSModel;
+import model.Room;
 import model.Student;
 import model.Teacher;
 
@@ -21,11 +22,20 @@ public class SettingsViewController
   @FXML private TableColumn<TeacherViewModel, String> teacherInitialsColumn;
   @FXML private TableColumn<TeacherViewModel, String> teacherSubjectColumn;
   @FXML private TableColumn<TeacherViewModel, Boolean> teacherIsBusyColumn;
+  @FXML private TableView<RoomViewModel> roomListTable;
+  @FXML private TableColumn<RoomViewModel, String> roomNameColumn;
+  @FXML private TableColumn<RoomViewModel, String> roomConnectorsColumn;
+  @FXML private TableColumn<RoomViewModel, Number> roomMaxStudentsColumn;
+  @FXML private TableColumn<RoomViewModel, Number> roomTablesColumn;
+  @FXML private TableColumn<RoomViewModel, Number> roomChairsColumn;
+  @FXML private TableColumn<RoomViewModel, Boolean> roomCanBeMergedTableColumn;
+
   private Region root;
   private EMSModel model;
   private ViewHandler viewHandler;
   private StudentListViewModel viewModel1;
   private TeacherListViewModel viewModel2;
+  private RoomListViewModel viewModel3;
 
   public SettingsViewController()
   {
@@ -39,6 +49,7 @@ public class SettingsViewController
     this.root = root;
     this.viewModel1 = new StudentListViewModel(model);
     this.viewModel2 = new TeacherListViewModel(model);
+    this.viewModel3 = new RoomListViewModel(model);
 
     studentNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
@@ -55,6 +66,19 @@ public class SettingsViewController
         cellData -> cellData.getValue().getSubjectProperty());
     teacherIsBusyColumn.setCellValueFactory(
         cellData -> cellData.getValue().getIsBusyProperty());
+
+    roomNameColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+    roomConnectorsColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getConnectorsProperty());
+    roomMaxStudentsColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getMaxStudentsProperty());
+    roomTablesColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getTablesProperty());
+    roomChairsColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getChairsProperty());
+    roomCanBeMergedTableColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getCanBeMergedProperty());
     reset();
   }
 
@@ -63,6 +87,7 @@ public class SettingsViewController
     errorLabel.setText("");
     studentListTable.setItems(viewModel1.update());
     teacherListTable.setItems(viewModel2.update());
+    roomListTable.setItems(viewModel3.update());
   }
 
   public Region getRoot()
@@ -204,10 +229,57 @@ public class SettingsViewController
     viewHandler.openView("addRoomPage");
   }
 
+  @FXML private void removeRoomButtonPressed()
+  {
+    errorLabel.setText("");
+    try
+    {
+      RoomViewModel selectedItem = roomListTable.getSelectionModel()
+          .getSelectedItem();
+
+      String buffer = "";
+      if (selectedItem.getCanBeMergedProperty().get())
+      {
+        buffer = "true";
+      }
+      else
+      {
+        buffer = "false";
+      }
+
+      boolean remove = confirmation3();
+      if (remove)
+      {
+        Room room = new Room(selectedItem.getNameProperty().get(),
+            selectedItem.getConnectorsProperty().get(),
+            selectedItem.getMaxStudentsProperty().get(),
+            selectedItem.getChairsProperty().get(),
+            selectedItem.getTablesProperty().get(),
+            buffer);
+        model.removeRoomByObject(room);
+        viewModel3.remove(room);
+        teacherListTable.getSelectionModel().clearSelection();
+      }
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("Item not found: " + e.getMessage());
+    }
+  }
+
   @FXML private void resetRoomButtonPressed()
   {
-    model.removeAllRooms();
-    System.out.println("All rooms have been removed");
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation");
+    alert.setHeaderText("This will remove all rooms from the system!");
+    Optional<ButtonType> result = alert.showAndWait();
+    boolean buffer = ((result.isPresent()) && (result.get() == ButtonType.OK));
+    if (buffer)
+    {
+      model.removeAllRooms();
+      reset();
+      System.out.println("All rooms have been removed");
+    }
   }
 
   @FXML private void resetClassButtonPressed()
@@ -220,6 +292,22 @@ public class SettingsViewController
   {
     model.removeAll();
     System.out.println("Everything has been removed");
+  }
+
+  private boolean confirmation3()
+  {
+    int index = roomListTable.getSelectionModel().getSelectedIndex();
+    RoomViewModel selectedItem = roomListTable.getItems().get(index);
+    if (index < 0 || index >= roomListTable.getItems().size())
+    {
+      return false;
+    }
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation");
+    alert.setHeaderText(
+        "Removing teacher {" + selectedItem.getNameProperty().get() + "}");
+    Optional<ButtonType> result = alert.showAndWait();
+    return ((result.isPresent()) && (result.get() == ButtonType.OK));
   }
 }
 
