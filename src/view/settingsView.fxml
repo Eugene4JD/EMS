@@ -71,6 +71,11 @@
                                         <Insets left="7.0" top="13.0" />
                                     </HBox.margin>
                                 </Button>
+                                <Button mnemonicParsing="false" onAction="#resetStudentButtonPressed" text="Reset">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0" />
+                                    </HBox.margin>
+                                </Button>
                             </children>
                         </HBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5 5 5 40;">
@@ -116,6 +121,11 @@
                                     </HBox.margin>
                                 </Button>
                                 <Button mnemonicParsing="false" text="Remove">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#resetTeacherButtonPressed" text="Reset">
                                     <HBox.margin>
                                         <Insets left="7.0" top="13.0" />
                                     </HBox.margin>
@@ -174,6 +184,11 @@
                                         <Insets left="7.0" top="13.0" />
                                     </HBox.margin>
                                 </Button>
+                                <Button mnemonicParsing="false" onAction="#resetRoomButtonPressed" text="Reset">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0" />
+                                    </HBox.margin>
+                                </Button>
                             </children>
                         </HBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5 5 5 40;">
@@ -226,6 +241,11 @@
                                         <Insets left="7.0" top="13.0" />
                                     </HBox.margin>
                                 </Button>
+                                <Button mnemonicParsing="false" onAction="#resetClassButtonPressed" text="Reset">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0" />
+                                    </HBox.margin>
+                                </Button>
                             </children>
                         </HBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5 40 5 5;">
@@ -247,9 +267,18 @@
                 </VBox>
             </children>
         </HBox>
-        <HBox prefHeight="65.0" prefWidth="900.0">
+        <HBox prefHeight="48.0" prefWidth="900.0">
             <children>
-                <Label fx:id="errorLabel" prefHeight="18.0" prefWidth="191.0" textFill="RED" />
+                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0" prefWidth="279.0" textFill="RED">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#resetEverythingButtonPressed" prefHeight="19.0" prefWidth="120.0" text="Reset everything">
+                    <HBox.margin>
+                        <Insets left="461.0" top="10.0" />
+                    </HBox.margin>
+                </Button>
             </children>
         </HBox>
     </children>

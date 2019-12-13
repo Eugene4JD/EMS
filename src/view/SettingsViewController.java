@@ -47,6 +47,21 @@ public class SettingsViewController
     studentListTable.setItems(viewModel.update());
   }
 
+  public Region getRoot()
+  {
+    return root;
+  }
+
+  @FXML private void backButtonPressed()
+  {
+    viewHandler.openView("firstPage");
+  }
+
+  @FXML private void addStudentButtonPressed()
+  {
+    viewHandler.openView("addStudentPage");
+  }
+
   @FXML private void removeStudentButtonPressed()
   {
     errorLabel.setText("");
@@ -72,29 +87,19 @@ public class SettingsViewController
     }
   }
 
-  public Region getRoot()
+  @FXML private void resetStudentButtonPressed()
   {
-    return root;
-  }
-
-  @FXML private void backButtonPressed()
-  {
-    viewHandler.openView("firstPage");
-  }
-
-  @FXML private void addStudentButtonPressed()
-  {
-    viewHandler.openView("addStudentPage");
-  }
-
-  @FXML private void addTeacherButtonPressed()
-  {
-    viewHandler.openView("addTeacherPage");
-  }
-
-  @FXML private void addRoomButtonPressed()
-  {
-    viewHandler.openView("addRoomPage");
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation");
+    alert.setHeaderText("This will remove all students from the system!");
+    Optional<ButtonType> result = alert.showAndWait();
+    boolean buffer = ((result.isPresent()) && (result.get() == ButtonType.OK));
+    if (buffer)
+    {
+      model.removeAllStudents();
+      reset();
+      System.out.println("All students have been removed");
+    }
   }
 
   private boolean confirmation()
@@ -112,6 +117,36 @@ public class SettingsViewController
             + selectedItem.getIdProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK));
+  }
+
+  @FXML private void addTeacherButtonPressed()
+  {
+    viewHandler.openView("addTeacherPage");
+  }
+
+  @FXML private void resetTeacherButtonPressed()
+  {
+    model.removeAllTeachers();
+    System.out.println("All teachers have been removed");
+  }
+  @FXML private void addRoomButtonPressed()
+  {
+    viewHandler.openView("addRoomPage");
+  }
+  @FXML private void resetRoomButtonPressed()
+  {
+    model.removeAllRooms();
+    System.out.println("All rooms have been removed");
+  }
+  @FXML private void resetClassButtonPressed()
+  {
+    model.removeAllClasses();
+    System.out.println("All classes have been removed");
+  }
+  @FXML private void resetEverythingButtonPressed()
+  {
+    model.removeAll();
+    System.out.println("Everything has been removed");
   }
 }
 
