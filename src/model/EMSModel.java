@@ -8,13 +8,15 @@ public interface EMSModel
   boolean isLoggedIn();
   void addStudent(String name, int id, int semester);
   void addTeacher(String name, String initials, String subject);
+  Teacher getTeacher(int index);
   void addRoom(String roomName, String typesOfConnectorsAvailable,
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
       String canBeMerged);
   void removeStudent(int id);
-  void removeStudentByObject (Student student);
+  void removeStudentByObject(Student student);
   Student getStudent(int index);
   void removeTeacher(String initials);
+  void removeTeacherByObject(Teacher teacher);
   void removeRoom(String roomName);
   void addExam(Exam exam);
   void addClass(String ClassName);
@@ -38,4 +40,5 @@ public interface EMSModel
   void removeAll();
   boolean checkUpdateState(File file);
   int studentListSize();
+  int teacherListSize();
 }

@@ -53,6 +53,11 @@ public class TeacherList implements Serializable
     }
   }
 
+  public void removeTeacherByObject(Teacher teacher)
+  {
+    teachers.remove(teacher);
+  }
+
   public Teacher getTeacherByInitials(String initials)
   {
     return teachers.get(getIndexOfTeacherByInitials(initials));
@@ -121,5 +126,10 @@ public class TeacherList implements Serializable
       str+= teachers.get(i).toString() + "\n";
     }
     return str;
+  }
+
+  public int size()
+  {
+    return teachers.size();
   }
 }
