@@ -72,14 +72,23 @@
                                         <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add"
-                                        onAction="#addStudentButtonPressed">
+                                <Button mnemonicParsing="false"
+                                        onAction="#addStudentButtonPressed"
+                                        text="Add">
                                     <HBox.margin>
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" text="Remove"
-                                        onAction="#removeStudentButtonPressed">
+                                <Button mnemonicParsing="false"
+                                        onAction="#removeStudentButtonPressed"
+                                        text="Remove">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetStudentButtonPressed"
+                                        text="Reset">
                                     <HBox.margin>
                                         <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
@@ -92,21 +101,21 @@
                                 <ScrollPane prefHeight="200.0"
                                             prefWidth="200.0">
                                     <content>
-                                        <TableView prefHeight="200.0"
-                                                   prefWidth="432.0"
-                                                   fx:id="studentListTable">
+                                        <TableView fx:id="studentListTable"
+                                                   prefHeight="200.0"
+                                                   prefWidth="432.0">
                                             <columns>
                                                 <TableColumn
-                                                        prefWidth="180.0000228881836"
                                                         fx:id="studentNameColumn"
+                                                        prefWidth="180.0000228881836"
                                                         text="Name"/>
                                                 <TableColumn
-                                                        prefWidth="105.5999755859375"
                                                         fx:id="studentIdColumn"
+                                                        prefWidth="105.5999755859375"
                                                         text="ID"/>
                                                 <TableColumn
-                                                        prefWidth="128.79998779296875"
                                                         fx:id="studentSemesterColumn"
+                                                        prefWidth="128.79998779296875"
                                                         text="Semester"/>
                                             </columns>
                                         </TableView>
@@ -140,13 +149,22 @@
                                         <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add"
-                                        onAction="#addTeacherButtonPressed">
+                                <Button mnemonicParsing="false"
+                                        onAction="#addTeacherButtonPressed"
+                                        text="Add">
                                     <HBox.margin>
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" text="Remove">
+                                <Button mnemonicParsing="false" text="Remove"
+                                        onAction="#removeTeacherButtonPressed">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetTeacherButtonPressed"
+                                        text="Reset">
                                     <HBox.margin>
                                         <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
@@ -160,20 +178,25 @@
                                             prefWidth="200.0">
                                     <content>
                                         <TableView prefHeight="200.0"
-                                                   prefWidth="432.0">
+                                                   prefWidth="432.0"
+                                                   fx:id="teacherListTable">
                                             <columns>
                                                 <TableColumn
                                                         prefWidth="142.40007436275482"
-                                                        text="Name"/>
+                                                        text="Name"
+                                                        fx:id="teacherNameColumn"/>
                                                 <TableColumn
                                                         prefWidth="96.800048828125"
-                                                        text="Initials"/>
+                                                        text="Initials"
+                                                        fx:id="teacherInitialsColumn"/>
                                                 <TableColumn
                                                         prefWidth="64.80012512207031"
-                                                        text="Subject"/>
+                                                        text="Subject"
+                                                        fx:id="teacherSubjectColumn"/>
                                                 <TableColumn
                                                         prefWidth="111.9998779296875"
-                                                        text="isBusy"/>
+                                                        text="isBusy"
+                                                        fx:id="teacherIsBusyColumn"/>
                                             </columns>
                                         </TableView>
                                     </content>
@@ -210,13 +233,22 @@
                                         <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add"
-                                        onAction="#addRoomButtonPressed">
+                                <Button mnemonicParsing="false"
+                                        onAction="#addRoomButtonPressed"
+                                        text="Add">
                                     <HBox.margin>
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" text="Remove">
+                                <Button mnemonicParsing="false" text="Remove"
+                                        onAction="#removeRoomButtonPressed">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetRoomButtonPressed"
+                                        text="Reset">
                                     <HBox.margin>
                                         <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
@@ -230,26 +262,26 @@
                                             prefWidth="200.0">
                                     <content>
                                         <TableView prefHeight="200.0"
-                                                   prefWidth="432.0">
+                                                   prefWidth="432.0" fx:id="roomListTable">
                                             <columns>
                                                 <TableColumn
                                                         prefWidth="70.40002477169037"
-                                                        text="Name"/>
+                                                        text="Name" fx:id="roomNameColumn"/>
                                                 <TableColumn
                                                         prefWidth="77.59994506835938"
-                                                        text="Conectors"/>
+                                                        text="Connectors" fx:id="roomConnectorsColumn"/>
                                                 <TableColumn
                                                         prefWidth="76.80001831054688"
-                                                        text="max Students"/>
+                                                        text="max Students" fx:id="roomMaxStudentsColumn"/>
                                                 <TableColumn
                                                         prefWidth="52.79998779296875"
-                                                        text="Tables"/>
+                                                        text="Tables" fx:id="roomTablesColumn"/>
                                                 <TableColumn
                                                         prefWidth="51.20001220703125"
-                                                        text="Chairs"/>
+                                                        text="Chairs" fx:id="roomChairsColumn"/>
                                                 <TableColumn
                                                         prefWidth="83.20001220703125"
-                                                        text="Mergeable"/>
+                                                        text="Can be merged" fx:id="roomCanBeMergedTableColumn"/>
                                             </columns>
                                         </TableView>
                                     </content>
@@ -292,6 +324,13 @@
                                         <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetClassButtonPressed"
+                                        text="Reset">
+                                    <HBox.margin>
+                                        <Insets left="7.0" top="13.0"/>
+                                    </HBox.margin>
+                                </Button>
                             </children>
                         </HBox>
                         <VBox prefHeight="200.0" prefWidth="100.0"
@@ -322,9 +361,22 @@
                 </VBox>
             </children>
         </HBox>
-        <HBox prefHeight="65.0" prefWidth="900.0">
+        <HBox prefHeight="48.0" prefWidth="900.0">
             <children>
-                <Label fx:id="errorLabel" text="Label"/>
+                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0"
+                       prefWidth="279.0" textFill="RED">
+                    <font>
+                        <Font name="System Italic" size="10.0"/>
+                    </font>
+                </Label>
+                <Button mnemonicParsing="false"
+                        onAction="#resetEverythingButtonPressed"
+                        prefHeight="19.0" prefWidth="120.0"
+                        text="Reset everything">
+                    <HBox.margin>
+                        <Insets left="461.0" top="10.0"/>
+                    </HBox.margin>
+                </Button>
             </children>
         </HBox>
     </children>

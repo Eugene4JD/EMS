@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exams.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exams.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Students.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exams.xml" beforeDir="false" afterPath="$PROJECT_DIR$/exams.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/StudentListViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/StudentListViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/EMSModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/EMSModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/RoomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RoomList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SettingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SettingsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/settingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/settingsView.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +38,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

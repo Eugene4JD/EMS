@@ -7,7 +7,7 @@ import mediator.PersistenceBinary;
 import mediator.PersistenceXML;
 import mediator.XML;
 
-public class EMSModelManager implements EMSModel,Serializable
+public class EMSModelManager implements EMSModel, Serializable
 {
   private PersistenceXML xmlModel;
   private PersistenceBinary BinaryModel;
@@ -111,15 +111,28 @@ public class EMSModelManager implements EMSModel,Serializable
   {
     students.removeStudentByObject(student);
   }
+
   @Override public Student getStudent(int index)
   {
     Student buffer = students.getStudentByIndex(index);
     return buffer;
   }
+
+  @Override public Teacher getTeacher(int index)
+  {
+    Teacher buffer = teachers.getTeacherByIndex(index);
+    return buffer;
+  }
+
   @Override public void removeTeacher(String initials)
   {
     teachers.removeTeacherByInitials(initials);
     writeToBinary(new File("Teachers.bin"));
+  }
+
+  @Override public void removeTeacherByObject(Teacher teacher)
+  {
+    teachers.removeTeacherByObject(teacher);
   }
 
   @Override public void removeRoom(String roomName)
@@ -151,7 +164,7 @@ public class EMSModelManager implements EMSModel,Serializable
 
   @Override public void readFromBinary(File file)
   {
-    if ( BinaryModel.update(file) != null)
+    if (BinaryModel.update(file) != null)
     {
       switch (file.getName())
       {
@@ -303,6 +316,23 @@ public class EMSModelManager implements EMSModel,Serializable
   @Override public int studentListSize()
   {
     return students.size();
+  }
+
+  @Override public int teacherListSize()
+  {
+    return teachers.size();
+  }
+  @Override public int roomListSize()
+  {
+    return rooms.size();
+  }
+  @Override public Room getRoom(int index)
+  {
+    return rooms.getRoomByIndex(index);
+  }
+  @Override public void removeRoomByObject(Room room)
+  {
+    rooms.removeRoomByObject(room);
   }
 }
 
