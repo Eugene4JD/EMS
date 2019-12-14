@@ -12,7 +12,7 @@ public class Exam implements Serializable
 
   public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime)
   {
-    if (examName == "")
+    if (examName .equals(""))
       throw new IllegalArgumentException("wrong Exam name");
     this.examName = examName;
     examClasses = new ClassList();
