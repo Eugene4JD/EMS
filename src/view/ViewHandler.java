@@ -27,6 +27,7 @@ public class ViewHandler
 
   public void start(Stage primaryScene)
   {
+    model.setAllUpToDate();
     this.primaryScene = primaryScene;
     openView("secretCode");
   }

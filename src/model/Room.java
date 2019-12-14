@@ -15,11 +15,11 @@ public class Room implements Serializable
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
       String canBeMerged)
   {
-    if (roomName == "")
+    if (roomName .equals(""))
       throw new IllegalArgumentException("the wrong Room name");
     else
       this.roomName = roomName;
-    if (typesOfConnectorsAvailable == "")
+    if (typesOfConnectorsAvailable.equals(""))
       throw new IllegalArgumentException("the wrong type connectors");
     else
       this.typesOfConnectorsAvailable = typesOfConnectorsAvailable;
@@ -35,9 +35,9 @@ public class Room implements Serializable
       throw new IllegalArgumentException("the wrong number of tables");
     else
       this.numberOfTables = numberOfTables;
-    if (canBeMerged == "true")
+    if (canBeMerged .equals("true"))
       this.canBeMerged = true;
-    else if (canBeMerged == "false")
+    else if (canBeMerged.equals("false"))
       this.canBeMerged = false;
     else
       throw new IllegalArgumentException("Wrong state of merge");
