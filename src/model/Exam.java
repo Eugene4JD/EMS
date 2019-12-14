@@ -70,7 +70,10 @@ public class Exam implements Serializable
   {
     examRooms.removeRoomByRoomName(roomName);
   }
-
+  public RoomList getExamRooms()
+  {
+    return examRooms;
+  }
   public void removeRoomByIndex(int index)
   {
     examRooms.removeRoom(index);

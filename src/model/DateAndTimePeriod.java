@@ -20,9 +20,11 @@ public class DateAndTimePeriod implements Serializable
     if (other.dateOfTheExam.equals(this.dateOfTheExam))
     {
       if ((this.startTime.isBefore(other.startTime) && other.endTime
-          .isBefore(this.startTime)) || (
+          .isBefore(this.endTime)) || (
           other.startTime.isBefore(this.startTime) && (this.endTime
-              .isBefore(other.endTime))))
+              .isBefore(other.endTime))
+      || ((this.startTime.isBefore(other.startTime)) && (other.startTime.isBefore(this.endTime)) &&(this.endTime.isBefore(other.endTime)))
+      || ((other.startTime.isBefore(this.startTime)) && (this.startTime.isBefore(other.endTime)) && (other.endTime.isBefore(this.endTime)))))
         return true;
       else if (this.startTime.equals(other.startTime) || other.endTime
           .equals(this.endTime))
