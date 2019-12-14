@@ -292,6 +292,7 @@ public class SettingsViewController
   {
     model.removeAll();
     System.out.println("Everything has been removed");
+    reset();
   }
 
   private boolean confirmation3()
