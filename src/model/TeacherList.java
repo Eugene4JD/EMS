@@ -128,6 +128,14 @@ public class TeacherList implements Serializable
     return str;
   }
 
+  public boolean hasAtLeastOneSameTeacher(TeacherList teacherList)
+  {
+    for (int i = 0 ; i< teacherList.size(); i++)
+      for (int j = 0; j < this.teachers.size(); j++)
+        if (teacherList.getTeacherByIndex(i).equals(this.teachers.get(j)))
+          return true;
+        return false;
+  }
   public int size()
   {
     return teachers.size();

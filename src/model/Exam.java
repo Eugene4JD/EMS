@@ -6,6 +6,7 @@ public class Exam implements Serializable
 {
   private String examName;
   private ClassList examClasses;
+  private TeacherList examTeachers;
   private DateAndTimePeriod periodOfExam;
   private RoomList examRooms;
   private String description;
@@ -18,6 +19,7 @@ public class Exam implements Serializable
     examClasses = new ClassList();
     periodOfExam = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);
     examRooms = new RoomList();
+    examTeachers = new TeacherList();
   }
   public String getExamName()
   {
@@ -34,6 +36,14 @@ public class Exam implements Serializable
   public void addClasses(ClassList examClasses)
   {
     this.examClasses = examClasses;
+  }
+  public void setExamTeachers(TeacherList other)
+  {
+    this.examTeachers = other;
+  }
+  public void addTeacher(Teacher other)
+  {
+    this.examTeachers.addTeacher(other);
   }
 
   public void addClass(Class classItem)
@@ -73,6 +83,10 @@ public class Exam implements Serializable
   public RoomList getExamRooms()
   {
     return examRooms;
+  }
+  public TeacherList getExamTeachers()
+  {
+    return examTeachers;
   }
   public void removeRoomByIndex(int index)
   {
