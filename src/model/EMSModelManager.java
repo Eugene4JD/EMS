@@ -62,31 +62,39 @@ public class EMSModelManager implements EMSModel, Serializable
     writeToXMl(new File("exams.xml"));
   }
 
-  @Override public void addRoom(String roomName,
-      String typesOfConnectorsAvailable, int maxNumberOfStudents,
-      int numberOfChairs, int numberOfTables, String canBeMerged)
+  @Override public void addRoom(String roomName, String typesOfConnectorsAvailable, int maxNumberOfStudents, int numberOfChairs, int numberOfTables, String canBeMerged)
   {
-    if (!rooms.isRoomExists(
-        new Room(roomName, typesOfConnectorsAvailable, maxNumberOfStudents,
-            numberOfChairs, numberOfTables, canBeMerged)))
+    for (int i = 0; i < rooms.size(); i++)
     {
-      rooms.addRoom(
-          new Room(roomName, typesOfConnectorsAvailable, maxNumberOfStudents,
-              numberOfChairs, numberOfTables, canBeMerged));
+      if (rooms.getRoomByIndex(i).getRoomName().equals(roomName))
+        throw new IllegalArgumentException("This room is already in the system");
     }
+    rooms.addRoom(new Room(roomName, typesOfConnectorsAvailable, maxNumberOfStudents, numberOfChairs, numberOfTables, canBeMerged));
     writeToBinary(new File("Rooms.bin"));
   }
 
   @Override public void addStudent(String name, int id, int semester)
   {
+
+    for (int i = 0; i < students.getNumberOfStudents(); i++)
+    {
+      if (students.getStudentByIndex(i).getId() == id)
+      {
+        throw new IllegalArgumentException("This Id is already used");
+      }
+    }
     students.addStudent(new Student(name, id, semester));
     writeToBinary(new File("Students.bin"));
   }
 
   @Override public void addTeacher(String name, String initials, String subject)
   {
-    if (!teachers.isTeacherExist(new Teacher(name, initials, subject)))
-      teachers.addTeacher(new Teacher(name, initials, subject));
+    for (int i =0 ; i<teachers.getNumberOfTeachers(); i++)
+    {
+      if (teachers.getTeacherByIndex(i).equals(new Teacher(name,initials,subject)))
+        throw new IllegalArgumentException("Teacher already in the system");
+    }
+    teachers.addTeacher(new Teacher(name, initials, subject));
     writeToBinary(new File("Teachers.bin"));
   }
 

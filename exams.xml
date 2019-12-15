@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ExamList/>
+<ExamList>
+  <Exam>
+    <Exam_name>df</Exam_name>
+    <Period>01/01/2020  |  12:00:00 - 14:00:00</Period>
+  </Exam>
+  <Exam>
+    <Exam_name>fds</Exam_name>
+    <Period>01/01/2020  |  14:00:00 - 15:00:00</Period>
+  </Exam>
+</ExamList>

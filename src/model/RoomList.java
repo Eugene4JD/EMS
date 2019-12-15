@@ -90,4 +90,32 @@ public class RoomList implements Serializable
   {
     rooms.remove(room);
   }
+  public boolean equals(Object object)
+  {
+    if (!(object instanceof RoomList))
+      return false;
+    RoomList other = (RoomList) object;
+    if (rooms.size() != other.size())
+      return false;
+    for (int i = 0; i<size(); i++)
+    {
+      if (!rooms.get(i).equals(other.getRoomByIndex(i)))
+      {
+        return false;
+      }
+    }
+    return true;
+  }
+  public boolean hasAtLeastOneSameRoom(RoomList other)
+  {
+    for (int i = 0; i < size(); i++)
+    {
+      for (int j = 0; j < other.size(); j++)
+      {
+        if (rooms.get(i).equals(other.getRoomByIndex(j)))
+          return true;
+      }
+    }
+    return false;
+  }
 }

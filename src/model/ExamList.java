@@ -17,9 +17,15 @@ public class ExamList implements Serializable
     for (int i =0; i<exams.size(); i++)
     {
       if (exams.get(i).equals(exam))
-        return false;
-      if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()))
-        return false;
+      {
+        throw new IllegalArgumentException("This exam already in the system");
+      }
+      if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()) && (exam.getExamRooms().equals(exams.get(i).getExamRooms())))
+      {
+        throw new IllegalArgumentException("The Wrong Date input(Period is used already for this rooms)");
+      }
+      if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()) && (exam.getExamRooms().hasAtLeastOneSameRoom(exams.get(i).getExamRooms())))
+        throw new IllegalArgumentException("The Wrong Date input(Period is used for some rooms)");
     }
     return true;
   }
