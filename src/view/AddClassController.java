@@ -68,12 +68,26 @@ public class AddClassController
     teacherSubjectColumn.setCellValueFactory(
         cellData -> cellData.getValue().getSubjectProperty());
 
+    studentNameColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+    studentIdColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getIdProperty());
+    studentSemesterColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getSemesterProperty());
+
     currentTeacherNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
     currentTeacherInitialsColumn.setCellValueFactory(
         cellData -> cellData.getValue().getInitialsProperty());
     currentTeacherSubjectColumn.setCellValueFactory(
         cellData -> cellData.getValue().getSubjectProperty());
+
+    currentStudentNameColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+    currentStudentIdColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getIdProperty());
+    currentStudentSemesterColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getSemesterProperty());
 
     reset();
   }
@@ -84,6 +98,8 @@ public class AddClassController
     this.teachersLabel.setText("");
     teacherListTable.setItems(viewModel1.update());
     currentTeacherListTable.setItems(viewModel11.update());
+    studentsListTable.setItems(viewModel2.update());
+    currentStudentListTable.setItems(viewModel22.update());
   }
 
   public Region getRoot()

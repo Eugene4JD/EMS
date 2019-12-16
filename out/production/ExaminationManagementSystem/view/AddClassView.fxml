@@ -13,38 +13,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="710.0" prefWidth="950.0"
-      style="-fx-background-color: #e6e6e6;" userData="addClass"
-      xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.AddClassController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="950.0" style="-fx-background-color: #e6e6e6;" userData="addClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddClassController">
     <children>
-        <HBox prefHeight="59.0" prefWidth="466.0"
-              style="-fx-background-color: #FAFAFA;">
+        <HBox prefHeight="59.0" prefWidth="466.0" style="-fx-background-color: #FAFAFA;">
             <children>
-                <ImageView fitHeight="32.0" fitWidth="35.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@room.png"/>
+                        <Image url="@room.png" />
                     </image>
                     <HBox.margin>
-                        <Insets left="30.0" top="13.0"/>
+                        <Insets left="30.0" top="13.0" />
                     </HBox.margin>
                 </ImageView>
-                <Label alignment="CENTER_RIGHT" prefHeight="30.0"
-                       prefWidth="144.0" text="Adding a class">
+                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="144.0" text="Adding a class">
                     <font>
-                        <Font name="System Bold" size="20.0"/>
+                        <Font name="System Bold" size="20.0" />
                     </font>
                     <HBox.margin>
-                        <Insets left="10.0" top="15.0"/>
+                        <Insets left="10.0" top="15.0" />
                     </HBox.margin>
                 </Label>
-                <Button mnemonicParsing="false" onAction="#backButtonPressed"
-                        prefHeight="35.0" prefWidth="53.0" text="Back">
+            <Button mnemonicParsing="false" onAction="#addClassButtonPressed" prefHeight="35.0" prefWidth="53.0" text="Add">
+               <HBox.margin>
+                  <Insets left="576.0" top="12.0" />
+               </HBox.margin>
+            </Button>
+                <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="35.0" prefWidth="53.0" text="Back">
                     <HBox.margin>
-                        <Insets left="637.0" top="12.0"/>
+                        <Insets left="8.0" top="12.0" />
                     </HBox.margin>
                 </Button>
             </children>
@@ -53,84 +49,62 @@
             <children>
                 <VBox prefHeight="536.0" prefWidth="450.0">
                     <children>
-                        <HBox prefHeight="59.0" prefWidth="450.0"
-                              style="-fx-background-color: #d6d6d6;">
+                        <HBox prefHeight="59.0" prefWidth="450.0" style="-fx-background-color: #d6d6d6;">
                             <children>
-                                <Label prefHeight="25.0" prefWidth="78.0"
-                                       text="Class name:">
+                                <Label prefHeight="25.0" prefWidth="78.0" text="Class name:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="95.0" top="15.0"/>
+                                        <Insets left="95.0" top="15.0" />
                                     </HBox.margin>
                                 </Label>
                                 <TextField fx:id="nameTextField">
                                     <HBox.margin>
-                                        <Insets left="10.0" top="17.0"/>
+                                        <Insets left="10.0" top="17.0" />
                                     </HBox.margin>
                                 </TextField>
                             </children>
                             <VBox.margin>
-                                <Insets/>
+                                <Insets />
                             </VBox.margin>
                         </HBox>
-                        <VBox prefHeight="237.0" prefWidth="450.0"
-                              style="-fx-background-color: #f0f0f0;">
+                        <VBox prefHeight="237.0" prefWidth="450.0" style="-fx-background-color: #f0f0f0;">
                             <children>
-                                <HBox fx:id="addTeacherLabel" prefHeight="35.0"
-                                      prefWidth="450.0">
+                                <HBox fx:id="addTeacherLabel" prefHeight="35.0" prefWidth="450.0">
                                     <children>
                                         <Label text="Add teachers:">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="40.0" top="13.0"/>
+                                                <Insets left="40.0" top="13.0" />
                                             </HBox.margin>
                                         </Label>
-                                        <Button mnemonicParsing="false"
-                                                text="Add" onAction="#addTeacherButtonPressed">
+                                        <Button mnemonicParsing="false" onAction="#addTeacherButtonPressed" text="Add">
                                             <HBox.margin>
-                                                <Insets left="10.0" top="10.0"/>
+                                                <Insets left="10.0" top="10.0" />
                                             </HBox.margin>
                                         </Button>
-                                        <Label fx:id="teachersLabel"
-                                               alignment="CENTER"
-                                               prefHeight="15.0"
-                                               prefWidth="235.0" textFill="RED">
+                                        <Label fx:id="teachersLabel" alignment="CENTER" prefHeight="15.0" prefWidth="235.0" textFill="RED">
                                             <font>
-                                                <Font name="System Italic"
-                                                      size="10.0"/>
+                                                <Font name="System Italic" size="10.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="10.0" top="15.0"/>
+                                                <Insets left="10.0" top="15.0" />
                                             </HBox.margin>
                                         </Label>
                                     </children>
                                 </HBox>
-                                <HBox prefHeight="195.0" prefWidth="450.0"
-                                      style="-fx-padding: 10 10 10 30;">
+                                <HBox prefHeight="195.0" prefWidth="450.0" style="-fx-padding: 10 10 10 30;">
                                     <children>
-                                        <ScrollPane prefHeight="195.0"
-                                                    prefWidth="460.0">
+                                        <ScrollPane prefHeight="195.0" prefWidth="460.0">
                                             <content>
-                                                <TableView prefHeight="173.0"
-                                                           prefWidth="394.0"
-                                                           fx:id="teacherListTable">
+                                                <TableView fx:id="teacherListTable" prefHeight="173.0" prefWidth="394.0">
                                                     <columns>
-                                                        <TableColumn
-                                                                prefWidth="131.19999539852142"
-                                                                text="Name"
-                                                                fx:id="teacherNameColumn"/>
-                                                        <TableColumn
-                                                                prefWidth="158.4000244140625"
-                                                                text="Initials"
-                                                                fx:id="teacherInitialsColumn"/>
-                                                        <TableColumn
-                                                                prefWidth="103.19998779296873"
-                                                                text="Subject"
-                                                                fx:id="teacherSubjectColumn"/>
+                                                        <TableColumn fx:id="teacherNameColumn" prefWidth="131.19999539852142" text="Name" />
+                                                        <TableColumn fx:id="teacherInitialsColumn" prefWidth="158.4000244140625" text="Initials" />
+                                                        <TableColumn fx:id="teacherSubjectColumn" prefWidth="103.19998779296873" text="Subject" />
                                                     </columns>
                                                 </TableView>
                                             </content>
@@ -139,58 +113,42 @@
                                 </HBox>
                             </children>
                         </VBox>
-                        <VBox prefHeight="295.0" prefWidth="450.0"
-                              style="-fx-background-color: #dbdbdb;">
+                        <VBox prefHeight="295.0" prefWidth="450.0" style="-fx-background-color: #dbdbdb;">
                             <children>
-                                <HBox fx:id="addTeacherLabel1" prefHeight="35.0"
-                                      prefWidth="450.0">
+                                <HBox fx:id="addTeacherLabel1" prefHeight="35.0" prefWidth="450.0">
                                     <children>
                                         <Label text="Add students:">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="40.0" top="13.0"/>
+                                                <Insets left="40.0" top="13.0" />
                                             </HBox.margin>
                                         </Label>
-                                        <Button mnemonicParsing="false"
-                                                text="Add">
+                                        <Button mnemonicParsing="false" onAction="#addStudentButtonPressed" text="Add">
                                             <HBox.margin>
-                                                <Insets left="10.0" top="10.0"/>
+                                                <Insets left="10.0" top="10.0" />
                                             </HBox.margin>
                                         </Button>
-                                        <Label fx:id="studentsLabel"
-                                               alignment="CENTER"
-                                               prefHeight="15.0"
-                                               prefWidth="228.0" textFill="RED">
+                                        <Label fx:id="studentsLabel" alignment="CENTER" prefHeight="15.0" prefWidth="228.0" textFill="RED">
                                             <font>
-                                                <Font name="System Italic"
-                                                      size="10.0"/>
+                                                <Font name="System Italic" size="10.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="10.0" top="15.0"/>
+                                                <Insets left="10.0" top="15.0" />
                                             </HBox.margin>
                                         </Label>
                                     </children>
                                 </HBox>
-                                <HBox prefHeight="258.0" prefWidth="450.0"
-                                      style="-fx-padding: 10 10 10 30;">
+                                <HBox prefHeight="258.0" prefWidth="450.0" style="-fx-padding: 10 10 10 30;">
                                     <children>
-                                        <ScrollPane prefHeight="195.0"
-                                                    prefWidth="460.0">
+                                        <ScrollPane prefHeight="195.0" prefWidth="460.0">
                                             <content>
-                                                <TableView prefHeight="236.0"
-                                                           prefWidth="394.0">
+                                                <TableView fx:id="studentsListTable" prefHeight="236.0" prefWidth="394.0">
                                                     <columns>
-                                                        <TableColumn
-                                                                prefWidth="131.19999539852142"
-                                                                text="Name"/>
-                                                        <TableColumn
-                                                                prefWidth="158.4000244140625"
-                                                                text="ID"/>
-                                                        <TableColumn
-                                                                prefWidth="103.19998779296873"
-                                                                text="Semester"/>
+                                                        <TableColumn fx:id="studentNameColumn" prefWidth="131.19999539852142" text="Name" />
+                                                        <TableColumn fx:id="studentIdColumn" prefWidth="158.4000244140625" text="ID" />
+                                                        <TableColumn fx:id="studentSemesterColumn" prefWidth="103.19998779296873" text="Semester" />
                                                     </columns>
                                                 </TableView>
                                             </content>
@@ -201,88 +159,64 @@
                         </VBox>
                     </children>
                 </VBox>
-                <VBox prefHeight="594.0" prefWidth="537.0"
-                      style="-fx-background-color: #e6e6e6;">
+                <VBox prefHeight="594.0" prefWidth="537.0" style="-fx-background-color: #e6e6e6;">
                     <children>
-                        <HBox prefHeight="42.0" prefWidth="482.0"
-                              style="-fx-background-color: #d6d6d6;">
+                        <HBox prefHeight="42.0" prefWidth="482.0" style="-fx-background-color: #d6d6d6;">
                             <children>
                                 <Label text="Current teachers:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="30.0" top="12.0"/>
+                                        <Insets left="30.0" top="12.0" />
                                     </HBox.margin>
                                 </Label>
                                 <Button mnemonicParsing="false" text="Remove">
                                     <HBox.margin>
-                                        <Insets left="15.0" top="9.0"/>
+                                        <Insets left="15.0" top="9.0" />
                                     </HBox.margin>
                                 </Button>
                                 <Label text="Current students:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="60.0" top="12.0"/>
+                                        <Insets left="60.0" top="12.0" />
                                     </HBox.margin>
                                 </Label>
                                 <Button mnemonicParsing="false" text="Remove">
                                     <HBox.margin>
-                                        <Insets left="15.0" top="9.0"/>
+                                        <Insets left="15.0" top="9.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
                         <HBox prefHeight="546.0" prefWidth="482.0">
                             <children>
-                                <VBox prefHeight="546.0" prefWidth="241.0"
-                                      style="-fx-padding: 5;">
+                                <VBox prefHeight="546.0" prefWidth="241.0" style="-fx-padding: 5;">
                                     <children>
-                                        <ScrollPane prefHeight="549.0"
-                                                    prefWidth="242.0">
+                                        <ScrollPane prefHeight="549.0" prefWidth="242.0">
                                             <content>
-                                                <TableView prefHeight="522.0"
-                                                           prefWidth="230.0"
-                                                           fx:id="currentTeacherListTable">
+                                                <TableView fx:id="currentTeacherListTable" prefHeight="522.0" prefWidth="230.0">
                                                     <columns>
-                                                        <TableColumn
-                                                                prefWidth="118.40008091926575"
-                                                                text="Name"
-                                                                fx:id="currentTeacherNameColumn"/>
-                                                        <TableColumn
-                                                                prefWidth="51.99994659423828"
-                                                                text="Initials"
-                                                                fx:id="currentTeacherInitialsColumn"/>
-                                                        <TableColumn
-                                                                prefWidth="56.79998779296875"
-                                                                text="Subject"
-                                                                fx:id="currentTeacherSubjectColumn"/>
+                                                        <TableColumn fx:id="currentTeacherNameColumn" prefWidth="118.40008091926575" text="Name" />
+                                                        <TableColumn fx:id="currentTeacherInitialsColumn" prefWidth="51.99994659423828" text="Initials" />
+                                                        <TableColumn fx:id="currentTeacherSubjectColumn" prefWidth="56.79998779296875" text="Subject" />
                                                     </columns>
                                                 </TableView>
                                             </content>
                                         </ScrollPane>
                                     </children>
                                 </VBox>
-                                <VBox prefHeight="546.0" prefWidth="247.0"
-                                      style="-fx-padding: 5;">
+                                <VBox prefHeight="546.0" prefWidth="247.0" style="-fx-padding: 5;">
                                     <children>
-                                        <ScrollPane prefHeight="550.0"
-                                                    prefWidth="247.0">
+                                        <ScrollPane prefHeight="550.0" prefWidth="247.0">
                                             <content>
-                                                <TableView prefHeight="536.0"
-                                                           prefWidth="234.0">
+                                                <TableView fx:id="currentStudentListTable" prefHeight="536.0" prefWidth="234.0">
                                                     <columns>
-                                                        <TableColumn
-                                                                prefWidth="115.2000105381012"
-                                                                text="Name"/>
-                                                        <TableColumn
-                                                                prefWidth="45.60009002685547"
-                                                                text="ID"/>
-                                                        <TableColumn
-                                                                prefWidth="64.7999267578125"
-                                                                text="Semester"/>
+                                                        <TableColumn fx:id="currentStudentNameColumn" prefWidth="115.2000105381012" text="Name" />
+                                                        <TableColumn fx:id="currentStudentIdColumn" prefWidth="45.60009002685547" text="ID" />
+                                                        <TableColumn fx:id="currentStudentSemesterColumn" prefWidth="64.7999267578125" text="Semester" />
                                                     </columns>
                                                 </TableView>
                                             </content>
