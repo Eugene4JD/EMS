@@ -3,6 +3,7 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import model.Class;
 import model.EMSModel;
 import model.Room;
 import model.Student;
@@ -29,6 +30,9 @@ public class SettingsViewController
   @FXML private TableColumn<RoomViewModel, Number> roomTablesColumn;
   @FXML private TableColumn<RoomViewModel, Number> roomChairsColumn;
   @FXML private TableColumn<RoomViewModel, Boolean> roomCanBeMergedTableColumn;
+  @FXML private TableView<ClassViewModel> classListTable;
+  @FXML private TableColumn<ClassViewModel, String> classNameColumn;
+  @FXML private TableColumn<ClassViewModel, Number> classNumberOfStudentsColumn;
 
   private Region root;
   private EMSModel model;
@@ -36,6 +40,7 @@ public class SettingsViewController
   private StudentListViewModel viewModel1;
   private TeacherListViewModel viewModel2;
   private RoomListViewModel viewModel3;
+  private ClassListViewModel viewModel4;
 
   public SettingsViewController()
   {
@@ -50,6 +55,7 @@ public class SettingsViewController
     this.viewModel1 = new StudentListViewModel(model);
     this.viewModel2 = new TeacherListViewModel(model);
     this.viewModel3 = new RoomListViewModel(model);
+    this.viewModel4 = new ClassListViewModel(model);
 
     studentNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
@@ -69,16 +75,21 @@ public class SettingsViewController
 
     roomNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
-    roomConnectorsColumn
-        .setCellValueFactory(cellData -> cellData.getValue().getConnectorsProperty());
-    roomMaxStudentsColumn
-        .setCellValueFactory(cellData -> cellData.getValue().getMaxStudentsProperty());
-    roomTablesColumn
-        .setCellValueFactory(cellData -> cellData.getValue().getTablesProperty());
-    roomChairsColumn
-        .setCellValueFactory(cellData -> cellData.getValue().getChairsProperty());
-    roomCanBeMergedTableColumn
-        .setCellValueFactory(cellData -> cellData.getValue().getCanBeMergedProperty());
+    roomConnectorsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getConnectorsProperty());
+    roomMaxStudentsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getMaxStudentsProperty());
+    roomTablesColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getTablesProperty());
+    roomChairsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getChairsProperty());
+    roomCanBeMergedTableColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getCanBeMergedProperty());
+
+    classNameColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+    classNumberOfStudentsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getNumberOfStudentsProperty());
     reset();
   }
 
@@ -88,6 +99,7 @@ public class SettingsViewController
     studentListTable.setItems(viewModel1.update());
     teacherListTable.setItems(viewModel2.update());
     roomListTable.setItems(viewModel3.update());
+    classListTable.setItems(viewModel4.update());
   }
 
   public Region getRoot()
@@ -254,8 +266,7 @@ public class SettingsViewController
             selectedItem.getConnectorsProperty().get(),
             selectedItem.getMaxStudentsProperty().get(),
             selectedItem.getChairsProperty().get(),
-            selectedItem.getTablesProperty().get(),
-            buffer);
+            selectedItem.getTablesProperty().get(), buffer);
         model.removeRoomByObject(room);
         viewModel3.remove(room);
         teacherListTable.getSelectionModel().clearSelection();
@@ -282,17 +293,19 @@ public class SettingsViewController
     }
   }
 
-  @FXML private void resetClassButtonPressed()
-  {
-    model.removeAllClasses();
-    System.out.println("All classes have been removed");
-  }
-
   @FXML private void resetEverythingButtonPressed()
   {
-    model.removeAll();
-    System.out.println("Everything has been removed");
-    reset();
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation");
+    alert.setHeaderText("This will remove EVERYTHING from the system!");
+    Optional<ButtonType> result = alert.showAndWait();
+    boolean buffer = ((result.isPresent()) && (result.get() == ButtonType.OK));
+    if (buffer)
+    {
+      model.removeAll();
+      reset();
+      System.out.println("The program has been reset");
+    }
   }
 
   private boolean confirmation3()
@@ -307,6 +320,66 @@ public class SettingsViewController
     alert.setTitle("Confirmation");
     alert.setHeaderText(
         "Removing teacher {" + selectedItem.getNameProperty().get() + "}");
+    Optional<ButtonType> result = alert.showAndWait();
+    return ((result.isPresent()) && (result.get() == ButtonType.OK));
+  }
+
+  @FXML private void addClassButtonPressed()
+  {
+    viewHandler.openView("addClassPage");
+  }
+
+  @FXML private void removeClassButtonPressed()
+  {
+    errorLabel.setText("");
+    try
+    {
+      ClassViewModel selectedItem = classListTable.getSelectionModel()
+          .getSelectedItem();
+
+      boolean remove = confirmation4();
+      if (remove)
+      {
+        Class class_ = model
+            .getClassByClassName(selectedItem.getNameProperty().get());
+        model.removeClassByName(selectedItem.getNameProperty().get());
+        viewModel4.remove(class_);
+        classListTable.getSelectionModel().clearSelection();
+      }
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("Item not found: " + e.getMessage());
+    }
+  }
+
+  @FXML private void resetClassButtonPressed()
+  {
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation");
+    alert.setHeaderText("This will remove all classes from the system!");
+    Optional<ButtonType> result = alert.showAndWait();
+    boolean buffer = ((result.isPresent()) && (result.get() == ButtonType.OK));
+    if (buffer)
+    {
+      model.removeAllClasses();
+      reset();
+      System.out.println("All classes have been removed");
+    }
+  }
+
+  private boolean confirmation4()
+  {
+    int index = classListTable.getSelectionModel().getSelectedIndex();
+    ClassViewModel selectedItem = classListTable.getItems().get(index);
+    if (index < 0 || index >= classListTable.getItems().size())
+    {
+      return false;
+    }
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation");
+    alert.setHeaderText(
+        "Removing class {" + selectedItem.getNameProperty().get() + "}");
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK));
   }

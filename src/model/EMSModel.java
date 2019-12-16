@@ -22,6 +22,7 @@ public interface EMSModel
   Room getRoom(int index);
   void addExam(Exam exam);
   void addClass(String ClassName);
+  void removeClassByName(String name);
   void removeExam(DateAndTimePeriod period);
   Class getClassByClassName(String name);
   String showSchedule();
@@ -44,4 +45,6 @@ public interface EMSModel
   int studentListSize();
   int teacherListSize();
   int roomListSize();
+  int classListSize();
+  Class getClass(int index);
 }

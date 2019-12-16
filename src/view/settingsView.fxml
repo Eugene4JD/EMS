@@ -12,29 +12,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="900.0" userData="settingsView" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SettingsViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="690.0" prefWidth="900.0"
+      userData="settingsView" xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.SettingsViewController">
     <children>
-        <HBox prefHeight="86.0" prefWidth="860.0" style="-fx-background-color: #FAFAFA;">
+        <HBox prefHeight="86.0" prefWidth="860.0"
+              style="-fx-background-color: #FAFAFA;">
             <children>
                 <Label prefHeight="52.0" prefWidth="124.0" text="Settings">
                     <font>
-                        <Font name="System Bold" size="30.0" />
+                        <Font name="System Bold" size="30.0"/>
                     </font>
                     <HBox.margin>
-                        <Insets left="40.0" top="18.0" />
+                        <Insets left="40.0" top="18.0"/>
                     </HBox.margin>
                 </Label>
-                <ImageView fitHeight="42.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="42.0" fitWidth="110.0" pickOnBounds="true"
+                           preserveRatio="true">
                     <image>
-                        <Image url="@logo.png" />
+                        <Image url="@logo.png"/>
                     </image>
                     <HBox.margin>
-                        <Insets left="527.0" top="22.0" />
+                        <Insets left="527.0" top="22.0"/>
                     </HBox.margin>
                 </ImageView>
-                <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="54.0" text="Back">
+                <Button mnemonicParsing="false" onAction="#backButtonPressed"
+                        prefHeight="32.0" prefWidth="54.0" text="Back">
                     <HBox.margin>
-                        <Insets left="5.0" top="28.0" />
+                        <Insets left="5.0" top="28.0"/>
                     </HBox.margin>
                 </Button>
             </children>
@@ -43,50 +50,73 @@
             <children>
                 <VBox prefHeight="252.0" prefWidth="450.0">
                     <children>
-                        <HBox prefHeight="52.0" prefWidth="450.0" style="-fx-background-color: #ebebeb;">
+                        <HBox prefHeight="52.0" prefWidth="450.0"
+                              style="-fx-background-color: #ebebeb;">
                             <children>
-                                <ImageView fitHeight="30.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="30.0" fitWidth="39.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true">
                                     <image>
-                                        <Image url="@student.png" />
+                                        <Image url="@student.png"/>
                                     </image>
                                     <HBox.margin>
-                                        <Insets left="43.0" top="9.0" />
+                                        <Insets left="43.0" top="9.0"/>
                                     </HBox.margin>
                                 </ImageView>
-                                <Label prefHeight="18.0" prefWidth="74.0" text="Students">
+                                <Label prefHeight="18.0" prefWidth="74.0"
+                                       text="Students">
                                     <font>
-                                        <Font name="System Bold" size="17.0" />
+                                        <Font name="System Bold" size="17.0"/>
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="10.0" top="12.0" />
+                                        <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" onAction="#addStudentButtonPressed" text="Add">
+                                <Button mnemonicParsing="false"
+                                        onAction="#addStudentButtonPressed"
+                                        text="Add">
                                     <HBox.margin>
-                                        <Insets left="15.0" top="13.0" />
+                                        <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#removeStudentButtonPressed" text="Remove">
+                                <Button mnemonicParsing="false"
+                                        onAction="#removeStudentButtonPressed"
+                                        text="Remove">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#resetStudentButtonPressed" text="Reset">
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetStudentButtonPressed"
+                                        text="Reset">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5 5 5 40;">
+                        <VBox prefHeight="200.0" prefWidth="100.0"
+                              style="-fx-padding: 5 5 5 40;">
                             <children>
-                                <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                <ScrollPane prefHeight="200.0"
+                                            prefWidth="200.0">
                                     <content>
-                                        <TableView fx:id="studentListTable" prefHeight="200.0" prefWidth="432.0">
+                                        <TableView fx:id="studentListTable"
+                                                   prefHeight="200.0"
+                                                   prefWidth="432.0">
                                             <columns>
-                                                <TableColumn fx:id="studentNameColumn" prefWidth="180.0000228881836" text="Name" />
-                                                <TableColumn fx:id="studentIdColumn" prefWidth="105.5999755859375" text="ID" />
-                                                <TableColumn fx:id="studentSemesterColumn" prefWidth="128.79998779296875" text="Semester" />
+                                                <TableColumn
+                                                        fx:id="studentNameColumn"
+                                                        prefWidth="180.0000228881836"
+                                                        text="Name"/>
+                                                <TableColumn
+                                                        fx:id="studentIdColumn"
+                                                        prefWidth="105.5999755859375"
+                                                        text="ID"/>
+                                                <TableColumn
+                                                        fx:id="studentSemesterColumn"
+                                                        prefWidth="128.79998779296875"
+                                                        text="Semester"/>
                                             </columns>
                                         </TableView>
                                     </content>
@@ -97,51 +127,77 @@
                 </VBox>
                 <VBox prefHeight="252.0" prefWidth="450.0">
                     <children>
-                        <HBox prefHeight="52.0" prefWidth="450.0" style="-fx-background-color: #ebebeb;">
+                        <HBox prefHeight="52.0" prefWidth="450.0"
+                              style="-fx-background-color: #ebebeb;">
                             <children>
-                                <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="39.0" fitWidth="40.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true">
                                     <image>
-                                        <Image url="@teacher.png" />
+                                        <Image url="@teacher.png"/>
                                     </image>
                                     <HBox.margin>
-                                        <Insets left="3.0" top="7.0" />
+                                        <Insets left="3.0" top="7.0"/>
                                     </HBox.margin>
                                 </ImageView>
-                                <Label prefHeight="18.0" prefWidth="74.0" text="Teachers">
+                                <Label prefHeight="18.0" prefWidth="74.0"
+                                       text="Teachers">
                                     <font>
-                                        <Font name="System Bold" size="17.0" />
+                                        <Font name="System Bold" size="17.0"/>
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="10.0" top="12.0" />
+                                        <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" onAction="#addTeacherButtonPressed" text="Add">
+                                <Button mnemonicParsing="false"
+                                        onAction="#addTeacherButtonPressed"
+                                        text="Add">
                                     <HBox.margin>
-                                        <Insets left="15.0" top="13.0" />
+                                        <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#removeTeacherButtonPressed" text="Remove">
+                                <Button mnemonicParsing="false"
+                                        onAction="#removeTeacherButtonPressed"
+                                        text="Remove">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#resetTeacherButtonPressed" text="Reset">
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetTeacherButtonPressed"
+                                        text="Reset">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5 40 5 5;">
+                        <VBox prefHeight="200.0" prefWidth="100.0"
+                              style="-fx-padding: 5 40 5 5;">
                             <children>
-                                <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                <ScrollPane prefHeight="200.0"
+                                            prefWidth="200.0">
                                     <content>
-                                        <TableView fx:id="teacherListTable" prefHeight="200.0" prefWidth="432.0">
+                                        <TableView fx:id="teacherListTable"
+                                                   prefHeight="200.0"
+                                                   prefWidth="432.0">
                                             <columns>
-                                                <TableColumn fx:id="teacherNameColumn" prefWidth="142.40007436275482" text="Name" />
-                                                <TableColumn fx:id="teacherInitialsColumn" prefWidth="96.800048828125" text="Initials" />
-                                                <TableColumn fx:id="teacherSubjectColumn" prefWidth="64.80012512207031" text="Subject" />
-                                                <TableColumn fx:id="teacherIsBusyColumn" prefWidth="111.9998779296875" text="isBusy" />
+                                                <TableColumn
+                                                        fx:id="teacherNameColumn"
+                                                        prefWidth="142.40007436275482"
+                                                        text="Name"/>
+                                                <TableColumn
+                                                        fx:id="teacherInitialsColumn"
+                                                        prefWidth="96.800048828125"
+                                                        text="Initials"/>
+                                                <TableColumn
+                                                        fx:id="teacherSubjectColumn"
+                                                        prefWidth="64.80012512207031"
+                                                        text="Subject"/>
+                                                <TableColumn
+                                                        fx:id="teacherIsBusyColumn"
+                                                        prefWidth="111.9998779296875"
+                                                        text="isBusy"/>
                                             </columns>
                                         </TableView>
                                     </content>
@@ -156,53 +212,85 @@
             <children>
                 <VBox prefHeight="252.0" prefWidth="450.0">
                     <children>
-                        <HBox prefHeight="52.0" prefWidth="450.0" style="-fx-background-color: #ebebeb;">
+                        <HBox prefHeight="52.0" prefWidth="450.0"
+                              style="-fx-background-color: #ebebeb;">
                             <children>
-                                <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="35.0" fitWidth="32.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true">
                                     <image>
-                                        <Image url="@room.png" />
+                                        <Image url="@room.png"/>
                                     </image>
                                     <HBox.margin>
-                                        <Insets left="43.0" top="9.0" />
+                                        <Insets left="43.0" top="9.0"/>
                                     </HBox.margin>
                                 </ImageView>
-                                <Label prefHeight="26.0" prefWidth="61.0" text="Rooms">
+                                <Label prefHeight="26.0" prefWidth="61.0"
+                                       text="Rooms">
                                     <font>
-                                        <Font name="System Bold" size="17.0" />
+                                        <Font name="System Bold" size="17.0"/>
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="10.0" top="12.0" />
+                                        <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" onAction="#addRoomButtonPressed" text="Add">
+                                <Button mnemonicParsing="false"
+                                        onAction="#addRoomButtonPressed"
+                                        text="Add">
                                     <HBox.margin>
-                                        <Insets left="15.0" top="13.0" />
+                                        <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#removeRoomButtonPressed" text="Remove">
+                                <Button mnemonicParsing="false"
+                                        onAction="#removeRoomButtonPressed"
+                                        text="Remove">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#resetRoomButtonPressed" text="Reset">
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetRoomButtonPressed"
+                                        text="Reset">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5 5 5 40;">
+                        <VBox prefHeight="200.0" prefWidth="100.0"
+                              style="-fx-padding: 5 5 5 40;">
                             <children>
-                                <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                <ScrollPane prefHeight="200.0"
+                                            prefWidth="200.0">
                                     <content>
-                                        <TableView fx:id="roomListTable" prefHeight="200.0" prefWidth="432.0">
+                                        <TableView fx:id="roomListTable"
+                                                   prefHeight="200.0"
+                                                   prefWidth="432.0">
                                             <columns>
-                                                <TableColumn fx:id="roomNameColumn" prefWidth="70.40002477169037" text="Name" />
-                                                <TableColumn fx:id="roomConnectorsColumn" prefWidth="77.59994506835938" text="Connectors" />
-                                                <TableColumn fx:id="roomMaxStudentsColumn" prefWidth="76.80001831054688" text="max Students" />
-                                                <TableColumn fx:id="roomTablesColumn" prefWidth="52.79998779296875" text="Tables" />
-                                                <TableColumn fx:id="roomChairsColumn" prefWidth="51.20001220703125" text="Chairs" />
-                                                <TableColumn fx:id="roomCanBeMergedTableColumn" prefWidth="83.20001220703125" text="Can be merged" />
+                                                <TableColumn
+                                                        fx:id="roomNameColumn"
+                                                        prefWidth="70.40002477169037"
+                                                        text="Name"/>
+                                                <TableColumn
+                                                        fx:id="roomConnectorsColumn"
+                                                        prefWidth="77.59994506835938"
+                                                        text="Connectors"/>
+                                                <TableColumn
+                                                        fx:id="roomMaxStudentsColumn"
+                                                        prefWidth="76.80001831054688"
+                                                        text="max Students"/>
+                                                <TableColumn
+                                                        fx:id="roomTablesColumn"
+                                                        prefWidth="52.79998779296875"
+                                                        text="Tables"/>
+                                                <TableColumn
+                                                        fx:id="roomChairsColumn"
+                                                        prefWidth="51.20001220703125"
+                                                        text="Chairs"/>
+                                                <TableColumn
+                                                        fx:id="roomCanBeMergedTableColumn"
+                                                        prefWidth="83.20001220703125"
+                                                        text="Can be merged"/>
                                             </columns>
                                         </TableView>
                                     </content>
@@ -213,49 +301,62 @@
                 </VBox>
                 <VBox prefHeight="252.0" prefWidth="450.0">
                     <children>
-                        <HBox prefHeight="52.0" prefWidth="450.0" style="-fx-background-color: #ebebeb;">
+                        <HBox prefHeight="52.0" prefWidth="450.0"
+                              style="-fx-background-color: #ebebeb;">
                             <children>
-                                <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="30.0" fitWidth="28.0"
+                                           pickOnBounds="true"
+                                           preserveRatio="true">
                                     <image>
-                                        <Image url="@class.png" />
+                                        <Image url="@class.png"/>
                                     </image>
                                     <HBox.margin>
-                                        <Insets left="7.0" top="10.0" />
+                                        <Insets left="7.0" top="10.0"/>
                                     </HBox.margin>
                                 </ImageView>
-                                <Label prefHeight="26.0" prefWidth="66.0" text="Classes">
+                                <Label prefHeight="26.0" prefWidth="66.0"
+                                       text="Classes">
                                     <font>
-                                        <Font name="System Bold" size="17.0" />
+                                        <Font name="System Bold" size="17.0"/>
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="10.0" top="12.0" />
+                                        <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add">
+                                <Button mnemonicParsing="false" text="Add" onAction="#addClassButtonPressed">
                                     <HBox.margin>
-                                        <Insets left="15.0" top="13.0" />
+                                        <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" text="Remove">
+                                <Button mnemonicParsing="false" text="Remove" onAction="#removeClassButtonPressed">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#resetClassButtonPressed" text="Reset">
+                                <Button mnemonicParsing="false"
+                                        onAction="#resetClassButtonPressed"
+                                        text="Reset">
                                     <HBox.margin>
-                                        <Insets left="7.0" top="13.0" />
+                                        <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5 40 5 5;">
+                        <VBox prefHeight="200.0" prefWidth="100.0"
+                              style="-fx-padding: 5 40 5 5;">
                             <children>
-                                <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                <ScrollPane prefHeight="200.0"
+                                            prefWidth="200.0">
                                     <content>
-                                        <TableView prefHeight="200.0" prefWidth="432.0">
+                                        <TableView prefHeight="200.0"
+                                                   prefWidth="432.0" fx:id="classListTable">
                                             <columns>
-                                                <TableColumn prefWidth="200.8000214099884" text="Name of the class" />
-                                                <TableColumn prefWidth="195.20008850097656" text="Number of students" />
+                                                <TableColumn
+                                                        prefWidth="200.8000214099884"
+                                                        text="Name of the class" fx:id="classNameColumn"/>
+                                                <TableColumn
+                                                        prefWidth="195.20008850097656"
+                                                        text="Number of students" fx:id="classNumberOfStudentsColumn"/>
                                             </columns>
                                         </TableView>
                                     </content>
@@ -268,14 +369,18 @@
         </HBox>
         <HBox prefHeight="48.0" prefWidth="900.0">
             <children>
-                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0" prefWidth="279.0" textFill="RED">
+                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0"
+                       prefWidth="279.0" textFill="RED">
                     <font>
-                        <Font name="System Italic" size="10.0" />
+                        <Font name="System Italic" size="10.0"/>
                     </font>
                 </Label>
-                <Button mnemonicParsing="false" onAction="#resetEverythingButtonPressed" prefHeight="19.0" prefWidth="120.0" text="Reset everything">
+                <Button mnemonicParsing="false"
+                        onAction="#resetEverythingButtonPressed"
+                        prefHeight="19.0" prefWidth="120.0"
+                        text="Reset everything">
                     <HBox.margin>
-                        <Insets left="448.0" top="10.0" />
+                        <Insets left="448.0" top="10.0"/>
                     </HBox.margin>
                 </Button>
             </children>

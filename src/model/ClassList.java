@@ -110,5 +110,9 @@ public class ClassList implements Serializable
     }
     return str;
   }
+  public int size()
+  {
+    return classes.size();
+  }
 
 }

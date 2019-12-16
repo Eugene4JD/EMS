@@ -62,14 +62,19 @@ public class EMSModelManager implements EMSModel, Serializable
     writeToXMl(new File("exams.xml"));
   }
 
-  @Override public void addRoom(String roomName, String typesOfConnectorsAvailable, int maxNumberOfStudents, int numberOfChairs, int numberOfTables, String canBeMerged)
+  @Override public void addRoom(String roomName,
+      String typesOfConnectorsAvailable, int maxNumberOfStudents,
+      int numberOfChairs, int numberOfTables, String canBeMerged)
   {
     for (int i = 0; i < rooms.size(); i++)
     {
       if (rooms.getRoomByIndex(i).getRoomName().equals(roomName))
-        throw new IllegalArgumentException("This room is already in the system");
+        throw new IllegalArgumentException(
+            "This room is already in the system");
     }
-    rooms.addRoom(new Room(roomName, typesOfConnectorsAvailable, maxNumberOfStudents, numberOfChairs, numberOfTables, canBeMerged));
+    rooms.addRoom(
+        new Room(roomName, typesOfConnectorsAvailable, maxNumberOfStudents,
+            numberOfChairs, numberOfTables, canBeMerged));
     writeToBinary(new File("Rooms.bin"));
   }
 
@@ -89,9 +94,10 @@ public class EMSModelManager implements EMSModel, Serializable
 
   @Override public void addTeacher(String name, String initials, String subject)
   {
-    for (int i =0 ; i<teachers.getNumberOfTeachers(); i++)
+    for (int i = 0; i < teachers.getNumberOfTeachers(); i++)
     {
-      if (teachers.getTeacherByIndex(i).equals(new Teacher(name,initials,subject)))
+      if (teachers.getTeacherByIndex(i)
+          .equals(new Teacher(name, initials, subject)))
         throw new IllegalArgumentException("Teacher already in the system");
     }
     teachers.addTeacher(new Teacher(name, initials, subject));
@@ -330,17 +336,35 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     return teachers.size();
   }
+
   @Override public int roomListSize()
   {
     return rooms.size();
   }
+
   @Override public Room getRoom(int index)
   {
     return rooms.getRoomByIndex(index);
   }
+
   @Override public void removeRoomByObject(Room room)
   {
     rooms.removeRoomByObject(room);
+  }
+
+  @Override public int classListSize()
+  {
+    return classes.size();
+  }
+
+  @Override public Class getClass(int index)
+  {
+    return classes.getClassByIndex(index);
+  }
+
+  @Override public void removeClassByName(String name)
+  {
+    classes.removeClassByClassName(name);
   }
 }
 

@@ -18,6 +18,7 @@ public class ViewHandler
   private AddStudentController addStudentController;
   private AddTeacherController addTeacherController;
   private AddRoomController addRoomController;
+  private AddClassController addClassController;
 
   public ViewHandler(EMSModel model)
   {
@@ -54,6 +55,9 @@ public class ViewHandler
         break;
       case "addRoomPage":
         root = loadAddRoomView("AddRoomView.fxml");
+        break;
+      case "addClassPage":
+        root = loadAddClassView("AddClassView.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -218,5 +222,29 @@ public class ViewHandler
       addRoomController.reset();
     }
     return addRoomController.getRoot();
+  }
+
+  private Region loadAddClassView(String fxmlFile)
+  {
+    if (addClassController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        addClassController = loader.getController();
+        addClassController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      addClassController.reset();
+    }
+    return addClassController.getRoot();
   }
 }
