@@ -11,7 +11,7 @@ public class Exam implements Serializable
   private RoomList examRooms;
   private String description;
 
-  public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime)
+/*  public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime)
   {
     if (examName .equals(""))
       throw new IllegalArgumentException("wrong Exam name");
@@ -21,6 +21,8 @@ public class Exam implements Serializable
     examRooms = new RoomList();
     examTeachers = new TeacherList();
   }
+
+ */
   public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime, ClassList classes, TeacherList teachers, RoomList rooms)
   {
     if (examName.equals(""))
