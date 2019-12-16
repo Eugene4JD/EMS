@@ -385,5 +385,41 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     return students.copy();
   }
+
+  @Override public StudentList getFreeStudentsFromTheClass()
+  {
+    StudentList freeStudents = new StudentList();
+    boolean isFree = true;
+    for (int i = 0; i<students.getNumberOfStudents(); i++)
+    {
+      isFree = true;
+      for (int j =0; j<classes.getNumberOfClasses(); j++)
+      {
+        if (classes.getClassByIndex(j).getStudents().isStudentExist(students.getStudentByIndex(i)))
+          isFree = false;
+      }
+      if (isFree)
+        freeStudents.addStudent(students.getStudentByIndex(i));
+    }
+    return freeStudents;
+  }
+
+  @Override public TeacherList getFreeTeachersFromTheClass()
+  {
+    TeacherList freeTeachers = new TeacherList();
+    boolean isFree = true;
+    for (int i = 0; i<teachers.getNumberOfTeachers(); i++)
+    {
+      isFree = false;
+      for (int j =0; j<classes.getNumberOfClasses(); j++)
+      {
+        if (!classes.getClassByIndex(j).getTeachers().isTeacherExist(teachers.getTeacherByIndex(i)))
+          isFree = true;
+      }
+      if (isFree)
+        freeTeachers.addTeacher(teachers.getTeacherByIndex(i));
+    }
+    return freeTeachers;
+  }
 }
 
