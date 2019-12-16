@@ -380,5 +380,10 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     return teachers.copy();
   }
+
+  @Override public StudentList getStudentListCopy()
+  {
+    return students.copy();
+  }
 }
 
