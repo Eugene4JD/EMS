@@ -122,7 +122,7 @@ public class ConsoleView
           System.out.println("Class Name:");
           input.nextLine();
           String className = input.nextLine();
-          model.addClass(className);
+          //model.addClass(className);
           break;
         case 105:
           System.out.println("Enter the date year:");
