@@ -52,9 +52,9 @@ public class AddClassController
     this.viewHandler = viewHandler;
     this.model = model;
     this.root = root;
-    this.freeTeachers = model.getFreeTeachersFromTheClass();
+    this.freeTeachers = model.getTeacherListCopy();
     this.selectedTeachers = new TeacherList();
-    this.freeStudents = model.getFreeStudentsFromTheClass();
+    this.freeStudents = model.getStudentListCopy();
     this.selectedStudents = new StudentList();
     this.viewModel1 = new TeacherListViewArrayList(freeTeachers);
     this.viewModel11 = new TeacherListViewArrayList(selectedTeachers);
@@ -140,6 +140,15 @@ public class AddClassController
   }
   @FXML private void addClassButtonPressed()
   {
+    try
+    {
+      model.addClass(nameTextField.getText(),selectedTeachers,selectedStudents);
+      viewHandler.openView("settingsPage");
+    }
+    catch (IllegalArgumentException e)
+    {
+      teachersLabel.setText(e.getMessage());
+    }
 
   }
 }

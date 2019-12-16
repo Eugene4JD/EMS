@@ -21,7 +21,7 @@ public interface EMSModel
   void removeRoomByObject(Room room);
   Room getRoom(int index);
   void addExam(Exam exam);
-  void addClass(String ClassName);
+  void addClass(String ClassName, TeacherList teachers, StudentList students);
   void removeClassByName(String name);
   void removeExam(DateAndTimePeriod period);
   Class getClassByClassName(String name);

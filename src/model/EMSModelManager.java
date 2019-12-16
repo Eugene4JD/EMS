@@ -47,9 +47,9 @@ public class EMSModelManager implements EMSModel, Serializable
     }
   }
 
-  @Override public void addClass(String ClassName) //????/////
+  @Override public void addClass(String ClassName, TeacherList teachers, StudentList Students) //????/////
   {
-    Class newClass = new Class(ClassName);
+    Class newClass = new Class(ClassName,teachers,Students);
     classes.addClass(newClass);
     writeToBinary(new File("Classes.bin"));
   }
@@ -410,11 +410,11 @@ public class EMSModelManager implements EMSModel, Serializable
     boolean isFree = true;
     for (int i = 0; i<teachers.getNumberOfTeachers(); i++)
     {
-      isFree = false;
+      isFree = true;
       for (int j =0; j<classes.getNumberOfClasses(); j++)
       {
-        if (!classes.getClassByIndex(j).getTeachers().isTeacherExist(teachers.getTeacherByIndex(i)))
-          isFree = true;
+        if (classes.getClassByIndex(j).getTeachers().isTeacherExist(teachers.getTeacherByIndex(i)))
+          isFree = false;
       }
       if (isFree)
         freeTeachers.addTeacher(teachers.getTeacherByIndex(i));

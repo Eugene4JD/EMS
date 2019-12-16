@@ -9,11 +9,18 @@ public class Class implements Serializable
   private TeacherList teachers;
   private String className;
 
-  public Class(String className)
+  public Class(String className, TeacherList teachers, StudentList students)
   {
-    this.students = new StudentList();
-    this.teachers = new TeacherList();
-    if (className == "")
+    if (teachers.getNumberOfTeachers() == 0)
+      throw new IllegalArgumentException("You haven't chosen any teacher");
+    else
+      this.teachers = teachers;
+    if (students.getNumberOfStudents() == 0)
+      throw new IllegalArgumentException("You haven't chosen any students");
+    else
+      this.students = students;
+
+    if (className .equals(""))
       throw  new IllegalArgumentException("wrong class name");
     else
       this.className = className;
