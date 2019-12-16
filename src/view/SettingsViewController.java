@@ -22,7 +22,6 @@ public class SettingsViewController
   @FXML private TableColumn<TeacherViewModel, String> teacherNameColumn;
   @FXML private TableColumn<TeacherViewModel, String> teacherInitialsColumn;
   @FXML private TableColumn<TeacherViewModel, String> teacherSubjectColumn;
-  @FXML private TableColumn<TeacherViewModel, Boolean> teacherIsBusyColumn;
   @FXML private TableView<RoomViewModel> roomListTable;
   @FXML private TableColumn<RoomViewModel, String> roomNameColumn;
   @FXML private TableColumn<RoomViewModel, String> roomConnectorsColumn;
@@ -70,8 +69,6 @@ public class SettingsViewController
         cellData -> cellData.getValue().getInitialsProperty());
     teacherSubjectColumn.setCellValueFactory(
         cellData -> cellData.getValue().getSubjectProperty());
-    teacherIsBusyColumn.setCellValueFactory(
-        cellData -> cellData.getValue().getIsBusyProperty());
 
     roomNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());

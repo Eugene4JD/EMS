@@ -184,20 +184,16 @@
                                             <columns>
                                                 <TableColumn
                                                         fx:id="teacherNameColumn"
-                                                        prefWidth="142.40007436275482"
+                                                        prefWidth="180.80008249282764"
                                                         text="Name"/>
                                                 <TableColumn
                                                         fx:id="teacherInitialsColumn"
-                                                        prefWidth="96.800048828125"
+                                                        prefWidth="129.59999084472656"
                                                         text="Initials"/>
                                                 <TableColumn
                                                         fx:id="teacherSubjectColumn"
-                                                        prefWidth="64.80012512207031"
+                                                        prefWidth="124.79998779296875"
                                                         text="Subject"/>
-                                                <TableColumn
-                                                        fx:id="teacherIsBusyColumn"
-                                                        prefWidth="111.9998779296875"
-                                                        text="isBusy"/>
                                             </columns>
                                         </TableView>
                                     </content>
@@ -323,12 +319,16 @@
                                         <Insets left="10.0" top="12.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Add" onAction="#addClassButtonPressed">
+                                <Button mnemonicParsing="false"
+                                        onAction="#addClassButtonPressed"
+                                        text="Add">
                                     <HBox.margin>
                                         <Insets left="15.0" top="13.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" text="Remove" onAction="#removeClassButtonPressed">
+                                <Button mnemonicParsing="false"
+                                        onAction="#removeClassButtonPressed"
+                                        text="Remove">
                                     <HBox.margin>
                                         <Insets left="7.0" top="13.0"/>
                                     </HBox.margin>
@@ -348,15 +348,18 @@
                                 <ScrollPane prefHeight="200.0"
                                             prefWidth="200.0">
                                     <content>
-                                        <TableView prefHeight="200.0"
-                                                   prefWidth="432.0" fx:id="classListTable">
+                                        <TableView fx:id="classListTable"
+                                                   prefHeight="200.0"
+                                                   prefWidth="432.0">
                                             <columns>
                                                 <TableColumn
+                                                        fx:id="classNameColumn"
                                                         prefWidth="200.8000214099884"
-                                                        text="Name of the class" fx:id="classNameColumn"/>
+                                                        text="Name of the class"/>
                                                 <TableColumn
+                                                        fx:id="classNumberOfStudentsColumn"
                                                         prefWidth="195.20008850097656"
-                                                        text="Number of students" fx:id="classNumberOfStudentsColumn"/>
+                                                        text="Number of students"/>
                                             </columns>
                                         </TableView>
                                     </content>

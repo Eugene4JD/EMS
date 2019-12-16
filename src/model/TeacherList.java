@@ -103,6 +103,7 @@ public class TeacherList implements Serializable
     }
     return buffer;
   }
+
   public Teacher getTeacherByName(String name)
   {
     for (int i = 0; i < teachers.size(); i++)
@@ -127,26 +128,38 @@ public class TeacherList implements Serializable
     }
     return true;
   }
+
   public String showAllTeachers()
   {
-    String str ="";
-    for (int i =0; i<teachers.size(); i++)
+    String str = "";
+    for (int i = 0; i < teachers.size(); i++)
     {
-      str+= teachers.get(i).toString() + "\n";
+      str += teachers.get(i).toString() + "\n";
     }
     return str;
   }
 
   public boolean hasAtLeastOneSameTeacher(TeacherList teacherList)
   {
-    for (int i = 0 ; i< teacherList.size(); i++)
+    for (int i = 0; i < teacherList.size(); i++)
       for (int j = 0; j < this.teachers.size(); j++)
         if (teacherList.getTeacherByIndex(i).equals(this.teachers.get(j)))
           return true;
     return false;
   }
+
   public int size()
   {
     return teachers.size();
+  }
+
+  public TeacherList copy()
+  {
+    TeacherList copyObject = new TeacherList();
+    for (int i = 0; i < teachers.size(); i++)
+    {
+      copyObject.addTeacher(teachers.get(i));
+    }
+    return copyObject;
   }
 }

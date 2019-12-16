@@ -2,20 +2,19 @@ package view;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.EMSModel;
 import model.Teacher;
 import model.TeacherList;
 
 import java.util.ArrayList;
 
-public class TeacherListViewModel
+public class TeacherListViewArrayList
 {
   private ObservableList<TeacherViewModel> list;
-  private EMSModel model;
+  private TeacherList teachers;
 
-  public TeacherListViewModel(EMSModel model)
+  public TeacherListViewArrayList(TeacherList teachers)
   {
-    this.model = model;
+    this.teachers = teachers;
     list = FXCollections.observableArrayList();
   }
 
@@ -26,15 +25,15 @@ public class TeacherListViewModel
 
   public ObservableList<TeacherViewModel> update()
   {
-    ArrayList<Teacher> teachers = new ArrayList<>();
-    for (int i = 0; i < model.teacherListSize(); i++)
-    {
-      teachers.add(model.getTeacher(i));
-    }
-    list.clear();
+    ArrayList<Teacher> teachers1 = new ArrayList<>();
     for (int i = 0; i < teachers.size(); i++)
     {
-      list.add(new TeacherViewModel(teachers.get(i)));
+      teachers1.add(teachers.getTeacherByIndex(i));
+    }
+    list.clear();
+    for (int i = 0; i < teachers1.size(); i++)
+    {
+      list.add(new TeacherViewModel(teachers1.get(i)));
     }
     return list;
   }
