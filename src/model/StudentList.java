@@ -107,4 +107,11 @@ public class StudentList implements Serializable
     }
     return str;
   }
+  public StudentList copy()
+  {
+    StudentList other = new StudentList();
+    for (int i=0;i<students.size();i++)
+      other.addStudent(students.get(i));
+    return other;
+  }
 }

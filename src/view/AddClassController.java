@@ -6,9 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
-import model.EMSModel;
-import model.Teacher;
-import model.TeacherList;
+import model.*;
 
 public class AddClassController
 {
@@ -23,13 +21,26 @@ public class AddClassController
   @FXML private TableColumn<TeacherViewModel, String> currentTeacherNameColumn;
   @FXML private TableColumn<TeacherViewModel, String> currentTeacherInitialsColumn;
   @FXML private TableColumn<TeacherViewModel, String> currentTeacherSubjectColumn;
+  @FXML private TableView<StudentViewModel> studentsListTable;
+  @FXML private TableColumn<StudentViewModel, String> studentNameColumn;
+  @FXML private TableColumn<StudentViewModel, Number> studentIdColumn;
+  @FXML private TableColumn<StudentViewModel, Number> studentSemesterColumn;
+  @FXML private TableView<StudentViewModel> currentStudentListTable;
+  @FXML private TableColumn<StudentViewModel, String> currentStudentNameColumn;
+  @FXML private TableColumn<StudentViewModel, Number> currentStudentIdColumn;
+  @FXML private TableColumn<StudentViewModel, Number> currentStudentSemesterColumn;
   private Region root;
   private EMSModel model;
-  private TeacherList teacherListCopy;
-  private TeacherList emptyTeacherList;
+  private TeacherList freeTeachers;
+  private TeacherList selectedTeachers;
+  private StudentList freeStudents;
+  private StudentList selectedStudents;
+
   private ViewHandler viewHandler;
   private TeacherListViewArrayList viewModel1;
   private TeacherListViewArrayList viewModel11;
+  private StudentListViewArrayList viewModel2;
+  private StudentListViewArrayList viewModel22;
 
   public AddClassController()
   {
@@ -41,10 +52,14 @@ public class AddClassController
     this.viewHandler = viewHandler;
     this.model = model;
     this.root = root;
-    this.teacherListCopy = model.getTeacherListCopy();
-    this.emptyTeacherList = new TeacherList();
-    this.viewModel1 = new TeacherListViewArrayList(teacherListCopy);
-    this.viewModel11 = new TeacherListViewArrayList(emptyTeacherList);
+    this.freeTeachers = model.getTeacherListCopy();
+    this.selectedTeachers = new TeacherList();
+    this.freeStudents = model.getStudentListCopy();
+    this.selectedStudents = new StudentList();
+    this.viewModel1 = new TeacherListViewArrayList(freeTeachers);
+    this.viewModel11 = new TeacherListViewArrayList(selectedTeachers);
+    this.viewModel2 = new StudentListViewArrayList(freeStudents);
+    this.viewModel22 = new StudentListViewArrayList(selectedStudents);
 
     teacherNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
@@ -89,13 +104,26 @@ public class AddClassController
     Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
         selectedItem.getInitialsProperty().get(),
         selectedItem.getSubjectProperty().get());
-    teacherListCopy.removeTeacherByObject(teacher); //actual ArrayList
-    emptyTeacherList.addTeacher(teacher);           //actual ArrayList
+    freeTeachers.removeTeacherByObject(teacher); //actual ArrayList
+    selectedTeachers.addTeacher(teacher);           //actual ArrayList
     viewModel1.remove(teacher);                     //refresh
     viewModel11.add(teacher);                       //refresh
     teacherListTable.getSelectionModel().clearSelection(); //removes the FOCUS
 
+  }
+  @FXML private void addStudentButtonPressed()
+  {
+    StudentViewModel selectedItem = studentsListTable.getSelectionModel().getSelectedItem();
+    Student student = new Student(selectedItem.getNameProperty().get(), selectedItem.getIdProperty().get(), selectedItem.getSemesterProperty().get());
+    freeStudents.removeStudentByObject(student);
+    selectedStudents.addStudent(student);
+    viewModel2.remove(student);
+    viewModel22.add(student);
+    studentsListTable.getSelectionModel().clearSelection();
 
+  }
+  @FXML private void addClassButtonPressed()
+  {
 
   }
 }
