@@ -70,8 +70,8 @@ public class AddClassController
 
     studentNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
-    studentIdColumn.setCellValueFactory(
-        cellData -> cellData.getValue().getIdProperty());
+    studentIdColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getIdProperty());
     studentSemesterColumn.setCellValueFactory(
         cellData -> cellData.getValue().getSemesterProperty());
 
@@ -84,8 +84,8 @@ public class AddClassController
 
     currentStudentNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
-    currentStudentIdColumn.setCellValueFactory(
-        cellData -> cellData.getValue().getIdProperty());
+    currentStudentIdColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getIdProperty());
     currentStudentSemesterColumn.setCellValueFactory(
         cellData -> cellData.getValue().getSemesterProperty());
 
@@ -96,6 +96,11 @@ public class AddClassController
   {
     this.studentsLabel.setText("");
     this.teachersLabel.setText("");
+    this.nameTextField.setText("");
+    this.freeTeachers = model.getTeacherListCopy();
+    this.selectedTeachers = new TeacherList();
+    this.freeStudents = model.getStudentListCopy();
+    this.selectedStudents = new StudentList();
     teacherListTable.setItems(viewModel1.update());
     currentTeacherListTable.setItems(viewModel11.update());
     studentsListTable.setItems(viewModel2.update());
@@ -127,10 +132,14 @@ public class AddClassController
     teacherListTable.getSelectionModel().clearSelection(); //removes the FOCUS
 
   }
+
   @FXML private void addStudentButtonPressed()
   {
-    StudentViewModel selectedItem = studentsListTable.getSelectionModel().getSelectedItem();
-    Student student = new Student(selectedItem.getNameProperty().get(), selectedItem.getIdProperty().get(), selectedItem.getSemesterProperty().get());
+    StudentViewModel selectedItem = studentsListTable.getSelectionModel()
+        .getSelectedItem();
+    Student student = new Student(selectedItem.getNameProperty().get(),
+        selectedItem.getIdProperty().get(),
+        selectedItem.getSemesterProperty().get());
     freeStudents.removeStudentByObject(student);
     selectedStudents.addStudent(student);
     viewModel2.remove(student);
@@ -138,11 +147,14 @@ public class AddClassController
     studentsListTable.getSelectionModel().clearSelection();
 
   }
+
   @FXML private void addClassButtonPressed()
   {
     try
     {
-      model.addClass(nameTextField.getText(),selectedTeachers,selectedStudents);
+      model.addClass(nameTextField.getText(), selectedTeachers,
+          selectedStudents);
+      reset();
       viewHandler.openView("settingsPage");
     }
     catch (IllegalArgumentException e)
@@ -151,4 +163,6 @@ public class AddClassController
     }
 
   }
+
+  
 }
