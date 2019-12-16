@@ -24,6 +24,8 @@ public interface EMSModel
   void addClass(String ClassName);
   void removeExam(DateAndTimePeriod period);
   Class getClassByClassName(String name);
+  Room getRoomByRoomName(String name);
+  Teacher getTeacherByTeacherName(String name);
   String showSchedule();
   void writeToBinary(File BinaryFile);
   void readFromBinary(File BinaryFile);

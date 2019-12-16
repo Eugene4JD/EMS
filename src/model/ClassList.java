@@ -110,5 +110,13 @@ public class ClassList implements Serializable
     }
     return str;
   }
+  public boolean hasAtLeastOneSameClass(ClassList other)
+  {
+    for (int i = 0; i<other.getNumberOfClasses(); i++)
+      for (int j = 0; j < this.classes.size(); j++)
+         if (other.getClassByIndex(i).equals(classes.get(j)))
+           return true;
+   return false;
+  }
 
 }

@@ -21,9 +21,11 @@ public class ExamList implements Serializable
       if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()) && (exam.getExamRooms().equals(exams.get(i).getExamRooms())))
         throw new IllegalArgumentException("The Wrong Date input(Period is used already for this rooms)");
       if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()) && (exam.getExamRooms().hasAtLeastOneSameRoom(exams.get(i).getExamRooms())))
-        throw new IllegalArgumentException("The Wrong Date input(Period is used for some rooms)");
+        throw new IllegalArgumentException("The Wrong Date input(Some Rooms are busy for this period)");
       if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()) && (exam.getExamTeachers().hasAtLeastOneSameTeacher(exams.get(i).getExamTeachers())))
         throw new IllegalArgumentException("The Wrong Date input(Teachers are busy for this period)");
+      if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()) && (exam.getExamClasses().hasAtLeastOneSameClass(exams.get(i).getExamClasses())));
+        throw new IllegalArgumentException("The Wrong Date Input(Some Classes are busy for this period)");
     }
     return true;
   }

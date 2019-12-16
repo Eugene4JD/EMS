@@ -43,6 +43,7 @@ public class ConsoleView
       System.out.println("601) Show all students");
       System.out.println("701) Show all teachers");
       System.out.println("801) Show all rooms");
+      System.out.println("1010) addExam");
       System.out.println("0) QUIT");
 
       System.out.print("\nEnter choice: ");
@@ -197,6 +198,80 @@ public class ConsoleView
         case 801:
           System.out.println(model.showRooms());
           break;
+        case 1010:
+          System.out.println("Enter the date year:");
+          input.nextLine();
+          System.out.println("Day:");
+          int startDayTest = input.nextInt();
+          System.out.println("Month:");
+          int startMonthTest = input.nextInt();
+          System.out.println("Year:");
+          int startYearTest = input.nextInt();
+          Date startDateTest = new Date(startDayTest,startMonthTest , startYearTest);
+          System.out.println("Enter the start time:");
+          System.out.println("Hour:");
+          int startHourTest = input.nextInt();
+          System.out.println("Minute:");
+          int startMinuteTest = input.nextInt();
+          System.out.println("Second:");
+          int startSecondTest = input.nextInt();
+          Time startTimeTest = new Time(startHourTest,startMinuteTest,startSecondTest);
+          System.out.println("Enter the end time:");
+          System.out.println("Hour:");
+          int endHourTest = input.nextInt();
+          System.out.println("Minute:");
+          int endMinuteTest = input.nextInt();
+          System.out.println("Second:");
+          int endSecondTest = input.nextInt();
+          Time endTimeTest = new Time(endHourTest,endMinuteTest,endSecondTest);
+          input.nextLine();
+          System.out.println("enter Exam Name: ");
+          String examNameTest = input.nextLine();
+          ClassList testClasses = new ClassList();
+          int p = 0;
+          while( p == 0 )
+          {
+            System.out.println(model.showAllClasses());
+            System.out.println("Enter the name of the class, to add for exam");
+            input.nextLine();
+            String testClassName = input.nextLine();
+            if (model.getClassByClassName(testClassName) != null)
+            {
+              testClasses.addClass(model.getClassByClassName(testClassName));
+              p = 1;
+            }
+          }
+          RoomList testRooms = new RoomList();
+          p = 0;
+          while (p == 0)
+          {
+            System.out.println(model.showRooms());
+            input.nextLine();
+            System.out.println("Enter the name of the Room, to add for exam ");
+            String testRoomName = input.nextLine();
+            if (model.getClassByClassName(testRoomName) != null)
+            {
+              testRooms.addRoom(model.getRoomByRoomName(testRoomName));
+              p = 1;
+            }
+          }
+          TeacherList testTeachers = new TeacherList();
+          p = 0;
+          while(p == 0)
+          {
+            System.out.println(model.showTeachers());
+            input.nextLine();
+            System.out.println("Enter the name of the Teacher, to add for exam");
+            String testTeacherName = input.nextLine();
+            if (model.getTeacherByTeacherName(testTeacherName) != null)
+            {
+              testTeachers.addTeacher(model.getTeacherByTeacherName(testTeacherName));
+              p=1;
+            }
+          }
+          model.addExam(new Exam(examNameTest, startDateTest, startTimeTest,endTimeTest, testClasses, testTeachers, testRooms));
+          break;
+
         case 0:
           running = false;
           break;

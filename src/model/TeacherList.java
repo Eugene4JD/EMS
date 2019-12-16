@@ -103,6 +103,15 @@ public class TeacherList implements Serializable
     }
     return buffer;
   }
+  public Teacher getTeacherByName(String name)
+  {
+    for (int i = 0; i < teachers.size(); i++)
+    {
+      if (teachers.get(i).getName().equals(name))
+        return teachers.get(i);
+    }
+    return null;
+  }
 
   public boolean equals(Object object)
   {
@@ -134,7 +143,7 @@ public class TeacherList implements Serializable
       for (int j = 0; j < this.teachers.size(); j++)
         if (teacherList.getTeacherByIndex(i).equals(this.teachers.get(j)))
           return true;
-        return false;
+    return false;
   }
   public int size()
   {

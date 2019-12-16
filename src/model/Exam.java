@@ -21,6 +21,16 @@ public class Exam implements Serializable
     examRooms = new RoomList();
     examTeachers = new TeacherList();
   }
+  public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime, ClassList classes, TeacherList teachers, RoomList rooms)
+  {
+    if (examName.equals(""))
+      throw new IllegalArgumentException("wrong Exam name");
+    this.examName = examName;
+    examClasses = classes;
+    periodOfExam = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);
+    examRooms = rooms;
+    examTeachers = teachers;
+  }
   public String getExamName()
   {
     return examName;
@@ -87,6 +97,10 @@ public class Exam implements Serializable
   public TeacherList getExamTeachers()
   {
     return examTeachers;
+  }
+  public ClassList getExamClasses()
+  {
+    return examClasses;
   }
   public void removeRoomByIndex(int index)
   {
