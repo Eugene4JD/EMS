@@ -52,9 +52,9 @@ public class AddClassController
     this.viewHandler = viewHandler;
     this.model = model;
     this.root = root;
-    this.freeTeachers = model.getTeacherListCopy();
+    this.freeTeachers = model.getFreeTeachersFromTheClass();
     this.selectedTeachers = new TeacherList();
-    this.freeStudents = model.getStudentListCopy();
+    this.freeStudents = model.getFreeStudentsFromTheClass();
     this.selectedStudents = new StudentList();
     this.viewModel1 = new TeacherListViewArrayList(freeTeachers);
     this.viewModel11 = new TeacherListViewArrayList(selectedTeachers);

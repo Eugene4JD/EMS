@@ -51,4 +51,6 @@ public interface EMSModel
   Class getClass(int index);
   TeacherList getTeacherListCopy();
   StudentList getStudentListCopy();
+  TeacherList getFreeTeachersFromTheClass();
+  StudentList getFreeStudentsFromTheClass();
 }

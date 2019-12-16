@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="870.0" userData="classDetails" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ClassDetailsController">
+    <children>
+        <HBox prefHeight="59.0" prefWidth="466.0" style="-fx-background-color: #FAFAFA;">
+            <children>
+                <ImageView fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@class.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets left="530.0" top="11.0" />
+                    </HBox.margin>
+                </ImageView>
+                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="176.0" text="Viewing the class">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="7.0" top="15.0" />
+                    </HBox.margin>
+                </Label>
+            <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="50.0" text="Back">
+               <HBox.margin>
+                  <Insets left="20.0" top="13.0" />
+               </HBox.margin>
+            </Button>
+            </children>
+        </HBox>
+      <HBox prefHeight="615.0" prefWidth="870.0">
+         <children>
+            <VBox prefHeight="615.0" prefWidth="439.0" style="-fx-padding: 10 5 30 30;">
+               <children>
+                  <ScrollPane prefHeight="614.0" prefWidth="435.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="615.0" prefWidth="439.0" style="-fx-padding: 10 30 30 5;">
+               <children>
+                  <ScrollPane prefHeight="616.0" prefWidth="435.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+    </children>
+</VBox>

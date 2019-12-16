@@ -79,6 +79,15 @@ public class Class implements Serializable
     return className;
   }
 
+  public StudentList getStudents()
+  {
+    return students;
+  }
+  public TeacherList getTeachers()
+  {
+    return teachers;
+  }
+
   public boolean equals(Object object)
   {
     if (!(object instanceof Class))
