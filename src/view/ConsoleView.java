@@ -60,18 +60,6 @@ public class ConsoleView
           int semester = input.nextInt();
           Student newStudent = new Student(name, Id ,semester);
           model.addStudent(name, Id, semester);
-          int k = 0;
-          while( k == 0 )
-          {
-            System.out.println(model.showAllClasses());
-            System.out.println("Enter the name of the class, to add student to:");
-            String className = input.nextLine();
-            if (model.getClassByClassName(className) != null)
-            {
-              model.getClassByClassName(className).addStudent(newStudent);
-              k = 1;
-            }
-          }
           break;
         case 102:
           System.out.println("teacherName?");
@@ -267,6 +255,10 @@ public class ConsoleView
             }
           }
           model.addExam(new Exam(examNameTest, startDateTest, startTimeTest,endTimeTest, testClasses, testTeachers, testRooms));
+          break;
+        case 1:
+          System.out.println(model.getFreeStudentsFromTheClass().toString());
+          System.out.println(model.getFreeTeachersFromTheClass().toString());
           break;
 
         case 0:

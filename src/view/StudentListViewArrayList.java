@@ -6,6 +6,7 @@ import model.Student;
 import model.StudentList;
 import model.Teacher;
 import model.TeacherList;
+import model.EMSModel;
 
 import java.util.ArrayList;
 
@@ -28,14 +29,14 @@ public class StudentListViewArrayList
   public ObservableList<StudentViewModel> update()
   {
     StudentList other = new StudentList();
-    for (int i = 0; i < students.size(); i++)
+    for (int i = 0; i <students.size(); i++)
     {
-      students.addStudent(students.getStudentByIndex(i));
+      other.addStudent(students.getStudentByIndex(i));
     }
     list.clear();
-    for (int i = 0; i < students.getNumberOfStudents(); i++)
+    for (int i = 0; i < other.getNumberOfStudents(); i++)
     {
-      list.add(new StudentViewModel((students.getStudentByIndex(i))));
+      list.add(new StudentViewModel((other.getStudentByIndex(i))));
     }
     return list;
   }

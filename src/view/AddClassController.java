@@ -94,6 +94,7 @@ public class AddClassController
 
   public void reset()
   {
+    model.setAllUpToDate();
     this.studentsLabel.setText("");
     this.teachersLabel.setText("");
     this.nameTextField.setText("");
@@ -101,6 +102,10 @@ public class AddClassController
     this.selectedTeachers = new TeacherList();
     this.freeStudents = model.getFreeStudentsFromTheClass();
     this.selectedStudents = new StudentList();
+    this.viewModel1 = new TeacherListViewArrayList(freeTeachers);
+    this.viewModel11 = new TeacherListViewArrayList(selectedTeachers);
+    this.viewModel2 = new StudentListViewArrayList(freeStudents);
+    this.viewModel22 = new StudentListViewArrayList(selectedStudents);
     teacherListTable.setItems(viewModel1.update());
     currentTeacherListTable.setItems(viewModel11.update());
     studentsListTable.setItems(viewModel2.update());

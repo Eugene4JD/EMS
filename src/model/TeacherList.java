@@ -162,4 +162,13 @@ public class TeacherList implements Serializable
     }
     return copyObject;
   }
+  public String toString()
+  {
+    String str = "";
+    for (int i =0; i<teachers.size(); i++)
+    {
+      str+=teachers.get(i).toString()+"\n";
+    }
+    return str;
+  }
 }

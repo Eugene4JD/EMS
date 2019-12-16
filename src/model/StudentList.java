@@ -114,4 +114,13 @@ public class StudentList implements Serializable
       other.addStudent(students.get(i));
     return other;
   }
+  public String toString()
+  {
+     String str ="";
+     for (int i =0 ; i< students.size(); i++)
+     {
+       str+=students.get(i).toString()+"\n";
+     }
+     return str;
+  }
 }
