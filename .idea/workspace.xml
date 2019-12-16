@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rooms.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Rooms.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Students.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teachers.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Teachers.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" afterDir="false" />
@@ -12,14 +11,21 @@
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ExamList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ExamList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/TeacherList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/TeacherList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ConsoleView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ConsoleView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ClassList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClassList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddClassController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddClassController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddClassView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddClassView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/SettingsViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/SettingsViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/TeacherListViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/TeacherListViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/TeacherViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/TeacherViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/settingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/settingsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/EMSModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/EMSModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Exam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ExamList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ExamList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/TeacherList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TeacherList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AddClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AddClassView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddClassView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SettingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SettingsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TeacherListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TeacherListViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/TeacherViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TeacherViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/settingsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/settingsView.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,19 +52,22 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
       <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
     </key>
   </component>
   <component name="RunDashboard">

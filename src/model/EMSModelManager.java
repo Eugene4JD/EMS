@@ -376,5 +376,9 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     classes.removeClassByClassName(name);
   }
+  @Override public TeacherList getTeacherListCopy()
+  {
+    return teachers.copy();
+  }
 }
 
