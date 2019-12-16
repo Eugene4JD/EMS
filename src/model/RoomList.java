@@ -118,4 +118,13 @@ public class RoomList implements Serializable
     }
     return false;
   }
+  public String toString()
+  {
+    String str = "";
+    for (int i =0; i<rooms.size(); i++)
+    {
+      str+=rooms.get(i).toString()+" ";
+    }
+    return str;
+  }
 }

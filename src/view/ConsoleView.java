@@ -153,7 +153,7 @@ public class ConsoleView
           input.nextLine();
           System.out.println("enter Exam Name: ");
           String examName = input.nextLine();
-          model.addExam(new Exam(examName,startDate,startTime,endTime));
+         // model.addExam(new Exam(examName,startDate,startTime,endTime));
           break;
 
         case 201:
@@ -233,7 +233,6 @@ public class ConsoleView
           {
             System.out.println(model.showAllClasses());
             System.out.println("Enter the name of the class, to add for exam");
-            input.nextLine();
             String testClassName = input.nextLine();
             if (model.getClassByClassName(testClassName) != null)
             {
@@ -246,10 +245,9 @@ public class ConsoleView
           while (p == 0)
           {
             System.out.println(model.showRooms());
-            input.nextLine();
             System.out.println("Enter the name of the Room, to add for exam ");
             String testRoomName = input.nextLine();
-            if (model.getClassByClassName(testRoomName) != null)
+            if (model.getRoomByRoomName(testRoomName) != null)
             {
               testRooms.addRoom(model.getRoomByRoomName(testRoomName));
               p = 1;
@@ -260,7 +258,6 @@ public class ConsoleView
           while(p == 0)
           {
             System.out.println(model.showTeachers());
-            input.nextLine();
             System.out.println("Enter the name of the Teacher, to add for exam");
             String testTeacherName = input.nextLine();
             if (model.getTeacherByTeacherName(testTeacherName) != null)
