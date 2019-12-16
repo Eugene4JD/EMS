@@ -388,6 +388,8 @@ public class EMSModelManager implements EMSModel, Serializable
 
   @Override public StudentList getFreeStudentsFromTheClass()
   {
+    if (classes.size() == 0)
+      return getStudentListCopy();
     StudentList freeStudents = new StudentList();
     boolean isFree = true;
     for (int i = 0; i<students.getNumberOfStudents(); i++)
@@ -406,11 +408,12 @@ public class EMSModelManager implements EMSModel, Serializable
 
   @Override public TeacherList getFreeTeachersFromTheClass()
   {
+    if (classes.size() == 0)
+      return getTeacherListCopy();
     TeacherList freeTeachers = new TeacherList();
     boolean isFree = true;
     for (int i = 0; i<teachers.getNumberOfTeachers(); i++)
     {
-      isFree = true;
       for (int j =0; j<classes.getNumberOfClasses(); j++)
       {
         if (classes.getClassByIndex(j).getTeachers().isTeacherExist(teachers.getTeacherByIndex(i)))
@@ -418,6 +421,7 @@ public class EMSModelManager implements EMSModel, Serializable
       }
       if (isFree)
         freeTeachers.addTeacher(teachers.getTeacherByIndex(i));
+      isFree = true;
     }
     return freeTeachers;
   }
