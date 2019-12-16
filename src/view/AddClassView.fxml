@@ -171,7 +171,7 @@
                                         <Insets left="30.0" top="12.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Remove">
+                                <Button mnemonicParsing="false" text="Remove" onAction="#removeTeacherButtonPressed">
                                     <HBox.margin>
                                         <Insets left="15.0" top="9.0" />
                                     </HBox.margin>
@@ -184,7 +184,7 @@
                                         <Insets left="60.0" top="12.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false" text="Remove">
+                                <Button mnemonicParsing="false" text="Remove" onAction="#removeStudentButtonPressed">
                                     <HBox.margin>
                                         <Insets left="15.0" top="9.0" />
                                     </HBox.margin>

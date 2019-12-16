@@ -164,5 +164,31 @@ public class AddClassController
 
   }
 
-  
+  @FXML private void removeTeacherButtonPressed()
+  {
+    TeacherViewModel selectedItem = currentTeacherListTable.getSelectionModel()
+        .getSelectedItem();
+    Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
+        selectedItem.getInitialsProperty().get(),
+        selectedItem.getSubjectProperty().get());
+    selectedTeachers.removeTeacherByObject(teacher); //actual ArrayList
+    freeTeachers.addTeacher(teacher);           //actual ArrayList
+    viewModel1.add(teacher);                     //refresh
+    viewModel11.remove(teacher);                       //refresh
+    currentTeacherListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+  }
+
+  @FXML private void removeStudentButtonPressed()
+  {
+    StudentViewModel selectedItem = currentStudentListTable.getSelectionModel()
+        .getSelectedItem();
+    Student student = new Student(selectedItem.getNameProperty().get(),
+        selectedItem.getIdProperty().get(),
+        selectedItem.getSemesterProperty().get());
+    selectedStudents.removeStudentByObject(student); //actual ArrayList
+    freeStudents.addStudent(student);           //actual ArrayList
+    viewModel2.add(student);                     //refresh
+    viewModel22.remove(student);                       //refresh
+    currentStudentListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+  }
 }
