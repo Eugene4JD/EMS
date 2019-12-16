@@ -201,6 +201,16 @@ public class EMSModelManager implements EMSModel, Serializable
 
   }
 
+  @Override public Teacher getTeacherByTeacherName(String name)
+  {
+    return teachers.getTeacherByName(name);
+  }
+
+  @Override public Room getRoomByRoomName(String name)
+  {
+    return rooms.getRoomByRoomName(name);
+  }
+
   @Override public Class getClassByClassName(String name)
   {
     return classes.getClassByClassName(name);
