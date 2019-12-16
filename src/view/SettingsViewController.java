@@ -380,5 +380,10 @@ public class SettingsViewController
     Optional<ButtonType> result = alert.showAndWait();
     return ((result.isPresent()) && (result.get() == ButtonType.OK));
   }
+
+  @FXML private void viewClassButtonPressed()
+  {
+    viewHandler.openView("classDetailsPage");
+  }
 }
 
