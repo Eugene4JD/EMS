@@ -26,9 +26,10 @@ public class AddClassController
   private Region root;
   private EMSModel model;
   private TeacherList teacherListCopy;
+  private TeacherList emptyTeacherList;
   private ViewHandler viewHandler;
   private TeacherListViewArrayList viewModel1;
-  private TeacherListViewModel viewModel11;
+  private TeacherListViewArrayList viewModel11;
 
   public AddClassController()
   {
@@ -41,8 +42,9 @@ public class AddClassController
     this.model = model;
     this.root = root;
     this.teacherListCopy = model.getTeacherListCopy();
+    this.emptyTeacherList = new TeacherList();
     this.viewModel1 = new TeacherListViewArrayList(teacherListCopy);
-    this.viewModel11 = new TeacherListViewModel(model);
+    this.viewModel11 = new TeacherListViewArrayList(emptyTeacherList);
 
     teacherNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
@@ -87,8 +89,13 @@ public class AddClassController
     Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
         selectedItem.getInitialsProperty().get(),
         selectedItem.getSubjectProperty().get());
-    teacherListCopy.removeTeacherByObject(teacher);
-    viewModel1.remove(teacher);
-    teacherListTable.getSelectionModel().clearSelection();
+    teacherListCopy.removeTeacherByObject(teacher); //actual ArrayList
+    emptyTeacherList.addTeacher(teacher);           //actual ArrayList
+    viewModel1.remove(teacher);                     //refresh
+    viewModel11.add(teacher);                       //refresh
+    teacherListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+
+
+
   }
 }
