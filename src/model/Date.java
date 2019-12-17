@@ -209,7 +209,7 @@ public class Date implements Serializable
     else if (this.getMonth() != date2.getMonth())
       return this.getMonth() < date2.getMonth();
     else
-      return this.getDay() < date2.getDay();
+      return this.getDay() <= date2.getDay();
   }
 
   public int yearsBetween(Date date2)

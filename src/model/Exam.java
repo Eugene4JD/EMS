@@ -130,7 +130,14 @@ public class Exam implements Serializable
   {
     return examRooms;
   }
-
+  public void setValueSimilarToExam(Exam exam)
+  {
+    this.periodOfExam = exam.getPeriodOExam();
+    this.examTeachers = exam.getExamTeachers();
+    this.examRooms = exam.getExamRooms();
+    this.examClasses = exam.getExamClasses();
+    this.examName = exam.getExamName();
+  }
 
   public String toString()
   {
@@ -164,6 +171,10 @@ public class Exam implements Serializable
     str += this.examName + " " + this.examRooms + " " + this.periodOfExam
         .toString();
     return str;
+  }
+  public Exam copy()
+  {
+    return new Exam(this.examName,this.periodOfExam.getDateOfTheExam(),this.getPeriodOExam().getStartTime(),this.getPeriodOExam().getEndTime(),this.examClasses,this.examTeachers,this.examRooms);
   }
 
 }

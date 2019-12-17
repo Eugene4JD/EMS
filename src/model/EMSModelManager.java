@@ -17,6 +17,7 @@ public class EMSModelManager implements EMSModel, Serializable
   private ExamList exams;
   private RoomList rooms;
   private Class tempClass;
+  private Exam tempExam;
   private boolean loggedIn;
 
   public EMSModelManager()
@@ -61,8 +62,7 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     if (exams.isExamLegitToBeCreated(exam))
       exams.addExam(exam);
-    writeToBinary(new File("Exams.bin"));
-    writeToXMl(new File("exams.xml"));
+    sortedByDateExams();
   }
 
   @Override public void addRoom(String roomName,
@@ -440,6 +440,27 @@ public class EMSModelManager implements EMSModel, Serializable
   @Override public Class getTempClass()
   {
     return tempClass;
+  }
+  @Override public void sortedByDateExams()
+  {
+    Exam buffer;
+    for (int i = 0; i<exams.getNumberOfExams()-1; i++)
+    {
+      for (int j = 0; j < exams.getNumberOfExams() - 1; j++)
+        if (exams.getExam(j+1).getPeriodOExam().isBefore(exams.getExam(j).getPeriodOExam()))
+        {
+          buffer = exams.getExam(j).copy();
+          exams.getExam(j).setValueSimilarToExam(exams.getExam(j + 1));
+          exams.getExam(j + 1).setValueSimilarToExam(buffer);
+        }
+    }
+    writeToBinary(new File("Exams.bin"));
+    writeToXMl(new File("exams.xml"));
+  }
+
+  @Override public Exam getTempExam()
+  {
+    return tempExam;
   }
 }
 

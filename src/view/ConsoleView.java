@@ -161,6 +161,7 @@ public class ConsoleView
           break;
         case 209:
           model.removeAllExams();
+          break;
         case 210:
           model.removeAll();
           break;
