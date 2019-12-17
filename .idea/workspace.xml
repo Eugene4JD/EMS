@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddExamView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddExamView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AddExamView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddExamView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddExamController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AddExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddExamController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,16 +38,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
-      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
-      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="view" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
+      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
+      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
     </key>
   </component>
   <component name="RunDashboard">
