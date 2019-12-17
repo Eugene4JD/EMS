@@ -4,18 +4,16 @@
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exams.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exams.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exams.xml" beforeDir="false" afterPath="$PROJECT_DIR$/exams.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/mediator/XML.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/mediator/XML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Exam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ExamList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ExamList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/RoomList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/RoomList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Teacher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Teacher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mediator/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mediator/XML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Exam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ExamList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ExamList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/RoomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RoomList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddClassController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddClassController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ClassDetailsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ClassDetailsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/SettingsViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/SettingsViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/EMSModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/EMSModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AddClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ClassDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ClassDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SettingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SettingsViewController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,15 +47,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
+      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="view" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
-      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -72,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartUP">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Launcher" />
       <module name="ExaminationManagementSystem" />
@@ -89,8 +87,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StartUP" />
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.StartUP" />
       </list>
     </recent_temporary>
   </component>

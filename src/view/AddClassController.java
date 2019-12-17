@@ -124,32 +124,46 @@ public class AddClassController
 
   @FXML private void addTeacherButtonPressed()
   {
-    TeacherViewModel selectedItem = teacherListTable.getSelectionModel()
-        .getSelectedItem();
+    try
+    {
+      TeacherViewModel selectedItem = teacherListTable.getSelectionModel()
+          .getSelectedItem();
 
-    Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
-        selectedItem.getInitialsProperty().get(),
-        selectedItem.getSubjectProperty().get());
-    freeTeachers.removeTeacherByObject(teacher); //actual ArrayList
-    selectedTeachers.addTeacher(teacher);           //actual ArrayList
-    viewModel1.remove(teacher);                     //refresh
-    viewModel11.add(teacher);                       //refresh
-    teacherListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+      Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
+          selectedItem.getInitialsProperty().get(),
+          selectedItem.getSubjectProperty().get());
+      freeTeachers.removeTeacherByObject(teacher); //actual ArrayList
+      selectedTeachers.addTeacher(teacher);           //actual ArrayList
+      viewModel1.remove(teacher);                     //refresh
+      viewModel11.add(teacher);                       //refresh
+      teacherListTable.getSelectionModel().clearSelection(); //removes the FOCUS
 
+    }
+    catch (Exception e)
+    {
+      teachersLabel.setText("No teacher selected!");
+    }
   }
 
   @FXML private void addStudentButtonPressed()
   {
-    StudentViewModel selectedItem = studentsListTable.getSelectionModel()
-        .getSelectedItem();
-    Student student = new Student(selectedItem.getNameProperty().get(),
-        selectedItem.getIdProperty().get(),
-        selectedItem.getSemesterProperty().get());
-    freeStudents.removeStudentByObject(student);
-    selectedStudents.addStudent(student);
-    viewModel2.remove(student);
-    viewModel22.add(student);
-    studentsListTable.getSelectionModel().clearSelection();
+    try
+    {
+      StudentViewModel selectedItem = studentsListTable.getSelectionModel()
+          .getSelectedItem();
+      Student student = new Student(selectedItem.getNameProperty().get(),
+          selectedItem.getIdProperty().get(),
+          selectedItem.getSemesterProperty().get());
+      freeStudents.removeStudentByObject(student);
+      selectedStudents.addStudent(student);
+      viewModel2.remove(student);
+      viewModel22.add(student);
+      studentsListTable.getSelectionModel().clearSelection();
+    }
+    catch (Exception e)
+    {
+      studentsLabel.setText("No student selected!");
+    }
 
   }
 
@@ -171,29 +185,45 @@ public class AddClassController
 
   @FXML private void removeTeacherButtonPressed()
   {
-    TeacherViewModel selectedItem = currentTeacherListTable.getSelectionModel()
-        .getSelectedItem();
-    Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
-        selectedItem.getInitialsProperty().get(),
-        selectedItem.getSubjectProperty().get());
-    selectedTeachers.removeTeacherByObject(teacher); //actual ArrayList
-    freeTeachers.addTeacher(teacher);           //actual ArrayList
-    viewModel1.add(teacher);                     //refresh
-    viewModel11.remove(teacher);                       //refresh
-    currentTeacherListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+    try
+    {
+      TeacherViewModel selectedItem = currentTeacherListTable
+          .getSelectionModel().getSelectedItem();
+      Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
+          selectedItem.getInitialsProperty().get(),
+          selectedItem.getSubjectProperty().get());
+      selectedTeachers.removeTeacherByObject(teacher); //actual ArrayList
+      freeTeachers.addTeacher(teacher);           //actual ArrayList
+      viewModel1.add(teacher);                     //refresh
+      viewModel11.remove(teacher);                       //refresh
+      currentTeacherListTable.getSelectionModel()
+          .clearSelection(); //removes the FOCUS
+    }
+    catch (Exception e)
+    {
+      teachersLabel.setText("No teacher selected!");
+    }
   }
 
   @FXML private void removeStudentButtonPressed()
   {
-    StudentViewModel selectedItem = currentStudentListTable.getSelectionModel()
-        .getSelectedItem();
-    Student student = new Student(selectedItem.getNameProperty().get(),
-        selectedItem.getIdProperty().get(),
-        selectedItem.getSemesterProperty().get());
-    selectedStudents.removeStudentByObject(student); //actual ArrayList
-    freeStudents.addStudent(student);           //actual ArrayList
-    viewModel2.add(student);                     //refresh
-    viewModel22.remove(student);                       //refresh
-    currentStudentListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+    try
+    {
+      StudentViewModel selectedItem = currentStudentListTable.getSelectionModel()
+          .getSelectedItem();
+      Student student = new Student(selectedItem.getNameProperty().get(),
+          selectedItem.getIdProperty().get(),
+          selectedItem.getSemesterProperty().get());
+      selectedStudents.removeStudentByObject(student); //actual ArrayList
+      freeStudents.addStudent(student);           //actual ArrayList
+      viewModel2.add(student);                     //refresh
+      viewModel22.remove(student);                       //refresh
+      currentStudentListTable.getSelectionModel()
+          .clearSelection(); //removes the FOCUS
+    }
+    catch (Exception e)
+    {
+      studentsLabel.setText("No student selected!");
+    }
   }
 }
