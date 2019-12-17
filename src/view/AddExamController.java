@@ -14,7 +14,9 @@ public class AddExamController
   private ViewHandler viewHandler;
   @FXML private Label errorLabel;
   @FXML private TextField nameTextField;
-  @FXML private DatePicker dateDatePicker;
+  @FXML private TextField dateDD;
+  @FXML private TextField dateMM;
+  @FXML private TextField dateYY;
   @FXML private TextField startHH;
   @FXML private TextField startMM;
   @FXML private TextField endHH;
