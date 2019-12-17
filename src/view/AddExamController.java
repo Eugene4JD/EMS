@@ -31,11 +31,11 @@ public class AddExamController
   @FXML private TableColumn<TeacherViewModel, String> currentSupervisorInitialsColumn;
   @FXML private TableColumn<TeacherViewModel, String> currentSupervisorSubjectColumn;
   @FXML private TableView<RoomViewModel> currentRoomListTable;
-  @FXML private TableColumn<RoomViewModel,String> currentRoomNameColumn;
-  @FXML private TableColumn<RoomViewModel,String> currentRoomConnectorsColumn;
-  @FXML private TableColumn<RoomViewModel,Number> currentRoomMaxStudentsColumn;
-  @FXML private TableColumn<RoomViewModel,Number> currentRoomTableColumn;
-  @FXML private TableColumn<RoomViewModel,Number> currentRoomChairColumn;
+  @FXML private TableColumn<RoomViewModel, String> currentRoomNameColumn;
+  @FXML private TableColumn<RoomViewModel, String> currentRoomConnectorsColumn;
+  @FXML private TableColumn<RoomViewModel, Number> currentRoomMaxStudentsColumn;
+  @FXML private TableColumn<RoomViewModel, Number> currentRoomTableColumn;
+  @FXML private TableColumn<RoomViewModel, Number> currentRoomChairColumn;
   @FXML private TableColumn<RoomViewModel, Boolean> currentRoomCanBeMergedTableColumn;
   @FXML private TableView<ClassViewModel> currentClassListTable;
   @FXML private TableColumn<ClassViewModel, String> currentClassNameColumn;
@@ -50,7 +50,6 @@ public class AddExamController
   @FXML private TableView<ClassViewModel> classListTable;
   @FXML private TableColumn<ClassViewModel, String> classNameColumn;
   @FXML private TableColumn<ClassViewModel, Number> classNumberOfStudentsColumn;
-
 
   private TeacherListViewArrayList teacherViewModel;
   private TeacherListViewArrayList currentTeacherViewModel;
@@ -67,8 +66,6 @@ public class AddExamController
   private RoomList freeRooms;
   private RoomList chosenRooms;
 
-
-
   public AddExamController()
   {
     //init
@@ -79,7 +76,6 @@ public class AddExamController
     this.viewHandler = viewHandler;
     this.model = model;
     this.root = root;
-
 
     this.freeClasses = model.getClassListCopy();
     this.chosenClasses = new ClassList();
@@ -110,8 +106,6 @@ public class AddExamController
     currentSupervisorSubjectColumn.setCellValueFactory(
         cellData -> cellData.getValue().getSubjectProperty());
 
-
-
     classNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
     classNumberOfStudentsColumn.setCellValueFactory(
@@ -121,7 +115,6 @@ public class AddExamController
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
     currentClassNumberOfStudentsColumn.setCellValueFactory(
         cellData -> cellData.getValue().getNumberOfStudentsProperty());
-
 
     roomNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
@@ -135,7 +128,6 @@ public class AddExamController
         cellData -> cellData.getValue().getTablesProperty());
     roomCanBeMergedTableColumn.setCellValueFactory(
         cellData -> cellData.getValue().getCanBeMergedProperty());
-
 
     currentRoomNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
@@ -174,7 +166,6 @@ public class AddExamController
     classListTable.setItems(classViewModel.update());
     currentClassListTable.setItems(currentClassViewModel.update());
 
-
     this.freeRooms = model.getRoomListCopy();
     this.chosenRooms = new RoomList();
     this.roomListViewModel = new RoomListViewArrayList(freeRooms);
@@ -189,15 +180,21 @@ public class AddExamController
     supervisorListTable.setItems(teacherViewModel.update());
     currentSupervisorListTable.setItems(currentTeacherViewModel.update());
   }
+
   @FXML private void addExamButtonPressed()
   {
     try
     {
       String name = nameTextField.getText();
-      Date newDate = new Date (Integer.parseInt(dateDD.getText()),Integer.parseInt(dateMM.getText()),Integer.parseInt(dateYY.getText()));
-      Time startTime = new Time(Integer.parseInt(startHH.getText()), Integer.parseInt(startMM.getText()),0);
-      Time endTime = new Time(Integer.parseInt(endHH.getText()), Integer.parseInt(endMM.getText()),0);
-      model.addExam(new Exam(name,newDate,startTime,endTime ,chosenClasses , chosenTeachers, chosenRooms));
+      Date newDate = new Date(Integer.parseInt(dateDD.getText()),
+          Integer.parseInt(dateMM.getText()),
+          Integer.parseInt(dateYY.getText()));
+      Time startTime = new Time(Integer.parseInt(startHH.getText()),
+          Integer.parseInt(startMM.getText()), 0);
+      Time endTime = new Time(Integer.parseInt(endHH.getText()),
+          Integer.parseInt(endMM.getText()), 0);
+      model.addExam(new Exam(name, newDate, startTime, endTime, chosenClasses,
+          chosenTeachers, chosenRooms));
       viewHandler.openView("firstPage");
     }
     catch (IllegalArgumentException e)
@@ -205,6 +202,7 @@ public class AddExamController
       errorLabel.setText(e.getMessage());
     }
   }
+
   @FXML private void addSupervisorButtonPressed()
   {
     try
@@ -219,7 +217,8 @@ public class AddExamController
       chosenTeachers.addTeacher(teacher);           //actual ArrayList
       teacherViewModel.remove(teacher);                     //refresh
       currentTeacherViewModel.add(teacher);                       //refresh
-      supervisorListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+      supervisorListTable.getSelectionModel()
+          .clearSelection(); //removes the FOCUS
 
     }
     catch (Exception e)
@@ -227,6 +226,7 @@ public class AddExamController
       errorLabel.setText("No teacher selected!");
     }
   }
+
   @FXML private void addClassButtonPressed()
   {
     try
@@ -245,6 +245,7 @@ public class AddExamController
     }
 
   }
+
   @FXML private void addRoomButtonPressed()
   {
     try
@@ -263,18 +264,66 @@ public class AddExamController
       errorLabel.setText("Room is not selected");
     }
   }
+
   @FXML private void removeSupervisorButtonPressed()
   {
-
+    try
+    {
+      TeacherViewModel selectedItem = currentSupervisorListTable
+          .getSelectionModel().getSelectedItem();
+      Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
+          selectedItem.getInitialsProperty().get(),
+          selectedItem.getSubjectProperty().get());
+      chosenTeachers.removeTeacherByObject(teacher);
+      freeTeachers.addTeacher(teacher);
+      teacherViewModel.add(teacher);
+      currentTeacherViewModel.remove(teacher);
+      currentSupervisorListTable.getSelectionModel().clearSelection();
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("No supervisor has been selected");
+    }
   }
+
   @FXML private void removeClassButtonPressed()
   {
-
+    try
+    {
+      ClassViewModel selectedItem = currentClassListTable.getSelectionModel().getSelectedItem();
+      String className = selectedItem.getNameProperty().get();
+      Class class_ = model.getClassByClassName(className);
+      chosenClasses.removeClassByClassName(className);
+      freeClasses.addClass(class_);
+      classViewModel.add(class_);
+      currentClassViewModel.remove(class_);
+      currentClassListTable.getSelectionModel().clearSelection();
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("No class has been selected");
+    }
   }
+
   @FXML private void removeRoomButtonPressed()
   {
-
+    try
+    {
+      RoomViewModel selectedItem = currentRoomListTable.getSelectionModel().getSelectedItem();
+      String roomName = selectedItem.getNameProperty().get();
+      Room room = model.getRoomByRoomName(roomName);
+      chosenRooms.removeRoomByRoomName(roomName);
+      freeRooms.addRoom(room);
+      roomListViewModel.add(room);
+      currentRoomListViewModel.remove(room);
+      currentRoomListTable.getSelectionModel().clearSelection();
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("No room has been selected");
+    }
   }
+
   @FXML private void backButtonPressed()
   {
     viewHandler.openView("firstPage");
