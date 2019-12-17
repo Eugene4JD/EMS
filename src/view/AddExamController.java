@@ -229,12 +229,40 @@ public class AddExamController
 
   @FXML private void addClassButtonPressed()
   {
+    try
+    {
+      ClassViewModel selectedItem = classListTable.getSelectionModel().getSelectedItem();
+      Class class1 = model.getClassListCopy().getClassByClassName(selectedItem.getNameProperty().get());
+      freeClasses.removeClassByClassName(selectedItem.getNameProperty().get());
+      chosenClasses.addClass(class1);
+      classViewModel.remove(class1);
+      currentClassViewModel.add(class1);
+      classListTable.getSelectionModel().clearSelection();
+    }
+    catch (IllegalArgumentException e)
+    {
+      errorLabel.setText("Class is not selected");
+    }
 
   }
 
   @FXML private void addRoomButtonPressed()
   {
-
+    try
+    {
+      RoomViewModel selectedItem = roomListTable.getSelectionModel().getSelectedItem();
+      Room room = model.getRoomListCopy()
+          .getRoomByRoomName(selectedItem.getNameProperty().get());
+      freeRooms.removeRoomByRoomName(selectedItem.getNameProperty().get());
+      chosenRooms.addRoom(room);
+      roomListViewModel.remove(room);
+      currentRoomListViewModel.add(room);
+      roomListTable.getSelectionModel().clearSelection();
+    }
+    catch (IllegalArgumentException e)
+    {
+      errorLabel.setText("Room is not selected");
+    }
   }
 
   @FXML private void removeSupervisorButtonPressed()
