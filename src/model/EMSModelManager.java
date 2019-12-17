@@ -462,5 +462,15 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     return tempExam;
   }
+
+  @Override public ClassList getClassListCopy()
+  {
+    return classes.copy();
+  }
+
+  @Override public RoomList getRoomListCopy()
+  {
+    return rooms.copy();
+  }
 }
 

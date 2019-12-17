@@ -122,5 +122,12 @@ public class ClassList implements Serializable
            return true;
    return false;
   }
+  public ClassList copy()
+  {
+    ClassList copyCLassList = new ClassList();
+    for (int i =0; i<classes.size();i++)
+      copyCLassList.addClass(classes.get(i));
+    return copyCLassList;
+  }
 
 }

@@ -130,4 +130,13 @@ public class RoomList implements Serializable
     }
     return str;
   }
+  public RoomList copy()
+  {
+    RoomList copyList = new RoomList();
+    for (int i=0; i<rooms.size();i++)
+    {
+      copyList.addRoom(rooms.get(i));
+    }
+    return copyList;
+  }
 }
