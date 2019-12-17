@@ -241,7 +241,7 @@ public class AddExamController
     }
     catch (IllegalArgumentException e)
     {
-      errorLabel.setText(e.getMessage());
+      errorLabel.setText("Class is not selected");
     }
 
   }
@@ -260,7 +260,7 @@ public class AddExamController
     }
     catch (IllegalArgumentException e)
     {
-      errorLabel.setText(e.getMessage());
+      errorLabel.setText("Room is not selected");
     }
   }
   @FXML private void removeSupervisorButtonPressed()
