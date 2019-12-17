@@ -58,7 +58,10 @@ public class RoomList implements Serializable
 
   public Room getRoomByRoomName(String roomName)
   {
-    return rooms.get(getIndexOfRoomByRoomName(roomName));
+    if (getIndexOfRoomByRoomName(roomName) != -1)
+      return rooms.get(getIndexOfRoomByRoomName(roomName));
+    else
+      return null;
   }
 
   public Room getRoomByIndex(int index)

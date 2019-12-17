@@ -114,6 +114,24 @@ public class Exam implements Serializable
     examRooms.removeAll();
   }
 
+  public DateAndTimePeriod getPeriodOfExam()
+  {
+    return periodOfExam;
+  }
+  public ClassList getClasses()
+  {
+    return examClasses;
+  }
+  public TeacherList getTeachers()
+  {
+    return examTeachers;
+  }
+  public RoomList getRooms()
+  {
+    return examRooms;
+  }
+
+
   public String toString()
   {
     String str = "";

@@ -35,9 +35,42 @@ public class XML implements PersistenceXML
         subSubElement.appendChild(doc.createTextNode(exams.getExam(i).getExamName()));
         subElement.appendChild(subSubElement);
         subSubElement = doc.createElement("Period");
-        subSubElement.appendChild(doc.createTextNode(
-            exams.getExam(i).getPeriodOExam().toString()));
+        Element subSubSubElement = doc.createElement("Date");
+        subSubSubElement.appendChild(doc.createTextNode(exams.getPeriodOfTheExamByIndex(i).getDateOfTheExam().toString()));
+        subSubElement.appendChild(subSubSubElement);
+        subSubSubElement = doc.createElement("StartTime");
+        subSubSubElement.appendChild(doc.createTextNode(exams.getPeriodOfTheExamByIndex(i).getStartTime().toString()));
+        subSubElement.appendChild(subSubSubElement);
+        subSubSubElement = doc.createElement("EndTime");
+        subSubSubElement.appendChild(doc.createTextNode(exams.getPeriodOfTheExamByIndex(i).getEndTime().toString()));
+        subSubElement.appendChild(subSubSubElement);
         subElement.appendChild(subSubElement);
+        subSubElement = doc.createElement("Classes");
+        for (int j =0 ; j<exams.getExam(i).getClasses().size(); j++)
+        {
+          subSubSubElement = doc.createElement("Class");
+          subSubSubElement.appendChild(doc.createTextNode(exams.getExam(i).getClasses().getClassByIndex(j).toString()));
+          subSubElement.appendChild(subSubSubElement);
+        }
+        subElement.appendChild(subSubElement);
+        subSubElement = doc.createElement("Teachers");
+        for (int j=0; j<exams.getExam(i).getTeachers().size(); j++)
+        {
+          subSubSubElement = doc.createElement("Teacher");
+          subSubSubElement.appendChild(doc.createTextNode(exams.getExam(i).getTeachers().getTeacherByIndex(j).toString()));
+          subSubElement.appendChild(subSubSubElement);
+        }
+        subElement.appendChild(subSubElement);
+        subSubElement = doc.createElement("Rooms");
+        for (int j=0; j<exams.getExam(i).getRooms().size(); j++)
+        {
+          subSubSubElement = doc.createElement("Room");
+          subSubSubElement.appendChild(doc.createTextNode(exams.getExam(i).getRooms().getRoomByIndex(j).toString()));
+          subSubElement.appendChild(subSubSubElement);
+        }
+
+        subElement.appendChild(subSubElement);
+
         rootElement.appendChild(subElement);
       }
       doc.appendChild(rootElement);
