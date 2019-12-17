@@ -67,8 +67,7 @@ public class Teacher implements Serializable
 
   public String toString()
   {
-    return getName() + " Subject: " + getSubject() + " Initials: "
-        + getInitials() + " isBusy: " + getIsBusy();
+    return getName();
   }
 
   public boolean equals(Object obj)

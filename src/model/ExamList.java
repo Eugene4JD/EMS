@@ -57,6 +57,10 @@ public class ExamList implements Serializable
   {
     return exams.get(index);
   }
+  public DateAndTimePeriod getPeriodOfTheExamByIndex(int i)
+  {
+    return exams.get(i).getPeriodOExam();
+  }
   public int getNumberOfExams()
   {
     return exams.size();
