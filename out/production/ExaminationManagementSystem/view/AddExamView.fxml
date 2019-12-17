@@ -22,7 +22,7 @@
                         <Image url="@newFile.png" />
                     </image>
                     <HBox.margin>
-                        <Insets left="853.0" top="13.0" />
+                        <Insets left="30.0" top="13.0" />
                     </HBox.margin>
                 </ImageView>
                 <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="162.0" text="Adding an exam">
@@ -33,9 +33,17 @@
                         <Insets left="4.0" top="12.0" />
                     </HBox.margin>
                 </Label>
+            <ImageView fitHeight="41.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="740.0" top="6.0" />
+               </HBox.margin>
+            </ImageView>
                 <Button mnemonicParsing="false" onAction="#addExamButtonPressed" prefHeight="35.0" prefWidth="49.0" text="Add">
                     <HBox.margin>
-                        <Insets left="15.0" top="10.0" />
+                        <Insets left="5.0" top="10.0" />
                     </HBox.margin>
                 </Button>
                 <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="35.0" prefWidth="49.0" text="Back">
