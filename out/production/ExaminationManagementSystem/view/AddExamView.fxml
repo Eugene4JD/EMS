@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="1000.0" prefWidth="2000.0"
+      minWidth="-Infinity" prefHeight="598.0" prefWidth="1215.0"
       userData="addExam" xmlns="http://javafx.com/javafx/11.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="view.AddExamController">
@@ -40,7 +40,7 @@
                         <Insets left="4.0" top="12.0"/>
                     </HBox.margin>
                 </Label>
-                <Button mnemonicParsing="false" onAction="#backButtonPressed"
+                <Button mnemonicParsing="false" onAction="#addExamButtonPressed"
                         prefHeight="35.0" prefWidth="49.0" text="Add">
                     <HBox.margin>
                         <Insets left="15.0" top="10.0"/>
