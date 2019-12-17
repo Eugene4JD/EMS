@@ -21,7 +21,7 @@
         <VBox prefHeight="588.0" prefWidth="275.0">
             <children>
                 <Button mnemonicParsing="false" prefHeight="146.0"
-                        prefWidth="202.0">
+                        prefWidth="202.0" onAction="#addExamButtonPressed">
                     <graphic>
                         <VBox prefHeight="115.0" prefWidth="199.0">
                             <children>

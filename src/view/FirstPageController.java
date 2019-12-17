@@ -39,5 +39,14 @@ public class FirstPageController
   {
     viewHandler.closeView();
   }
-  public void settingsButtonPressed() {viewHandler.openView("settingsPage");}
+
+  public void settingsButtonPressed()
+  {
+    viewHandler.openView("settingsPage");
+  }
+
+  public void addExamButtonPressed()
+  {
+    viewHandler.openView("addExamPage");
+  }
 }
