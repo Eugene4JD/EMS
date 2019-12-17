@@ -188,20 +188,63 @@ public class AddExamController
     supervisorListTable.setItems(teacherViewModel.update());
     currentSupervisorListTable.setItems(currentTeacherViewModel.update());
   }
-  @FXML private void addButtonPressed()
+  @FXML private void addExamButtonPressed()
   {
     try
     {
       String name = nameTextField.getText();
-      // something with date
+      Date newDate = new Date (Integer.parseInt(dateDD.getText()),Integer.parseInt(dateMM.getText()),Integer.parseInt(dateYY.getText()));
       Time startTime = new Time(Integer.parseInt(startHH.getText()), Integer.parseInt(startMM.getText()),0);
       Time endTime = new Time(Integer.parseInt(endHH.getText()), Integer.parseInt(endMM.getText()),0);
-
+      model.addExam(new Exam(name,newDate,startTime,endTime ,chosenClasses , chosenTeachers, chosenRooms));
+      viewHandler.openView("firstPage");
     }
     catch (IllegalArgumentException e)
     {
       errorLabel.setText(e.getMessage());
     }
+  }
+  @FXML private void addSupervisorButtonPressed()
+  {
+    try
+    {
+      TeacherViewModel selectedItem = supervisorListTable.getSelectionModel()
+          .getSelectedItem();
+
+      Teacher teacher = new Teacher(selectedItem.getNameProperty().get(),
+          selectedItem.getInitialsProperty().get(),
+          selectedItem.getSubjectProperty().get());
+      freeTeachers.removeTeacherByObject(teacher); //actual ArrayList
+      chosenTeachers.addTeacher(teacher);           //actual ArrayList
+      teacherViewModel.remove(teacher);                     //refresh
+      currentTeacherViewModel.add(teacher);                       //refresh
+      supervisorListTable.getSelectionModel().clearSelection(); //removes the FOCUS
+
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("No teacher selected!");
+    }
+  }
+  @FXML private void addClassButtonPressed()
+  {
+
+  }
+  @FXML private void addRoomButtonPressed()
+  {
+
+  }
+  @FXML private void removeSupervisorButtonPressed()
+  {
+
+  }
+  @FXML private void removeClassButtonPressed()
+  {
+
+  }
+  @FXML private void removeRoomButtonPressed()
+  {
+    
   }
   @FXML private void backButtonPressed()
   {
