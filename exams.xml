@@ -1,2 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ExamList/>
+<ExamList>
+  <Exam>
+    <Exam_name>Qwerty</Exam_name>
+    <Period>
+      <Date>10/01/2020</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>14:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>Something</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Ib Havn</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>A.203</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>SDF</Exam_name>
+    <Period>
+      <Date>11/01/2020</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>14:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>Something</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Troels Mortensen</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.201b</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>Sert</Exam_name>
+    <Period>
+      <Date>12/01/2020</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>14:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>Something</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Ib Havn</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.303</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>asdfjl</Exam_name>
+    <Period>
+      <Date>13/01/2020</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>14:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>Something</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Ib Havn</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.303</Room>
+    </Rooms>
+  </Exam>
+</ExamList>

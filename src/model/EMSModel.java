@@ -55,4 +55,6 @@ public interface EMSModel
   StudentList getFreeStudentsFromTheClass();
   void setTempClass(Class tempClass);
   Class getTempClass();
+  Exam getTempExam();
+  void sortedByDateExams();
 }

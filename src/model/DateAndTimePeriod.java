@@ -71,7 +71,17 @@ public class DateAndTimePeriod implements Serializable
         startTime, endTime);
     return copyObject;
   }
-
+  public boolean isBefore(DateAndTimePeriod other)
+  {
+    if (this.getDateOfTheExam().isBefore(other.getDateOfTheExam()))
+      return true;
+    else if (other.getDateOfTheExam().equals(this.getDateOfTheExam()))
+    {
+      if (this.getEndTime().isBefore(other.startTime))
+        return true;
+    }
+    return false;
+  }
   public String toString()
   {
     String str ="";
