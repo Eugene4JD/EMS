@@ -86,7 +86,7 @@
                         <Insets left="30.0" top="6.0"/>
                     </HBox.margin>
                 </Label>
-                <TextField fx:id="subjectTextField">
+                <TextField fx:id="subjectTextField" onAction="#onEnter">
                     <HBox.margin>
                         <Insets left="15.0" top="7.0"/>
                     </HBox.margin>

@@ -12,83 +12,115 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="870.0" userData="classDetails" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ClassDetailsController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="730.0" prefWidth="870.0"
+      userData="classDetails" xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.ClassDetailsController">
     <children>
-        <HBox prefHeight="59.0" prefWidth="466.0" style="-fx-background-color: #FAFAFA;">
+        <HBox prefHeight="59.0" prefWidth="466.0"
+              style="-fx-background-color: #FAFAFA;">
             <children>
-                <ImageView fitHeight="36.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="36.0" fitWidth="31.0" pickOnBounds="true"
+                           preserveRatio="true">
                     <image>
-                        <Image url="@class.png" />
+                        <Image url="@class.png"/>
                     </image>
                     <HBox.margin>
-                        <Insets left="548.0" top="12.0" />
+                        <Insets left="545.0" top="14.0"/>
                     </HBox.margin>
                 </ImageView>
-                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="176.0" text="Viewing the class">
+                <Label alignment="CENTER_RIGHT" prefHeight="30.0"
+                       prefWidth="176.0" text="Viewing the class">
                     <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="System Bold" size="20.0"/>
                     </font>
                     <HBox.margin>
-                        <Insets left="5.0" top="13.0" />
+                        <Insets left="3.0" top="14.0"/>
                     </HBox.margin>
                 </Label>
-            <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="33.0" prefWidth="50.0" text="Back">
-               <HBox.margin>
-                  <Insets left="20.0" top="11.0" />
-               </HBox.margin>
-            </Button>
+                <Button mnemonicParsing="false" onAction="#backButtonPressed"
+                        prefHeight="33.0" prefWidth="50.0" text="Back">
+                    <HBox.margin>
+                        <Insets left="20.0" top="13.0"/>
+                    </HBox.margin>
+                </Button>
             </children>
         </HBox>
-      <HBox prefHeight="50.0" prefWidth="870.0" style="-fx-background-color: #e6e6e6;">
-         <children>
-            <Label prefHeight="35.0" prefWidth="70.0" text="Teachers:">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="190.0" top="5.0" />
-               </HBox.margin>
-            </Label>
-            <Label prefHeight="35.0" prefWidth="76.0" text="Students:">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="350.0" top="5.0" />
-               </HBox.margin>
-            </Label>
-         </children></HBox>
-      <HBox prefHeight="582.0" prefWidth="870.0" style="-fx-background-color: #cccccc;">
-         <children>
-            <VBox prefHeight="615.0" prefWidth="439.0" style="-fx-padding: 10 5 30 30;">
-               <children>
-                  <ScrollPane prefHeight="614.0" prefWidth="435.0">
-                     <content>
-                        <TableView prefHeight="528.0" prefWidth="398.0">
-                          <columns>
-                            <TableColumn prefWidth="147.20001447200775" text="Name" />
-                            <TableColumn prefWidth="120.80000305175781" text="Initials" />
-                              <TableColumn prefWidth="120.0" text="Subject" />
-                          </columns>
-                        </TableView>
-                     </content></ScrollPane>
-               </children>
-            </VBox>
-            <VBox prefHeight="615.0" prefWidth="439.0" style="-fx-padding: 10 30 30 5;">
-               <children>
-                  <ScrollPane prefHeight="616.0" prefWidth="435.0">
-                     <content>
-                        <TableView prefHeight="542.0" prefWidth="395.0">
-                          <columns>
-                            <TableColumn prefWidth="148.79998755455017" text="Name" />
-                            <TableColumn prefWidth="130.39990234375" text="Id" />
-                              <TableColumn prefWidth="106.4000244140625" text="Semester" />
-                          </columns>
-                        </TableView>
-                     </content></ScrollPane>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
+        <HBox prefHeight="50.0" prefWidth="870.0"
+              style="-fx-background-color: #e6e6e6;">
+            <children>
+                <Label prefHeight="35.0" prefWidth="70.0" text="Teachers:">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="190.0" top="7.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label prefHeight="35.0" prefWidth="76.0" text="Students:">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="350.0" top="7.0"/>
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+        <HBox prefHeight="582.0" prefWidth="870.0"
+              style="-fx-background-color: #cccccc;">
+            <children>
+                <VBox prefHeight="615.0" prefWidth="439.0"
+                      style="-fx-padding: 10 5 30 30;">
+                    <children>
+                        <ScrollPane prefHeight="614.0" prefWidth="435.0">
+                            <content>
+                                <TableView fx:id="teacherListTable"
+                                           prefHeight="528.0" prefWidth="398.0">
+                                    <columns>
+                                        <TableColumn fx:id="teacherNameColumn"
+                                                     prefWidth="147.20001447200775"
+                                                     text="Name"/>
+                                        <TableColumn
+                                                fx:id="teacherInitialsColumn"
+                                                prefWidth="120.80000305175781"
+                                                text="Initials"/>
+                                        <TableColumn
+                                                fx:id="teacherSubjectColumn"
+                                                prefWidth="120.0"
+                                                text="Subject"/>
+                                    </columns>
+                                </TableView>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+                <VBox prefHeight="615.0" prefWidth="439.0"
+                      style="-fx-padding: 10 30 30 5;">
+                    <children>
+                        <ScrollPane prefHeight="616.0" prefWidth="435.0">
+                            <content>
+                                <TableView fx:id="studentListTable"
+                                           prefHeight="542.0" prefWidth="395.0">
+                                    <columns>
+                                        <TableColumn fx:id="studentNameColumn"
+                                                     prefWidth="148.79998755455017"
+                                                     text="Name"/>
+                                        <TableColumn fx:id="studentIdColumn"
+                                                     prefWidth="130.39990234375"
+                                                     text="Id"/>
+                                        <TableColumn
+                                                fx:id="studentSemesterColumn"
+                                                prefWidth="106.4000244140625"
+                                                text="Semester"/>
+                                    </columns>
+                                </TableView>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
     </children>
 </VBox>

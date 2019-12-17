@@ -1,5 +1,6 @@
 package view;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -70,5 +71,10 @@ public class AddStudentController
   @FXML private void cancelButtonPressed()
   {
     viewHandler.openView("settingsPage");
+  }
+
+  @FXML private void onEnter(ActionEvent event)
+  {
+    addStudentButtonPressed();
   }
 }
