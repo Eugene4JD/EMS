@@ -52,7 +52,7 @@ public class AddClassController
     this.viewHandler = viewHandler;
     this.model = model;
     this.root = root;
-    this.freeTeachers = model.getFreeTeachersFromTheClass();
+    this.freeTeachers = model.getTeacherListCopy();
     this.selectedTeachers = new TeacherList();
     this.freeStudents = model.getFreeStudentsFromTheClass();
     this.selectedStudents = new StudentList();
@@ -98,7 +98,7 @@ public class AddClassController
     this.studentsLabel.setText("");
     this.teachersLabel.setText("");
     this.nameTextField.setText("");
-    this.freeTeachers = model.getFreeTeachersFromTheClass();
+    this.freeTeachers = model.getTeacherListCopy();
     this.selectedTeachers = new TeacherList();
     this.freeStudents = model.getFreeStudentsFromTheClass();
     this.selectedStudents = new StudentList();
