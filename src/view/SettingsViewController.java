@@ -383,7 +383,24 @@ public class SettingsViewController
 
   @FXML private void viewClassButtonPressed()
   {
-    viewHandler.openView("classDetailsPage");
+    try
+    {
+      setSelectedItem();
+      viewHandler.openView("classDetailsPage");
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("Select a class first");
+    }
+  }
+
+  private void setSelectedItem()
+  {
+    int index = classListTable.getSelectionModel().getSelectedIndex();
+    ClassViewModel selectedItem = classListTable.getItems().get(index);
+    String nameOfClass = selectedItem.getNameProperty().get();
+    Class theClass = model.getClassByClassName(nameOfClass);
+    model.setTempClass(theClass);
   }
 }
 

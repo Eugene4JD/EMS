@@ -16,6 +16,7 @@ public class EMSModelManager implements EMSModel, Serializable
   private ClassList classes;
   private ExamList exams;
   private RoomList rooms;
+  private Class tempClass;
   private boolean loggedIn;
 
   public EMSModelManager()
@@ -28,6 +29,7 @@ public class EMSModelManager implements EMSModel, Serializable
     rooms = new RoomList();
     BinaryModel = new Binary();
     xmlModel = new XML();
+    tempClass = null;
   }
 
   @Override public boolean isLoggedIn()
@@ -47,9 +49,10 @@ public class EMSModelManager implements EMSModel, Serializable
     }
   }
 
-  @Override public void addClass(String ClassName, TeacherList teachers, StudentList Students) //????/////
+  @Override public void addClass(String ClassName, TeacherList teachers,
+      StudentList Students) //????/////
   {
-    Class newClass = new Class(ClassName,teachers,Students);
+    Class newClass = new Class(ClassName, teachers, Students);
     classes.addClass(newClass);
     writeToBinary(new File("Classes.bin"));
   }
@@ -376,6 +379,7 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     classes.removeClassByClassName(name);
   }
+
   @Override public TeacherList getTeacherListCopy()
   {
     return teachers.copy();
@@ -392,12 +396,13 @@ public class EMSModelManager implements EMSModel, Serializable
       return getStudentListCopy();
     StudentList freeStudents = new StudentList();
     boolean isFree = true;
-    for (int i = 0; i<students.getNumberOfStudents(); i++)
+    for (int i = 0; i < students.getNumberOfStudents(); i++)
     {
       isFree = true;
-      for (int j =0; j<classes.getNumberOfClasses(); j++)
+      for (int j = 0; j < classes.getNumberOfClasses(); j++)
       {
-        if (classes.getClassByIndex(j).getStudents().isStudentExist(students.getStudentByIndex(i)))
+        if (classes.getClassByIndex(j).getStudents()
+            .isStudentExist(students.getStudentByIndex(i)))
           isFree = false;
       }
       if (isFree)
@@ -412,11 +417,12 @@ public class EMSModelManager implements EMSModel, Serializable
       return getTeacherListCopy();
     TeacherList freeTeachers = new TeacherList();
     boolean isFree = true;
-    for (int i = 0; i<teachers.getNumberOfTeachers(); i++)
+    for (int i = 0; i < teachers.getNumberOfTeachers(); i++)
     {
-      for (int j =0; j<classes.getNumberOfClasses(); j++)
+      for (int j = 0; j < classes.getNumberOfClasses(); j++)
       {
-        if (classes.getClassByIndex(j).getTeachers().isTeacherExist(teachers.getTeacherByIndex(i)))
+        if (classes.getClassByIndex(j).getTeachers()
+            .isTeacherExist(teachers.getTeacherByIndex(i)))
           isFree = false;
       }
       if (isFree)
@@ -424,6 +430,16 @@ public class EMSModelManager implements EMSModel, Serializable
       isFree = true;
     }
     return freeTeachers;
+  }
+
+  @Override public void setTempClass(Class tempClass)
+  {
+    this.tempClass = tempClass;
+  }
+
+  @Override public Class getTempClass()
+  {
+    return tempClass;
   }
 }
 
