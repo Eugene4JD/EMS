@@ -51,6 +51,8 @@ public interface EMSModel
   Class getClass(int index);
   TeacherList getTeacherListCopy();
   StudentList getStudentListCopy();
+  RoomList getRoomListCopy();
+  ClassList getClassListCopy();
   TeacherList getFreeTeachersFromTheClass();
   StudentList getFreeStudentsFromTheClass();
   void setTempClass(Class tempClass);
