@@ -171,4 +171,21 @@ public class TeacherList implements Serializable
     }
     return str;
   }
+  public TeacherList returnWithoutObjectsOfAnotherList(TeacherList other)
+  {
+    TeacherList result = new TeacherList();
+    boolean ready = true;
+    for (int i =0; i<this.size();i++)
+    {
+      ready = true;
+      for (int j =0; j < other.size(); j++)
+      {
+        if (this.getTeacherByIndex(i).equals(other.getTeacherByIndex(j)))
+          ready = false;
+      }
+      if (ready)
+        result.addTeacher(this.getTeacherByIndex(i));
+    }
+    return result;
+  }
 }

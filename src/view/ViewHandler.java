@@ -24,6 +24,7 @@ public class ViewHandler
   private DisplayAddedExamsController displayAddedExamsController;
   private ExamDetailsController examDetailsController;
   private ChangeSecretCodeController changeSecretCodeController;
+  private EditExamController editExamController;
 
   public ViewHandler(EMSModel model)
   {
@@ -78,6 +79,9 @@ public class ViewHandler
         break;
       case "changeSecretCodePage":
         root = loadChangeSecretCodeView("ChangeSecretCodeView.fxml");
+        break;
+      case "editExamPage":
+        root = loadEditExamView("EditExamView.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -386,5 +390,28 @@ public class ViewHandler
       changeSecretCodeController.reset();
     }
     return changeSecretCodeController.getRoot();
+  }
+  private Region loadEditExamView(String fxmlFile)
+  {
+    if (editExamController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        editExamController = loader.getController();
+        editExamController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      editExamController.reset();
+    }
+    return editExamController.getRoot();
   }
 }

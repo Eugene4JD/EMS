@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ExamList>
   <Exam>
-    <Exam_name>DASDSADSA</Exam_name>
+    <Exam_name>SecondSuccessfullExam</Exam_name>
     <Period>
-      <Date>22/11/2019</Date>
-      <StartTime>11:11:00</StartTime>
-      <EndTime>12:22:00</EndTime>
+      <Date>12/12/2019</Date>
+      <StartTime>11:30:00</StartTime>
+      <EndTime>12:40:00</EndTime>
     </Period>
     <Classes>
-      <Class>DSADSA</Class>
+      <Class>adsfdas</Class>
     </Classes>
     <Teachers>
-      <Teacher>Jakob Knop Rasmussen</Teacher>
       <Teacher>Troels Mortensen</Teacher>
+      <Teacher>Ib Havn</Teacher>
+      <Teacher>Mona Wendel Andersen</Teacher>
+      <Teacher>Jakob Knop Rasmussen</Teacher>
     </Teachers>
     <Rooms>
-      <Room>E.302 </Room>
       <Room>E.303</Room>
+      <Room>E.201b</Room>
+      <Room>E.302 </Room>
     </Rooms>
   </Exam>
 </ExamList>

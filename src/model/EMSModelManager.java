@@ -537,11 +537,12 @@ public class EMSModelManager implements EMSModel, Serializable
     {
       try
       {
+        if (password.equals(""))
+          throw new IllegalArgumentException("Wrong Password");
         PrintWriter out = new PrintWriter(new File("Password.txt"));
         out.write(password);
         out.flush();
         out.close();
-        System.out.println("End writing data to file");
         out.close();
       }
       catch (IOException e)
