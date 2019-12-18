@@ -1,5 +1,7 @@
 package view;
 
+import javafx.application.HostServices;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
@@ -405,6 +407,15 @@ public class SettingsViewController
   @FXML private void changeSCButtonPressed()
   {
     viewHandler.openView("changeSecretCodePage");
+  }
+  @FXML private void userGuideButtonPressed()
+  {
+    getHostServices().showDocument("http://www.yahoo.com");
+  }
+
+  private HostServices getHostServices()
+  {
+    return null;
   }
 }
 

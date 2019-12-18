@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ExamList/>
+<ExamList>
+  <Exam>
+    <Exam_name>DASDSADSA</Exam_name>
+    <Period>
+      <Date>22/11/2019</Date>
+      <StartTime>11:11:00</StartTime>
+      <EndTime>12:22:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>DSADSA</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Jakob Knop Rasmussen</Teacher>
+      <Teacher>Troels Mortensen</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.302 </Room>
+      <Room>E.303</Room>
+    </Rooms>
+  </Exam>
+</ExamList>
