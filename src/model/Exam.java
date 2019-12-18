@@ -27,6 +27,14 @@ public class Exam implements Serializable
   {
     if (examName.equals(""))
       throw new IllegalArgumentException("wrong Exam name");
+    if (endTime.isBefore(startTime))
+      throw new IllegalArgumentException("wrong Time input(End Time should be after Start Time)");
+    if (classes.size() == 0)
+      throw new IllegalArgumentException("no class has been selected");
+    if (teachers.size() == 0)
+      throw new IllegalArgumentException("no teachers has been selected");
+    if (rooms.size() == 0)
+      throw new IllegalArgumentException("no rooms has been selected");
     this.examName = examName;
     examClasses = classes;
     periodOfExam = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);

@@ -27,8 +27,14 @@ public class ExamList implements Serializable
           throw new IllegalArgumentException("The Wrong Date input(Some Rooms are busy for this period)");
         if ((exam.getExamTeachers().hasAtLeastOneSameTeacher(exams.get(i).getExamTeachers())))
           throw new IllegalArgumentException("The Wrong Date input(Teachers are busy for this period)");
-        if ((exam.getExamClasses().hasAtLeastOneSameClass(exams.get(i).getExamClasses()))) ;
+        if ((exam.getExamClasses().hasAtLeastOneSameClass(exams.get(i).getExamClasses())))
            throw new IllegalArgumentException("The Wrong Date Input(Some Classes are busy for this period)");
+        if(exam.getClasses().getNumberOfClasses() == 0)
+          throw new IllegalArgumentException("You haven't chosen any classes!");
+        if (exam.getTeachers().getNumberOfTeachers() == 0)
+          throw new IllegalArgumentException("You haven't chosen any supervisors!");
+        if (exam.getRooms().numberOfRooms() == 0)
+          throw new IllegalArgumentException("You haven't chosen any room!");
       }
     }
     return true;
