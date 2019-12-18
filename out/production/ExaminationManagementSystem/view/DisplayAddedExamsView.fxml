@@ -67,17 +67,17 @@
                     <children>
                         <ScrollPane prefHeight="414.0" prefWidth="740.0">
                             <content>
-                                <TableView prefHeight="412.0" prefWidth="737.0">
+                                <TableView prefHeight="412.0" prefWidth="737.0" fx:id="examListTable">
                                     <columns>
                                         <TableColumn
                                                 prefWidth="234.40003049373627"
-                                                text="Name of the exam"/>
+                                                text="Name of the exam" fx:id="examNameColumn"/>
                                         <TableColumn
                                                 prefWidth="247.99993896484375"
-                                                text="Exam period"/>
+                                                text="Exam period" fx:id="periodOfTheExamColumn"/>
                                         <TableColumn
                                                 prefWidth="256.7998962402344"
-                                                text="Classes"/>
+                                                text="Classes" fx:id="classNameColumn"/>
                                     </columns>
                                 </TableView>
                             </content>
@@ -97,17 +97,17 @@
                         <Font name="System Italic" size="10.0"/>
                     </font>
                 </Label>
-                <Button mnemonicParsing="false" text="See details">
+                <Button mnemonicParsing="false" text="See details" onAction="#viewDetailsButtonPressed">
                     <HBox.margin>
                         <Insets left="140.0" top="15.0"/>
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Edit">
+                <Button mnemonicParsing="false" text="Edit" onAction="#editExamButtonPressed">
                     <HBox.margin>
                         <Insets left="7.0" top="15.0"/>
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Remove">
+                <Button mnemonicParsing="false" text="Remove" onAction="#removeExamButtonPressed">
                     <HBox.margin>
                         <Insets left="7.0" top="15.0"/>
                     </HBox.margin>

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Text;
 import model.EMSModel;
 
 public class ExamDetailsController
@@ -11,11 +12,13 @@ public class ExamDetailsController
   private Region root;
   private EMSModel model;
   private ViewHandler viewHandler;
+  @FXML private Text nameText;
+  @FXML private Text periodText;
   @FXML private TableView<TeacherViewModel> supervisorListTable;
   @FXML private TableColumn<TeacherViewModel, String> supervisorNameColumn;
   @FXML private TableColumn<TeacherViewModel, String> supervisorInitialsColumn;
   @FXML private TableColumn<TeacherViewModel, String> supervisorSubjectColumn;
-  @FXML private TableView<StudentViewModel> studentInCLassTable;
+  @FXML private TableView<StudentViewModel> studentInClassTable;
   @FXML private TableColumn<StudentViewModel, String> studentNameColumn;
   @FXML private TableColumn<StudentViewModel, Number> studentIdColumn;
   @FXML private TableColumn<StudentViewModel, Number> studentSemesterColumn;
@@ -83,7 +86,7 @@ public class ExamDetailsController
   public void reset()
   {
     supervisorListTable.setItems(supervisorViewModel.update());
-    studentInCLassTable.setItems(studentsViewModel.update());
+    studentInClassTable.setItems(studentsViewModel.update());
     roomsForExamListTable.setItems(roomListViewModel.update());
   }
 

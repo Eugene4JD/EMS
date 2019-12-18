@@ -11,7 +11,7 @@ import java.util.Optional;
 public class DisplayAddedExamsController
 {
   @FXML private Label errorLabel;
-  @FXML private TableView<ExamViewModel> schedule;
+  @FXML private TableView<ExamViewModel> examListTable;
   @FXML private TableColumn<ExamViewModel, String> examNameColumn;
   @FXML private TableColumn<ExamViewModel, String> periodOfTheExamColumn;
   @FXML private TableColumn<ExamViewModel, String> classNameColumn;
@@ -33,7 +33,6 @@ public class DisplayAddedExamsController
     this.root = root;
     examViewModel = new ExamListViewModel(model);
 
-
     examNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
     periodOfTheExamColumn.setCellValueFactory(
@@ -41,14 +40,13 @@ public class DisplayAddedExamsController
     classNameColumn.setCellValueFactory(
         cellData -> cellData.getValue().getClassProperty());
 
-
     reset();
   }
 
   public void reset()
   {
     errorLabel.setText("");
-    schedule.setItems(examViewModel.update());
+    examListTable.setItems(examViewModel.update());
   }
 
   public Region getRoot()
@@ -56,21 +54,22 @@ public class DisplayAddedExamsController
     return root;
   }
 
-  @FXML private void removeExamPressed()
+  @FXML private void removeExamButtonPressed()
   {
     errorLabel.setText("");
     try
     {
-      ExamViewModel selectedItem = schedule.getSelectionModel()
+      ExamViewModel selectedItem = examListTable.getSelectionModel()
           .getSelectedItem();
 
       boolean remove = confirmation1();
       if (remove)
       {
-        Exam exam = model.getExamByName(selectedItem.getNameProperty().get()).copy();
+        Exam exam = model.getExamByName(selectedItem.getNameProperty().get())
+            .copy();
         model.removeExam(exam.getPeriodOfExam());
         examViewModel.remove(exam);
-        schedule.getSelectionModel().clearSelection();
+        examListTable.getSelectionModel().clearSelection();
       }
     }
     catch (Exception e)
@@ -81,9 +80,9 @@ public class DisplayAddedExamsController
 
   private boolean confirmation1()
   {
-    int index = schedule.getSelectionModel().getSelectedIndex();
-    ExamViewModel selectedItem = schedule.getItems().get(index);
-    if (index < 0 || index >= schedule.getItems().size())
+    int index = examListTable.getSelectionModel().getSelectedIndex();
+    ExamViewModel selectedItem = examListTable.getItems().get(index);
+    if (index < 0 || index >= examListTable.getItems().size())
     {
       return false;
     }
@@ -95,7 +94,7 @@ public class DisplayAddedExamsController
     return ((result.isPresent()) && (result.get() == ButtonType.OK));
   }
 
-  @FXML private void viewClassButtonPressed()
+  @FXML private void viewDetailsButtonPressed()
   {
     try
     {
@@ -110,13 +109,12 @@ public class DisplayAddedExamsController
 
   private void setSelectedItem()
   {
-    int index = schedule.getSelectionModel().getSelectedIndex();
-    ExamViewModel selectedItem = schedule.getItems().get(index);
+    int index = examListTable.getSelectionModel().getSelectedIndex();
+    ExamViewModel selectedItem = examListTable.getItems().get(index);
     String nameOfAnExam = selectedItem.getNameProperty().get();
     Exam exam = model.getExamByName(nameOfAnExam);
     model.setTempExam(exam);
   }
-
 
   @FXML private void editExamButtonPressed()
   {
@@ -130,6 +128,7 @@ public class DisplayAddedExamsController
       errorLabel.setText("Select an exam");
     }
   }
+
   @FXML private void backButtonPressed()
   {
     viewHandler.openView("firstPage");

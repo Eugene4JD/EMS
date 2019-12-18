@@ -11,7 +11,15 @@
       <change beforePath="$PROJECT_DIR$/exams.xml" beforeDir="false" afterPath="$PROJECT_DIR$/exams.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/DateAndTimePeriod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/DateAndTimePeriod.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/DisplayAddedExamsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/DisplayAddedExamsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/DisplayAddedExamsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/DisplayAddedExamsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ExamDetailsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ExamDetailsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/SeeDetailsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/SeeDetailsView.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ViewHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DisplayAddedExamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DisplayAddedExamsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DisplayAddedExamsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DisplayAddedExamsView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ExamDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ExamDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ExamDetailsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ExamDetailsView.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,16 +53,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
-      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
-      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="view" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pavli\Documents\GitHub\EMS" />
       <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
+      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
+      <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
     </key>
   </component>
   <component name="RunDashboard">
