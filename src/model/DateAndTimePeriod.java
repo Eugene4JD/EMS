@@ -85,7 +85,7 @@ public class DateAndTimePeriod implements Serializable
   public String toString()
   {
     String str ="";
-    str+=dateOfTheExam.toString()+"  |  "+ startTime.toString()+" - " + endTime.toString();
+    str+=dateOfTheExam.toString()+"\n"+ startTime.toString()+" - " + endTime.toString();
     return str;
   }
 }
