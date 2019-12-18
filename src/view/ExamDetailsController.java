@@ -15,7 +15,7 @@ public class ExamDetailsController
   @FXML private TableColumn<TeacherViewModel, String> supervisorNameColumn;
   @FXML private TableColumn<TeacherViewModel, String> supervisorInitialsColumn;
   @FXML private TableColumn<TeacherViewModel, String> supervisorSubjectColumn;
-  @FXML private TableView<StudentListViewModel> studentInCLassTable;
+  @FXML private TableView<StudentViewModel> studentInCLassTable;
   @FXML private TableColumn<StudentViewModel, String> studentNameColumn;
   @FXML private TableColumn<StudentViewModel, Number> studentIdColumn;
   @FXML private TableColumn<StudentViewModel, Number> studentSemesterColumn;
@@ -34,5 +34,61 @@ public class ExamDetailsController
   public ExamDetailsController()
   {
     //init
+  }
+
+  public void init(ViewHandler viewHandler, EMSModel model, Region root)
+  {
+    this.viewHandler = viewHandler;
+    this.model = model;
+    this.root = root;
+    this.supervisorViewModel = new TeacherListViewModel_details(model);
+    this.studentsViewModel = new StudentListViewModel_details(model);
+    this.roomListViewModel = new RoomListViewModel_details(model);
+
+    supervisorNameColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+    supervisorInitialsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getInitialsProperty());
+    supervisorSubjectColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getSubjectProperty());
+
+    studentNameColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+    studentIdColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getIdProperty());
+    studentSemesterColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getSemesterProperty());
+
+    roomNameColumn
+        .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
+    roomConnectorsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getConnectorsProperty());
+    roomMaxStudentsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getMaxStudentsProperty());
+    roomChairsColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getChairsProperty());
+    roomTablesColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getTablesProperty());
+    roomCanBeMergedTableColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getCanBeMergedProperty());
+
+    reset();
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
+
+  public void reset()
+  {
+    supervisorListTable.setItems(supervisorViewModel.update());
+    studentInCLassTable.setItems(studentsViewModel.update());
+    roomsForExamListTable.setItems(roomListViewModel.update());
+  }
+
+  @FXML private void backButtonPressed()
+  {
+    viewHandler.openView("settingsPage");
   }
 }
