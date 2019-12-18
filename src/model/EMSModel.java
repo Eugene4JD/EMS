@@ -26,6 +26,8 @@ public interface EMSModel
   void removeExam(DateAndTimePeriod period);
   Class getClassByClassName(String name);
   Room getRoomByRoomName(String name);
+  Exam getExamByIndex(int index);
+  Exam getExamByName(String name);
   Teacher getTeacherByTeacherName(String name);
   String showSchedule();
   void writeToBinary(File BinaryFile);
@@ -48,6 +50,7 @@ public interface EMSModel
   int teacherListSize();
   int roomListSize();
   int classListSize();
+  int examListSize();
   Class getClass(int index);
   TeacherList getTeacherListCopy();
   StudentList getStudentListCopy();
@@ -57,6 +60,7 @@ public interface EMSModel
   StudentList getFreeStudentsFromTheClass();
   void setTempClass(Class tempClass);
   Class getTempClass();
+  void setTempExam(Exam tempExam);
   Exam getTempExam();
   void sortedByDateExams();
 }

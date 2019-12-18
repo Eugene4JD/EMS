@@ -158,6 +158,9 @@ public class AddExamController
     this.startMM.setText("");
     this.endHH.setText("");
     this.endHH.setText("");
+    this.dateDD.setText("");
+    this.dateMM.setText("");
+    this.dateYY.setText("");
 
     this.freeClasses = model.getClassListCopy();
     this.chosenClasses = new ClassList();
