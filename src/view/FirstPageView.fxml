@@ -167,7 +167,7 @@
                     </VBox.margin>
                 </Text>
                 <Button mnemonicParsing="false" prefHeight="42.0"
-                        prefWidth="183.0" text="view the current schedule">
+                        prefWidth="183.0" text="Display added exams">
                     <VBox.margin>
                         <Insets left="30.0" top="15.0"/>
                     </VBox.margin>
