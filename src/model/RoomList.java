@@ -139,4 +139,21 @@ public class RoomList implements Serializable
     }
     return copyList;
   }
+  public RoomList returnWithoutObjectsOfAnotherList(RoomList other)
+  {
+    RoomList result = new RoomList();
+    boolean ready = true;
+    for (int i =0; i<this.size();i++)
+    {
+      ready = true;
+      for (int j =0; j < other.size(); j++)
+      {
+        if (this.getRoomByIndex(i).equals(other.getRoomByIndex(j)))
+          ready = false;
+      }
+      if (ready)
+        result.addRoom(this.getRoomByIndex(i));
+    }
+    return result;
+  }
 }

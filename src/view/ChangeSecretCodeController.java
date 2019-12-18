@@ -47,7 +47,10 @@ public class ChangeSecretCodeController
   {
     try
     {
-      model.changeSC(oldSCPasswordField.getText(), newSCPasswordField.getText());
+      if (model.validateSecretCode(oldSCPasswordField.getText()))
+       if (newSCPasswordField == null)
+         throw new IllegalArgumentException("Wrong Password");
+       model.savePassword(newSCPasswordField.getText());
       viewHandler.openView("settingsPage");
     }
     catch (Exception e)

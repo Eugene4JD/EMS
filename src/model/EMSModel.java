@@ -4,7 +4,7 @@ import java.io.File;
 
 public interface EMSModel
 {
-  void validateSecretCode(String secretCode);
+  boolean validateSecretCode(String secretCode);
   boolean isLoggedIn();
   void addStudent(String name, int id, int semester);
   void addTeacher(String name, String initials, String subject);

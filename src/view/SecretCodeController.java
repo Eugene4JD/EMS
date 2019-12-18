@@ -50,7 +50,7 @@ public class SecretCodeController
   {
     try
     {
-      model.validateSecretCode(secretCodeField.getText());
+      if (model.validateSecretCode(secretCodeField.getText()))
       System.out.println("Success");
       errorLabel.setText("");
       viewHandler.openView("firstPage");

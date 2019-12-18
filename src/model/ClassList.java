@@ -138,5 +138,22 @@ public class ClassList implements Serializable
     }
     return result;
   }
+  public ClassList returnWithoutObjectsOfAnotherList(ClassList other)
+  {
+    ClassList result = new ClassList();
+    boolean ready = true;
+    for (int i =0; i<this.size();i++)
+    {
+      ready = true;
+      for (int j =0; j < other.size(); j++)
+      {
+        if (this.getClassByIndex(i).equals(other.getClassByIndex(j)))
+          ready = false;
+      }
+      if (ready)
+        result.addClass(this.getClassByIndex(i));
+    }
+    return result;
+  }
 
 }

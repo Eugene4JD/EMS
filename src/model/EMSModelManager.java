@@ -24,7 +24,6 @@ public class EMSModelManager implements EMSModel, Serializable
 
   public EMSModelManager()
   {
-    loggedIn = false;
     students = new StudentList();
     teachers = new TeacherList();
     classes = new ClassList();
@@ -33,7 +32,6 @@ public class EMSModelManager implements EMSModel, Serializable
     BinaryModel = new Binary();
     xmlModel = new XML();
     tempClass = null;
-    secretCode = "123";
   }
 
   @Override public boolean isLoggedIn()
@@ -41,16 +39,19 @@ public class EMSModelManager implements EMSModel, Serializable
     return loggedIn;
   }
 
-  @Override public void validateSecretCode(String secretCode)
+  @Override public boolean validateSecretCode(String secretCode)
   {
+    this.secretCode = getPassword();
+    System.out.println(this.secretCode);
     if (secretCode.equals(this.secretCode))
     {
-      loggedIn = true;
+      return true;
     }
     else
     {
       throw new IllegalArgumentException("Wrong secret code!");
     }
+
   }
 
   @Override public void addClass(String ClassName, TeacherList teachers,
@@ -516,16 +517,14 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     try
     {
-      Scanner in = new Scanner(new File("Password.txt"));
-
-      while (in.hasNext())
+      File textFile = new File("Password.txt");
+      FileReader fr= new FileReader(textFile);
+      BufferedReader br = new BufferedReader(fr);
+      String s;
+      while ((s=br.readLine())!=null)
       {
-        String line = in.nextLine().trim();
-        this.secretCode = line;
-        System.out.println(line);
-        System.out.println(secretCode);
+        return s.trim();
       }
-      in.close();
     }
     catch (IOException e)
     {
@@ -538,11 +537,12 @@ public class EMSModelManager implements EMSModel, Serializable
     {
       try
       {
+        if (password.equals(""))
+          throw new IllegalArgumentException("Wrong Password");
         PrintWriter out = new PrintWriter(new File("Password.txt"));
         out.write(password);
         out.flush();
         out.close();
-        System.out.println("End writing data to file");
         out.close();
       }
       catch (IOException e)
