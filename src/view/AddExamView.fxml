@@ -13,355 +13,279 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="598.0" prefWidth="1215.0"
-      userData="addExam" xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.AddExamController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="1215.0" userData="addExam" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AddExamController">
     <children>
-        <HBox prefHeight="55.0" prefWidth="900.0"
-              style="-fx-background-color: #FAFAFA;">
+        <HBox prefHeight="55.0" prefWidth="900.0" style="-fx-background-color: #FAFAFA;">
             <children>
-                <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@newFile.png"/>
+                        <Image url="@newFile.png" />
                     </image>
                     <HBox.margin>
-                        <Insets left="853.0" top="13.0"/>
+                        <Insets left="30.0" top="13.0" />
                     </HBox.margin>
                 </ImageView>
-                <Label alignment="CENTER_RIGHT" prefHeight="30.0"
-                       prefWidth="162.0" text="Adding an exam">
+                <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="162.0" text="Adding an exam">
                     <font>
-                        <Font name="System Bold" size="20.0"/>
+                        <Font name="System Bold" size="20.0" />
                     </font>
                     <HBox.margin>
-                        <Insets left="4.0" top="12.0"/>
+                        <Insets left="4.0" top="12.0" />
                     </HBox.margin>
                 </Label>
-                <Button mnemonicParsing="false" onAction="#addExamButtonPressed"
-                        prefHeight="35.0" prefWidth="49.0" text="Add">
+            <ImageView fitHeight="41.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="740.0" top="6.0" />
+               </HBox.margin>
+            </ImageView>
+                <Button mnemonicParsing="false" onAction="#addExamButtonPressed" prefHeight="35.0" prefWidth="49.0" text="Add">
                     <HBox.margin>
-                        <Insets left="15.0" top="10.0"/>
+                        <Insets left="5.0" top="10.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#backButtonPressed"
-                        prefHeight="35.0" prefWidth="49.0" text="Back">
+                <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="35.0" prefWidth="49.0" text="Back">
                     <HBox.margin>
-                        <Insets left="5.0" top="10.0"/>
+                        <Insets left="5.0" top="10.0" />
                     </HBox.margin>
                 </Button>
             </children>
         </HBox>
         <HBox prefHeight="506.0" prefWidth="900.0">
             <children>
-                <VBox prefHeight="460.0" prefWidth="400.0"
-                      style="-fx-background-color: #d4d4d4;">
+                <VBox prefHeight="460.0" prefWidth="400.0" style="-fx-background-color: #dedede;">
                     <children>
                         <HBox prefHeight="43.0" prefWidth="400.0">
                             <children>
-                                <Label alignment="CENTER_RIGHT"
-                                       prefHeight="26.0" prefWidth="64.0"
-                                       text="Name:">
+                                <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="64.0" text="Name:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="70.0" top="6.0"/>
+                                        <Insets left="70.0" top="6.0" />
                                     </HBox.margin>
                                 </Label>
                                 <TextField fx:id="nameTextField">
                                     <HBox.margin>
-                                        <Insets left="15.0" top="7.0"/>
+                                        <Insets left="15.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
                             </children>
                             <VBox.margin>
-                                <Insets top="21.0"/>
+                                <Insets top="21.0" />
                             </VBox.margin>
                         </HBox>
                         <HBox prefHeight="43.0" prefWidth="400.0">
                             <children>
-                                <Label alignment="CENTER_RIGHT"
-                                       prefHeight="26.0" prefWidth="64.0"
-                                       text="Date:">
+                                <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="64.0" text="Date:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="70.0" top="6.0"/>
+                                        <Insets left="70.0" top="6.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Label prefHeight="19.0" prefWidth="22.0"
-                                       text="DD:">
+                                <Label prefHeight="19.0" prefWidth="22.0" text="DD:">
                                     <font>
-                                        <Font name="System Bold Italic"
-                                              size="12.0"/>
+                                        <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="18.0" top="10.0"/>
+                                        <Insets left="18.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="dateDD" prefHeight="26.0"
-                                           prefWidth="26.0">
+                                <TextField fx:id="dateDD" prefHeight="26.0" prefWidth="26.0">
                                     <HBox.margin>
-                                        <Insets left="2.0" top="7.0"/>
+                                        <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
-                                <Label prefHeight="19.0" prefWidth="27.0"
-                                       text="MM:">
+                                <Label prefHeight="19.0" prefWidth="27.0" text="MM:">
                                     <font>
-                                        <Font name="System Bold Italic"
-                                              size="12.0"/>
+                                        <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="10.0" top="10.0"/>
+                                        <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="dateMM" prefHeight="26.0"
-                                           prefWidth="26.0">
+                                <TextField fx:id="dateMM" prefHeight="26.0" prefWidth="26.0">
                                     <HBox.margin>
-                                        <Insets left="2.0" top="7.0"/>
+                                        <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
-                                <Label prefHeight="19.0" prefWidth="22.0"
-                                       text="YY:">
+                                <Label prefHeight="19.0" prefWidth="22.0" text="YY:">
                                     <font>
-                                        <Font name="System Bold Italic"
-                                              size="12.0"/>
+                                        <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="10.0" top="10.0"/>
+                                        <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="dateYY" prefHeight="26.0"
-                                           prefWidth="26.0">
+                                <TextField fx:id="dateYY" prefHeight="26.0" prefWidth="26.0">
                                     <HBox.margin>
-                                        <Insets left="2.0" top="7.0"/>
+                                        <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
                             </children>
                         </HBox>
                         <HBox prefHeight="43.0" prefWidth="400.0">
                             <children>
-                                <Label alignment="CENTER_RIGHT"
-                                       prefHeight="26.0" prefWidth="64.0"
-                                       text="Start time:">
+                                <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="64.0" text="Start time:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="70.0" top="6.0"/>
+                                        <Insets left="70.0" top="6.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Label prefHeight="19.0" prefWidth="22.0"
-                                       text="HH:">
+                                <Label prefHeight="19.0" prefWidth="22.0" text="HH:">
                                     <HBox.margin>
-                                        <Insets left="18.0" top="10.0"/>
+                                        <Insets left="18.0" top="10.0" />
                                     </HBox.margin>
                                     <font>
-                                        <Font name="System Bold Italic"
-                                              size="12.0"/>
+                                        <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="startHH" prefHeight="26.0"
-                                           prefWidth="26.0">
+                                <TextField fx:id="startHH" prefHeight="26.0" prefWidth="26.0">
                                     <HBox.margin>
-                                        <Insets left="2.0" top="7.0"/>
+                                        <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
-                                <Label prefHeight="19.0" prefWidth="30.0"
-                                       text="MM:">
+                                <Label prefHeight="19.0" prefWidth="30.0" text="MM:">
                                     <font>
-                                        <Font name="System Bold Italic"
-                                              size="12.0"/>
+                                        <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="15.0" top="10.0"/>
+                                        <Insets left="15.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="startMM" prefHeight="26.0"
-                                           prefWidth="26.0">
+                                <TextField fx:id="startMM" prefHeight="26.0" prefWidth="26.0">
                                     <HBox.margin>
-                                        <Insets left="2.0" top="7.0"/>
+                                        <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
                             </children>
                         </HBox>
                         <HBox prefHeight="43.0" prefWidth="400.0">
                             <children>
-                                <Label alignment="CENTER_RIGHT"
-                                       prefHeight="26.0" prefWidth="64.0"
-                                       text="End time:">
+                                <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="64.0" text="End time:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="70.0" top="6.0"/>
+                                        <Insets left="70.0" top="6.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Label prefHeight="19.0" prefWidth="22.0"
-                                       text="HH:">
+                                <Label prefHeight="19.0" prefWidth="22.0" text="HH:">
                                     <HBox.margin>
-                                        <Insets left="18.0" top="10.0"/>
+                                        <Insets left="18.0" top="10.0" />
                                     </HBox.margin>
                                     <font>
-                                        <Font name="System Bold Italic"
-                                              size="12.0"/>
+                                        <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="endHH" prefHeight="26.0"
-                                           prefWidth="26.0">
+                                <TextField fx:id="endHH" prefHeight="26.0" prefWidth="26.0">
                                     <HBox.margin>
-                                        <Insets left="2.0" top="7.0"/>
+                                        <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
-                                <Label prefHeight="19.0" prefWidth="30.0"
-                                       text="MM:">
+                                <Label prefHeight="19.0" prefWidth="30.0" text="MM:">
                                     <font>
-                                        <Font name="System Bold Italic"
-                                              size="12.0"/>
+                                        <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="15.0" top="10.0"/>
+                                        <Insets left="15.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="endMM" prefHeight="26.0"
-                                           prefWidth="26.0">
+                                <TextField fx:id="endMM" prefHeight="26.0" prefWidth="26.0">
                                     <HBox.margin>
-                                        <Insets left="2.0" top="7.0"/>
+                                        <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
                                 </TextField>
                             </children>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="400.0">
                             <children>
-                                <Label alignment="CENTER_RIGHT"
-                                       prefHeight="26.0" prefWidth="76.0"
-                                       text="Supervisors:">
+                                <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="76.0" text="Supervisors:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="145.0"/>
+                                        <Insets left="145.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false"
-                                        onAction="#addSupervisorButtonPressed"
-                                        text="Add">
+                                <Button mnemonicParsing="false" onAction="#addSupervisorButtonPressed" text="Add">
                                     <HBox.margin>
-                                        <Insets left="10.0"/>
+                                        <Insets left="10.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
                         <HBox prefHeight="235.0" prefWidth="400.0">
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0"
-                                        top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <children>
-                                <ScrollPane prefHeight="242.0"
-                                            prefWidth="347.0">
+                                <ScrollPane prefHeight="242.0" prefWidth="347.0">
                                     <content>
-                                        <TableView fx:id="supervisorListTable"
-                                                   prefHeight="223.0"
-                                                   prefWidth="337.0">
+                                        <TableView fx:id="supervisorListTable" prefHeight="223.0" prefWidth="337.0">
                                             <columns>
-                                                <TableColumn
-                                                        fx:id="supervisorNameColumn"
-                                                        prefWidth="120.00002133846283"
-                                                        text="Name"/>
-                                                <TableColumn
-                                                        fx:id="supervisorInitialsColumn"
-                                                        prefWidth="104.79996490478516"
-                                                        text="Initials"/>
-                                                <TableColumn
-                                                        fx:id="supervisorSubjectColumn"
-                                                        prefWidth="112.800048828125"
-                                                        text="Subject"/>
+                                                <TableColumn fx:id="supervisorNameColumn" prefWidth="120.00002133846283" text="Name" />
+                                                <TableColumn fx:id="supervisorInitialsColumn" prefWidth="104.79996490478516" text="Initials" />
+                                                <TableColumn fx:id="supervisorSubjectColumn" prefWidth="112.800048828125" text="Subject" />
                                             </columns>
                                         </TableView>
                                     </content>
                                 </ScrollPane>
                             </children>
                         </HBox>
-                        <Label fx:id="errorLabel" alignment="CENTER"
-                               prefHeight="15.0" prefWidth="343.0"
-                               textFill="RED">
+                        <Label fx:id="errorLabel" alignment="CENTER" prefHeight="15.0" prefWidth="343.0" textFill="RED">
                             <font>
-                                <Font name="System Italic" size="10.0"/>
+                                <Font name="System Italic" size="10.0" />
                             </font>
                             <VBox.margin>
-                                <Insets left="30.0"/>
+                                <Insets left="30.0" />
                             </VBox.margin>
                         </Label>
                     </children>
                 </VBox>
-                <VBox prefHeight="460.0" prefWidth="400.0"
-                      style="-fx-background-color: #d4d4d4;">
+                <VBox prefHeight="460.0" prefWidth="400.0" style="-fx-background-color: #dedede;">
                     <children>
                         <HBox prefHeight="26.0" prefWidth="334.0">
                             <children>
-                                <Label alignment="CENTER" prefHeight="26.0"
-                                       prefWidth="53.0" text="Rooms:">
+                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="53.0" text="Rooms:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="147.0"/>
+                                        <Insets left="147.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false"
-                                        onAction="#addRoomButtonPressed"
-                                        text="Add">
+                                <Button mnemonicParsing="false" onAction="#addRoomButtonPressed" text="Add">
                                     <HBox.margin>
-                                        <Insets left="10.0"/>
+                                        <Insets left="10.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                             <VBox.margin>
-                                <Insets top="11.0"/>
+                                <Insets top="11.0" />
                             </VBox.margin>
                         </HBox>
                         <HBox prefHeight="205.0" prefWidth="400.0">
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0"
-                                        top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <children>
-                                <ScrollPane prefHeight="183.0"
-                                            prefWidth="340.0">
+                                <ScrollPane prefHeight="183.0" prefWidth="340.0">
                                     <content>
-                                        <TableView fx:id="roomListTable"
-                                                   prefHeight="193.0"
-                                                   prefWidth="337.0">
+                                        <TableView fx:id="roomListTable" prefHeight="193.0" prefWidth="337.0">
                                             <columns>
-                                                <TableColumn
-                                                        fx:id="roomNameColumn"
-                                                        prefWidth="76.26669156551361"
-                                                        text="Name"/>
-                                                <TableColumn
-                                                        fx:id="roomConnectorsColumn"
-                                                        prefWidth="53.333229064941406"
-                                                        text="Connectors"/>
-                                                <TableColumn
-                                                        fx:id="roomMaxStudentsColumn"
-                                                        prefWidth="53.86669921875"
-                                                        text="Max Students"/>
-                                                <TableColumn
-                                                        fx:id="roomChairsColumn"
-                                                        prefWidth="42.4000244140625"
-                                                        text="Chairs"/>
-                                                <TableColumn
-                                                        fx:id="roomTablesColumn"
-                                                        prefWidth="52.26666259765625"
-                                                        text="Tables"/>
-                                                <TableColumn
-                                                        fx:id="roomCanBeMergedTableColumn"
-                                                        prefWidth="57.3333740234375"
-                                                        text="Can be merged"/>
+                                                <TableColumn fx:id="roomNameColumn" prefWidth="76.26669156551361" text="Name" />
+                                                <TableColumn fx:id="roomConnectorsColumn" prefWidth="53.333229064941406" text="Connectors" />
+                                                <TableColumn fx:id="roomMaxStudentsColumn" prefWidth="53.86669921875" text="Max Students" />
+                                                <TableColumn fx:id="roomChairsColumn" prefWidth="42.4000244140625" text="Chairs" />
+                                                <TableColumn fx:id="roomTablesColumn" prefWidth="52.26666259765625" text="Tables" />
+                                                <TableColumn fx:id="roomCanBeMergedTableColumn" prefWidth="57.3333740234375" text="Can be merged" />
                                             </columns>
                                         </TableView>
                                     </content>
@@ -370,45 +294,32 @@
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="334.0">
                             <children>
-                                <Label alignment="CENTER" prefHeight="26.0"
-                                       prefWidth="51.0" text="Classes:">
+                                <Label alignment="CENTER" prefHeight="26.0" prefWidth="51.0" text="Classes:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="150.0"/>
+                                        <Insets left="150.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false"
-                                        onAction="#addClassButtonPressed"
-                                        text="Add">
+                                <Button mnemonicParsing="false" onAction="#addClassButtonPressed" text="Add">
                                     <HBox.margin>
-                                        <Insets left="10.0"/>
+                                        <Insets left="10.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
                         <HBox prefHeight="205.0" prefWidth="400.0">
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0"
-                                        top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <children>
-                                <ScrollPane prefHeight="183.0"
-                                            prefWidth="340.0">
+                                <ScrollPane prefHeight="183.0" prefWidth="340.0">
                                     <content>
-                                        <TableView fx:id="classListTable"
-                                                   prefHeight="193.0"
-                                                   prefWidth="337.0">
+                                        <TableView fx:id="classListTable" prefHeight="193.0" prefWidth="337.0">
                                             <columns>
-                                                <TableColumn
-                                                        fx:id="classNameColumn"
-                                                        prefWidth="164.79993283748627"
-                                                        text="Name"/>
-                                                <TableColumn
-                                                        fx:id="classNumberOfStudentsColumn"
-                                                        prefWidth="172.80007934570312"
-                                                        text="Students"/>
+                                                <TableColumn fx:id="classNameColumn" prefWidth="164.79993283748627" text="Name" />
+                                                <TableColumn fx:id="classNumberOfStudentsColumn" prefWidth="172.80007934570312" text="Students" />
                                             </columns>
                                         </TableView>
                                     </content>
@@ -417,59 +328,40 @@
                         </HBox>
                     </children>
                 </VBox>
-                <VBox prefHeight="460.0" prefWidth="400.0"
-                      style="-fx-background-color: #ebebeb;">
+                <VBox prefHeight="460.0" prefWidth="400.0" style="-fx-background-color: #ebebeb;">
                     <children>
                         <HBox prefHeight="26.0" prefWidth="334.0">
                             <children>
-                                <Label alignment="CENTER" prefHeight="23.0"
-                                       prefWidth="124.0"
-                                       text="Chosen supervisors:">
+                                <Label alignment="CENTER" prefHeight="23.0" prefWidth="124.0" text="Chosen supervisors:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="113.0"/>
+                                        <Insets left="113.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false"
-                                        onAction="#removeSupervisorButtonPressed"
-                                        text="Remove">
+                                <Button mnemonicParsing="false" onAction="#removeSupervisorButtonPressed" text="Remove">
                                     <HBox.margin>
-                                        <Insets left="10.0"/>
+                                        <Insets left="10.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                             <VBox.margin>
-                                <Insets top="11.0"/>
+                                <Insets top="11.0" />
                             </VBox.margin>
                         </HBox>
                         <HBox prefHeight="129.0" prefWidth="400.0">
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0"
-                                        top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <children>
-                                <ScrollPane prefHeight="183.0"
-                                            prefWidth="340.0">
+                                <ScrollPane prefHeight="183.0" prefWidth="340.0">
                                     <content>
-                                        <TableView
-                                                fx:id="currentSupervisorListTable"
-                                                prefHeight="117.0"
-                                                prefWidth="337.0">
+                                        <TableView fx:id="currentSupervisorListTable" prefHeight="117.0" prefWidth="337.0">
                                             <columns>
-                                                <TableColumn
-                                                        fx:id="currentSupervisorNameColumn"
-                                                        prefWidth="136.00006711483002"
-                                                        text="Name"/>
-                                                <TableColumn
-                                                        fx:id="currentSupervisorInitialsColumn"
-                                                        prefWidth="101.60003662109375"
-                                                        text="Initials"/>
-                                                <TableColumn
-                                                        fx:id="currentSupervisorSubjectColumn"
-                                                        prefWidth="99.99981689453125"
-                                                        text="Subject"/>
+                                                <TableColumn fx:id="currentSupervisorNameColumn" prefWidth="136.00006711483002" text="Name" />
+                                                <TableColumn fx:id="currentSupervisorInitialsColumn" prefWidth="101.60003662109375" text="Initials" />
+                                                <TableColumn fx:id="currentSupervisorSubjectColumn" prefWidth="99.99981689453125" text="Subject" />
                                             </columns>
                                         </TableView>
                                     </content>
@@ -478,61 +370,36 @@
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="334.0">
                             <children>
-                                <Label alignment="CENTER" prefHeight="23.0"
-                                       prefWidth="94.0" text="Chosen rooms:">
+                                <Label alignment="CENTER" prefHeight="23.0" prefWidth="94.0" text="Chosen rooms:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="120.0"/>
+                                        <Insets left="120.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false"
-                                        onAction="#removeRoomButtonPressed"
-                                        text="Remove">
+                                <Button mnemonicParsing="false" onAction="#removeRoomButtonPressed" text="Remove">
                                     <HBox.margin>
-                                        <Insets left="10.0"/>
+                                        <Insets left="10.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
                         <HBox prefHeight="129.0" prefWidth="400.0">
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0"
-                                        top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <children>
-                                <ScrollPane prefHeight="183.0"
-                                            prefWidth="340.0">
+                                <ScrollPane prefHeight="183.0" prefWidth="340.0">
                                     <content>
-                                        <TableView fx:id="currentRoomListTable"
-                                                   prefHeight="117.0"
-                                                   prefWidth="337.0">
+                                        <TableView fx:id="currentRoomListTable" prefHeight="117.0" prefWidth="337.0">
                                             <columns>
-                                                <TableColumn
-                                                        fx:id="currentRoomNameColumn"
-                                                        prefWidth="53.866758704185486"
-                                                        text="Name"/>
-                                                <TableColumn
-                                                        fx:id="currentRoomConnectorsColumn"
-                                                        prefWidth="75.46662139892578"
-                                                        text="Connectors"/>
-                                                <TableColumn
-                                                        fx:id="currentRoomMaxStudentsColumn"
-                                                        prefWidth="64.5333251953125"
-                                                        text="Max Students"/>
-                                                <TableColumn
-                                                        fx:id="currentRoomChairColumn"
-                                                        prefWidth="51.1998291015625"
-                                                        text="Chairs"/>
-                                                <TableColumn
-                                                        fx:id="currentRoomTableColumn"
-                                                        prefWidth="50.13330078125"
-                                                        text="Tables"/>
-                                                <TableColumn
-                                                        fx:id="currentRoomCanBeMergedTableColumn"
-                                                        prefWidth="45.5999755859375"
-                                                        text="Can be merged"/>
+                                                <TableColumn fx:id="currentRoomNameColumn" prefWidth="53.866758704185486" text="Name" />
+                                                <TableColumn fx:id="currentRoomConnectorsColumn" prefWidth="75.46662139892578" text="Connectors" />
+                                                <TableColumn fx:id="currentRoomMaxStudentsColumn" prefWidth="64.5333251953125" text="Max Students" />
+                                                <TableColumn fx:id="currentRoomChairColumn" prefWidth="51.1998291015625" text="Chairs" />
+                                                <TableColumn fx:id="currentRoomTableColumn" prefWidth="50.13330078125" text="Tables" />
+                                                <TableColumn fx:id="currentRoomCanBeMergedTableColumn" prefWidth="45.5999755859375" text="Can be merged" />
                                             </columns>
                                         </TableView>
                                     </content>
@@ -541,45 +408,32 @@
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="334.0">
                             <children>
-                                <Label alignment="CENTER" prefHeight="23.0"
-                                       prefWidth="96.0" text="Chosen classes:">
+                                <Label alignment="CENTER" prefHeight="23.0" prefWidth="96.0" text="Chosen classes:">
                                     <font>
-                                        <Font size="14.0"/>
+                                        <Font size="14.0" />
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="120.0"/>
+                                        <Insets left="120.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Button mnemonicParsing="false"
-                                        onAction="#removeClassButtonPressed"
-                                        text="Remove">
+                                <Button mnemonicParsing="false" onAction="#removeClassButtonPressed" text="Remove">
                                     <HBox.margin>
-                                        <Insets left="10.0"/>
+                                        <Insets left="10.0" />
                                     </HBox.margin>
                                 </Button>
                             </children>
                         </HBox>
                         <HBox prefHeight="128.0" prefWidth="400.0">
                             <padding>
-                                <Insets bottom="5.0" left="30.0" right="30.0"
-                                        top="5.0"/>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
                             <children>
-                                <ScrollPane prefHeight="183.0"
-                                            prefWidth="340.0">
+                                <ScrollPane prefHeight="183.0" prefWidth="340.0">
                                     <content>
-                                        <TableView fx:id="currentClassListTable"
-                                                   prefHeight="115.0"
-                                                   prefWidth="337.0">
+                                        <TableView fx:id="currentClassListTable" prefHeight="115.0" prefWidth="337.0">
                                             <columns>
-                                                <TableColumn
-                                                        fx:id="currentClassNameColumn"
-                                                        prefWidth="175.46668088436127"
-                                                        text="Name"/>
-                                                <TableColumn
-                                                        fx:id="currentClassNumberOfStudentsColumn"
-                                                        prefWidth="161.333251953125"
-                                                        text="Students"/>
+                                                <TableColumn fx:id="currentClassNameColumn" prefWidth="175.46668088436127" text="Name" />
+                                                <TableColumn fx:id="currentClassNumberOfStudentsColumn" prefWidth="161.333251953125" text="Students" />
                                             </columns>
                                         </TableView>
                                     </content>
