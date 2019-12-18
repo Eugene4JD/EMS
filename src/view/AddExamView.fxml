@@ -95,7 +95,7 @@
                                         <Insets left="18.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="dateDD" prefHeight="26.0" prefWidth="26.0">
+                                <TextField fx:id="dateDD" prefHeight="26.0" prefWidth="28.0">
                                     <HBox.margin>
                                         <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
@@ -108,7 +108,7 @@
                                         <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="dateMM" prefHeight="26.0" prefWidth="26.0">
+                                <TextField fx:id="dateMM" prefHeight="26.0" prefWidth="28.0">
                                     <HBox.margin>
                                         <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
@@ -121,7 +121,7 @@
                                         <Insets left="10.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="dateYY" prefHeight="26.0" prefWidth="26.0">
+                                <TextField fx:id="dateYY" prefHeight="26.0" prefWidth="42.0">
                                     <HBox.margin>
                                         <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
@@ -146,7 +146,7 @@
                                         <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="startHH" prefHeight="26.0" prefWidth="26.0">
+                                <TextField fx:id="startHH" prefHeight="26.0" prefWidth="28.0">
                                     <HBox.margin>
                                         <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
@@ -159,7 +159,7 @@
                                         <Insets left="15.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="startMM" prefHeight="26.0" prefWidth="26.0">
+                                <TextField fx:id="startMM" prefHeight="26.0" prefWidth="28.0">
                                     <HBox.margin>
                                         <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
@@ -184,7 +184,7 @@
                                         <Font name="System Bold Italic" size="12.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="endHH" prefHeight="26.0" prefWidth="26.0">
+                                <TextField fx:id="endHH" prefHeight="26.0" prefWidth="28.0">
                                     <HBox.margin>
                                         <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
@@ -197,7 +197,7 @@
                                         <Insets left="15.0" top="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <TextField fx:id="endMM" prefHeight="26.0" prefWidth="26.0">
+                                <TextField fx:id="endMM" prefHeight="26.0" prefWidth="28.0">
                                     <HBox.margin>
                                         <Insets left="2.0" top="7.0" />
                                     </HBox.margin>
