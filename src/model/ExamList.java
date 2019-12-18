@@ -18,7 +18,7 @@ public class ExamList implements Serializable
     {
       if (exams.get(i).equals(exam))
         throw new IllegalArgumentException("This exam already in the system");
-      if (exams.get(i).getPeriodOExam().onConflict(exam.getPeriodOExam()))
+      if (exams.get(i).getPeriodOfExam().onConflict(exam.getPeriodOfExam()))
       {
         System.out.println("Period is on conflict");
         if ((exam.getExamRooms().equals(exams.get(i).getExamRooms())))
@@ -48,7 +48,7 @@ public class ExamList implements Serializable
   {
     for (int i=0; i<exams.size(); i++)
     {
-      if (exams.get(i).getPeriodOExam().equals(period))
+      if (exams.get(i).getPeriodOfExam().equals(period))
       {
         exams.remove(i);
         break;
@@ -65,7 +65,7 @@ public class ExamList implements Serializable
   }
   public DateAndTimePeriod getPeriodOfTheExamByIndex(int i)
   {
-    return exams.get(i).getPeriodOExam();
+    return exams.get(i).getPeriodOfExam();
   }
   public int getNumberOfExams()
   {

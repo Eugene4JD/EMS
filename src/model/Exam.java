@@ -31,6 +31,8 @@ public class Exam implements Serializable
       throw new IllegalArgumentException("wrong Time input(End Time should be after Start Time)");
     if (classes.size() == 0)
       throw new IllegalArgumentException("no class has been selected");
+    if (classes.size() > 1)
+      throw  new IllegalArgumentException("You must select only one class for the exam");
     if (teachers.size() == 0)
       throw new IllegalArgumentException("no teachers has been selected");
     if (rooms.size() == 0)
@@ -140,7 +142,7 @@ public class Exam implements Serializable
   }
   public void setValueSimilarToExam(Exam exam)
   {
-    this.periodOfExam = exam.getPeriodOExam();
+    this.periodOfExam = exam.getPeriodOfExam();
     this.examTeachers = exam.getExamTeachers();
     this.examRooms = exam.getExamRooms();
     this.examClasses = exam.getExamClasses();
@@ -168,10 +170,6 @@ public class Exam implements Serializable
         .equals(this.examRooms) && other.periodOfExam.equals(this.periodOfExam);
   }
 
-  public DateAndTimePeriod getPeriodOExam()
-  {
-    return this.periodOfExam;
-  }
 
   public String showScheduleElement()
   {
@@ -182,7 +180,7 @@ public class Exam implements Serializable
   }
   public Exam copy()
   {
-    return new Exam(this.examName,this.periodOfExam.getDateOfTheExam(),this.getPeriodOExam().getStartTime(),this.getPeriodOExam().getEndTime(),this.examClasses,this.examTeachers,this.examRooms);
+    return new Exam(this.examName,this.periodOfExam.getDateOfTheExam(),this.getPeriodOfExam().getStartTime(),this.getPeriodOfExam().getEndTime(),this.examClasses,this.examTeachers,this.examRooms);
   }
 
 }

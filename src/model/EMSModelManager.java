@@ -447,7 +447,7 @@ public class EMSModelManager implements EMSModel, Serializable
     for (int i = 0; i<exams.getNumberOfExams()-1; i++)
     {
       for (int j = 0; j < exams.getNumberOfExams() - 1; j++)
-        if (exams.getExam(j+1).getPeriodOExam().isBefore(exams.getExam(j).getPeriodOExam()))
+        if (exams.getExam(j+1).getPeriodOfExam().isBefore(exams.getExam(j).getPeriodOfExam()))
         {
           buffer = exams.getExam(j).copy();
           exams.getExam(j).setValueSimilarToExam(exams.getExam(j + 1));

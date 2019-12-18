@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Classes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exams.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exams.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AddExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddExamController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ExamViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Exam.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -38,16 +37,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="view" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
       <recent name="C:\Users\pavli\Documents\GitHub\EMS\src" />
       <recent name="C:\Users\pavli\Documents\GitHub\EMS\src\view" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jenia\Documents\GitHub\EMS" />
     </key>
   </component>
   <component name="RunDashboard">
