@@ -96,6 +96,7 @@ public class DisplayAddedExamsController
 
   @FXML private void viewDetailsButtonPressed()
   {
+
     try
     {
       setSelectedItem();
@@ -105,6 +106,7 @@ public class DisplayAddedExamsController
     {
       errorLabel.setText("Select an exam");
     }
+    
   }
 
   private void setSelectedItem()

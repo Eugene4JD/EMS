@@ -3,19 +3,19 @@
   <Exam>
     <Exam_name>SDJ1-Y</Exam_name>
     <Period>
-      <Date>18/12/2019</Date>
-      <StartTime>12:12:00</StartTime>
-      <EndTime>13:13:00</EndTime>
+      <Date>11/11/2019</Date>
+      <StartTime>14:38:00</StartTime>
+      <EndTime>15:38:00</EndTime>
     </Period>
     <Classes>
       <Class>1Y</Class>
     </Classes>
     <Teachers>
-      <Teacher>Troels Mortensen</Teacher>
-      <Teacher>Ib Havn</Teacher>
+      <Teacher>Mona Wendel Andersen</Teacher>
+      <Teacher>Jakob Knop Rasmussen</Teacher>
     </Teachers>
     <Rooms>
-      <Room>E.303</Room>
+      <Room>E.302 </Room>
     </Rooms>
   </Exam>
 </ExamList>
