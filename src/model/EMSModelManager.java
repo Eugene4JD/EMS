@@ -501,8 +501,9 @@ public class EMSModelManager implements EMSModel, Serializable
     {
       this.secretCode = newSC;
     }
-    else throw new IllegalArgumentException("Wrong old SC!");
-
+    else
+      throw new IllegalArgumentException("Wrong old SC!");
+  }
   @Override public void removeFromExamsByExam(Exam exam)
   {
     exams.removeExamByIndex(exams.getIndexOfExamByName(exam.getExamName()));
