@@ -212,7 +212,7 @@ public class EditExamController
           chosenTeachers, chosenRooms);
       model.removeFromExamsByExam(model.getTempExam());
       model.addExam(newExam);
-      
+
       viewHandler.openView("displayAddedExamsPage");
     }
     catch (Exception e)
