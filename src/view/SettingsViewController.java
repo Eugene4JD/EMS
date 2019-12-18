@@ -402,5 +402,9 @@ public class SettingsViewController
     Class theClass = model.getClassByClassName(nameOfClass);
     model.setTempClass(theClass);
   }
+  @FXML private void changeSCButtonPressed()
+  {
+    viewHandler.openView("changeSecretCodePage");
+  }
 }
 
