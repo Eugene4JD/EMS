@@ -64,4 +64,6 @@ public interface EMSModel
   Exam getTempExam();
   void sortedByDateExams();
   void removeFromExamsByExam(Exam exam);
+  void savePassword(String password);
+  String getPassword();
 }
