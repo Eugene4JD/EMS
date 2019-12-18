@@ -55,6 +55,16 @@ public class ExamList implements Serializable
       }
     }
   }
+  public void removeExamByObject(Exam exam){
+    for (int i =0; i<this.exams.size();i++)
+    {
+      if (exams.get(i).equals(exam))
+      {
+            exams.remove(i);
+            break;
+      }
+    }
+  }
   public void removeExamByIndex(int index)
   {
     exams.remove(index);
@@ -90,5 +100,14 @@ public class ExamList implements Serializable
         return exams.get(i);
     }
     return null;
+  }
+  public int getIndexOfExamByName(String name)
+  {
+    for (int i=0; i<exams.size();i++)
+    {
+      if (exams.get(i).getExamName().equals(name))
+        return i;
+    }
+    return -1;
   }
 }
