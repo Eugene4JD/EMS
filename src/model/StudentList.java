@@ -123,4 +123,14 @@ public class StudentList implements Serializable
      }
      return str;
   }
+  public boolean areAllStudentsInTheSameSemester()
+  {
+    int semester = students.get(0).getSemester();
+    for (int i =1; i<students.size(); i++)
+    {
+      if (students.get(i).getSemester() != semester)
+        return false;
+    }
+    return true;
+  }
 }

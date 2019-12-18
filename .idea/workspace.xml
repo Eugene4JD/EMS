@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddExamView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/AddExamView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/FirstPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/FirstPageView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/FirstPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/FirstPageView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Class.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/Class.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/StudentList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/StudentList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/StudentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/StudentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AddExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddExamController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
