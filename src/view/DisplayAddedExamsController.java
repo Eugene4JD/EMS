@@ -67,7 +67,7 @@ public class DisplayAddedExamsController
       {
         Exam exam = model.getExamByName(selectedItem.getNameProperty().get())
             .copy();
-        model.removeExam(exam.getPeriodOfExam());
+        model.removeFromExamsByExam(exam);
         examViewModel.remove(exam);
         examListTable.getSelectionModel().clearSelection();
       }

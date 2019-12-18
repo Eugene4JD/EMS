@@ -63,4 +63,5 @@ public interface EMSModel
   void setTempExam(Exam tempExam);
   Exam getTempExam();
   void sortedByDateExams();
+  void removeFromExamsByExam(Exam exam);
 }

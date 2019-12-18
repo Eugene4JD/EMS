@@ -30,8 +30,8 @@ public class ExamDetailsController
   @FXML private TableColumn<RoomViewModel, Number> roomChairsColumn;
   @FXML private TableColumn<RoomViewModel, Boolean> roomCanBeMergedColumn;
 
-  private TeacherListViewModel_details supervisorViewModel;
-  private StudentListViewModel_details studentsViewModel;
+  private TeacherListViewModel_detailsForExam supervisorViewModel;
+  private StudentListViewModel_detailsForExam studentsViewModel;
   private RoomListViewModel_details roomListViewModel;
 
   public ExamDetailsController()
@@ -44,8 +44,8 @@ public class ExamDetailsController
     this.viewHandler = viewHandler;
     this.model = model;
     this.root = root;
-    this.supervisorViewModel = new TeacherListViewModel_details(model);
-    this.studentsViewModel = new StudentListViewModel_details(model);
+    this.supervisorViewModel = new TeacherListViewModel_detailsForExam(model);
+    this.studentsViewModel = new StudentListViewModel_detailsForExam(model);
     this.roomListViewModel = new RoomListViewModel_details(model);
 
     supervisorNameColumn

@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ExamList>
   <Exam>
-    <Exam_name>ASDFGH</Exam_name>
+    <Exam_name>adf</Exam_name>
     <Period>
-      <Date>11/11/2019</Date>
-      <StartTime>14:38:00</StartTime>
-      <EndTime>15:38:00</EndTime>
+      <Date>12/12/1999</Date>
+      <StartTime>15:00:00</StartTime>
+      <EndTime>16:00:00</EndTime>
     </Period>
     <Classes>
-      <Class>SDJ</Class>
+      <Class>1Y</Class>
     </Classes>
     <Teachers>
-      <Teacher>Mona Wendel Andersen</Teacher>
-      <Teacher>Jakob Knop Rasmussen</Teacher>
+      <Teacher>Troels Mortensen</Teacher>
     </Teachers>
     <Rooms>
-      <Room>E.302 </Room>
+      <Room>C.202 </Room>
     </Rooms>
   </Exam>
 </ExamList>
