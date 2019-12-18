@@ -107,7 +107,7 @@ public class DisplayAddedExamsController
     {
       errorLabel.setText("Select an exam");
     }
-    
+
   }
 
   private void setSelectedItem()

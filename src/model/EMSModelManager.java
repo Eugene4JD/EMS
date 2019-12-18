@@ -19,6 +19,7 @@ public class EMSModelManager implements EMSModel, Serializable
   private Class tempClass;
   private Exam tempExam;
   private boolean loggedIn;
+  private String secretCode;
 
   public EMSModelManager()
   {
@@ -31,6 +32,7 @@ public class EMSModelManager implements EMSModel, Serializable
     BinaryModel = new Binary();
     xmlModel = new XML();
     tempClass = null;
+    secretCode = "123";
   }
 
   @Override public boolean isLoggedIn()
@@ -40,7 +42,7 @@ public class EMSModelManager implements EMSModel, Serializable
 
   @Override public void validateSecretCode(String secretCode)
   {
-    if (secretCode.equals("123"))
+    if (secretCode.equals(this.secretCode))
     {
       loggedIn = true;
     }
@@ -493,7 +495,15 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     this.tempExam = tempExam;
   }
-
+  @Override public void changeSC(String oldSC, String newSC)
+  {
+    if (oldSC.equals(this.secretCode))
+    {
+      this.secretCode = newSC;
+    }
+    else
+      throw new IllegalArgumentException("Wrong old SC!");
+  }
   @Override public void removeFromExamsByExam(Exam exam)
   {
     exams.removeExamByIndex(exams.getIndexOfExamByName(exam.getExamName()));
