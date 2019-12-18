@@ -129,5 +129,14 @@ public class ClassList implements Serializable
       copyCLassList.addClass(classes.get(i));
     return copyCLassList;
   }
+  public String toString()
+  {
+    String str ="";
+    for (int i =0; i<getNumberOfClasses();i++)
+    {
+      str+=classes.get(i).toString()+" ";
+    }
+    return str;
+  }
 
 }

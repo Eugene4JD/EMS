@@ -1,21 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ExamList>
   <Exam>
-    <Exam_name>SDJ1-Y</Exam_name>
+    <Exam_name>ASDFGH</Exam_name>
     <Period>
-      <Date>18/12/2019</Date>
-      <StartTime>12:12:00</StartTime>
-      <EndTime>13:13:00</EndTime>
+      <Date>01/01/2009</Date>
+      <StartTime>07:00:00</StartTime>
+      <EndTime>08:00:00</EndTime>
     </Period>
     <Classes>
-      <Class>1Y</Class>
+      <Class>SDJ</Class>
     </Classes>
     <Teachers>
-      <Teacher>Troels Mortensen</Teacher>
       <Teacher>Ib Havn</Teacher>
     </Teachers>
     <Rooms>
-      <Room>E.303</Room>
+      <Room>A.203</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>kjnjn</Exam_name>
+    <Period>
+      <Date>07/07/2010</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>15:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>SDJ</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Ib Havn</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.201b</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>adsfasdf</Exam_name>
+    <Period>
+      <Date>12/12/2019</Date>
+      <StartTime>14:00:00</StartTime>
+      <EndTime>15:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>SDJ</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Io Sandberg Hess Odderskov</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>C.202 </Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>SDJ1Y</Exam_name>
+    <Period>
+      <Date>12/12/2019</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>14:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>SDJ</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Mona Wendel Andersen</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.201b</Room>
+      <Room>D.304</Room>
     </Rooms>
   </Exam>
 </ExamList>

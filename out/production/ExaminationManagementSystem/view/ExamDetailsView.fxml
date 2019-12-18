@@ -30,7 +30,7 @@
                     </HBox.margin>
                 </Label>
                 <Button mnemonicParsing="false" prefHeight="33.0"
-                        prefWidth="54.0" text="Back">
+                        prefWidth="54.0" text="Back" onAction="#backButtonPressed">
                     <HBox.margin>
                         <Insets left="14.0" top="13.0"/>
                     </HBox.margin>
@@ -54,7 +54,7 @@
                                     </HBox.margin>
                                 </Label>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                                      wrappingWidth="174.93670463562012">
+                                      wrappingWidth="174.93670463562012" fx:id="nameText">
                                     <font>
                                         <Font name="System Bold" size="17.0"/>
                                     </font>
@@ -80,7 +80,7 @@
                                     </HBox.margin>
                                 </Label>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                                      wrappingWidth="174.93670463562012">
+                                      wrappingWidth="174.93670463562012" fx:id="periodText">
                                     <font>
                                         <Font name="System Bold" size="17.0"/>
                                     </font>
@@ -120,7 +120,7 @@
                                             prefWidth="458.0">
                                     <content>
                                         <TableView prefHeight="202.0"
-                                                   prefWidth="452.0">
+                                                   prefWidth="452.0" >
                                             <columns>
                                                 <TableColumn
                                                         prefWidth="218.39996945858002"

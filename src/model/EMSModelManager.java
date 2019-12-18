@@ -444,9 +444,9 @@ public class EMSModelManager implements EMSModel, Serializable
   @Override public void sortedByDateExams()
   {
     Exam buffer;
-    for (int i = 0; i<exams.getNumberOfExams()-1; i++)
+    for (int i = 0; i<exams.getNumberOfExams(); i++)
     {
-      for (int j = 0; j < exams.getNumberOfExams() - 1; j++)
+      for (int j = i; j < exams.getNumberOfExams() - 1; j++)
         if (exams.getExam(j+1).getPeriodOfExam().isBefore(exams.getExam(j).getPeriodOfExam()))
         {
           buffer = exams.getExam(j).copy();
