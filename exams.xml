@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ExamList>
   <Exam>
-    <Exam_name>SomeName</Exam_name>
+    <Exam_name>SDJ1-Y</Exam_name>
     <Period>
-      <Date>12/12/2020</Date>
-      <StartTime>12:00:00</StartTime>
-      <EndTime>14:00:00</EndTime>
+      <Date>18/12/2019</Date>
+      <StartTime>12:12:00</StartTime>
+      <EndTime>13:13:00</EndTime>
     </Period>
     <Classes>
-      <Class>2X</Class>
+      <Class>1Y</Class>
     </Classes>
     <Teachers>
-      <Teacher>Mona Wendel Andersen</Teacher>
       <Teacher>Troels Mortensen</Teacher>
+      <Teacher>Ib Havn</Teacher>
     </Teachers>
     <Rooms>
-      <Room>C.202 </Room>
       <Room>E.303</Room>
     </Rooms>
   </Exam>
