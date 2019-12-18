@@ -47,6 +47,8 @@ public class ExamDetailsController
     this.supervisorViewModel = new TeacherListViewModel_detailsForExam(model);
     this.studentsViewModel = new StudentListViewModel_detailsForExam(model);
     this.roomListViewModel = new RoomListViewModel_details(model);
+    nameText.setText(model.getTempExam().getExamName());
+    periodText.setText(model.getTempExam().getPeriodOfExam().toString());
 
     supervisorNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
