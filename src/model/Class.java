@@ -103,5 +103,10 @@ public class Class implements Serializable
     Class other = (Class) object;
     return other.getClassName().equals(this.className) && other.teachers
         .equals(this.teachers) && other.students.equals(this.students);
+
+  }
+  public String getName()
+  {
+    return className;
   }
 }

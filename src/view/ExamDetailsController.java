@@ -28,7 +28,7 @@ public class ExamDetailsController
   @FXML private TableColumn<RoomViewModel, Number> roomMaxStudentsColumn;
   @FXML private TableColumn<RoomViewModel, Number> roomTablesColumn;
   @FXML private TableColumn<RoomViewModel, Number> roomChairsColumn;
-  @FXML private TableColumn<RoomViewModel, Boolean> roomCanBeMergedTableColumn;
+  @FXML private TableColumn<RoomViewModel, Boolean> roomCanBeMergedColumn;
 
   private TeacherListViewModel_details supervisorViewModel;
   private StudentListViewModel_details studentsViewModel;
@@ -72,7 +72,7 @@ public class ExamDetailsController
         cellData -> cellData.getValue().getChairsProperty());
     roomTablesColumn.setCellValueFactory(
         cellData -> cellData.getValue().getTablesProperty());
-    roomCanBeMergedTableColumn.setCellValueFactory(
+    roomCanBeMergedColumn.setCellValueFactory(
         cellData -> cellData.getValue().getCanBeMergedProperty());
 
     reset();
@@ -92,6 +92,6 @@ public class ExamDetailsController
 
   @FXML private void backButtonPressed()
   {
-    viewHandler.openView("settingsPage");
+    viewHandler.openView("displayAddedExamsPage");
   }
 }

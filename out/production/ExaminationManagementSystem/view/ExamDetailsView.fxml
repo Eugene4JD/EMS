@@ -6,13 +6,15 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="595.0" prefWidth="800.0"
+      minWidth="-Infinity" prefHeight="627.0" prefWidth="813.0"
       userData="examDetails" xmlns="http://javafx.com/javafx/11.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="view.ExamDetailsController">
@@ -26,18 +28,28 @@
                         <Font name="System Bold" size="20.0"/>
                     </font>
                     <HBox.margin>
-                        <Insets left="580.0" top="15.0"/>
+                        <Insets left="30.0" top="15.0"/>
                     </HBox.margin>
                 </Label>
-                <Button mnemonicParsing="false" prefHeight="33.0"
-                        prefWidth="54.0" text="Back" onAction="#backButtonPressed">
+                <ImageView fitHeight="43.0" fitWidth="112.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@logo.png"/>
+                    </image>
                     <HBox.margin>
-                        <Insets left="14.0" top="13.0"/>
+                        <Insets left="459.0" top="7.0"/>
+                    </HBox.margin>
+                </ImageView>
+                <Button mnemonicParsing="false" onAction="#backButtonPressed"
+                        prefHeight="33.0" prefWidth="54.0" text="Back">
+                    <HBox.margin>
+                        <Insets left="7.0" top="13.0"/>
                     </HBox.margin>
                 </Button>
             </children>
         </HBox>
-        <HBox prefHeight="255.0" prefWidth="784.0">
+        <HBox prefHeight="255.0" prefWidth="784.0"
+              style="-fx-background-color: #e3e3e3;">
             <children>
                 <VBox prefHeight="255.0" prefWidth="284.0">
                     <children>
@@ -53,8 +65,9 @@
                                         <Insets left="30.0" top="6.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                                      wrappingWidth="174.93670463562012" fx:id="nameText">
+                                <Text fx:id="nameText" strokeType="OUTSIDE"
+                                      strokeWidth="0.0"
+                                      wrappingWidth="174.93670463562012">
                                     <font>
                                         <Font name="System Bold" size="17.0"/>
                                     </font>
@@ -79,8 +92,9 @@
                                         <Insets left="30.0" top="6.0"/>
                                     </HBox.margin>
                                 </Label>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0"
-                                      wrappingWidth="174.93670463562012" fx:id="periodText">
+                                <Text fx:id="periodText" strokeType="OUTSIDE"
+                                      strokeWidth="0.0"
+                                      wrappingWidth="174.93670463562012">
                                     <font>
                                         <Font name="System Bold" size="17.0"/>
                                     </font>
@@ -119,16 +133,20 @@
                                 <ScrollPane prefHeight="201.0"
                                             prefWidth="458.0">
                                     <content>
-                                        <TableView prefHeight="202.0"
-                                                   prefWidth="452.0" >
+                                        <TableView fx:id="studentInClassTable"
+                                                   prefHeight="202.0"
+                                                   prefWidth="452.0">
                                             <columns>
                                                 <TableColumn
+                                                        fx:id="studentNameColumn"
                                                         prefWidth="218.39996945858002"
                                                         text="Name"/>
                                                 <TableColumn
+                                                        fx:id="studentIdColumn"
                                                         prefWidth="137.5999755859375"
                                                         text="Id"/>
                                                 <TableColumn
+                                                        fx:id="studentSemesterColumn"
                                                         prefWidth="96.800048828125"
                                                         text="Semester"/>
                                             </columns>
@@ -141,7 +159,8 @@
                 </VBox>
             </children>
         </HBox>
-        <HBox prefHeight="22.0" prefWidth="800.0">
+        <HBox prefHeight="22.0" prefWidth="800.0"
+              style="-fx-background-color: #e3e3e3;">
             <children>
                 <Label prefHeight="20.0" prefWidth="75.0" text="Supervisors:">
                     <font>
@@ -161,7 +180,8 @@
                 </Label>
             </children>
         </HBox>
-        <HBox prefHeight="254.0" prefWidth="800.0">
+        <HBox prefHeight="254.0" prefWidth="800.0"
+              style="-fx-background-color: #e3e3e3;">
             <children>
                 <VBox prefHeight="254.0" prefWidth="305.0">
                     <HBox.margin>
@@ -174,15 +194,19 @@
                     <children>
                         <ScrollPane prefHeight="214.0" prefWidth="263.0">
                             <content>
-                                <TableView prefHeight="212.0" prefWidth="262.0">
+                                <TableView fx:id="supervisorListTable"
+                                           prefHeight="212.0" prefWidth="262.0">
                                     <columns>
                                         <TableColumn
+                                                fx:id="supervisorNameColumn"
                                                 prefWidth="116.80002057552338"
                                                 text="Name"/>
                                         <TableColumn
+                                                fx:id="supervisorInitialsColumn"
                                                 prefWidth="63.20001983642578"
                                                 text="Initials"/>
                                         <TableColumn
+                                                fx:id="supervisorSubjectColumn"
                                                 prefWidth="80.80003356933594"
                                                 text="Subject"/>
                                     </columns>
@@ -199,20 +223,30 @@
                     <children>
                         <ScrollPane prefHeight="220.0" prefWidth="477.0">
                             <content>
-                                <TableView prefHeight="211.0" prefWidth="452.0">
+                                <TableView fx:id="roomsForExamListTable"
+                                           prefHeight="211.0" prefWidth="452.0">
                                     <columns>
-                                        <TableColumn prefWidth="75.0"
+                                        <TableColumn fx:id="roomNameColumn"
+                                                     prefWidth="75.0"
                                                      text="Name"/>
-                                        <TableColumn prefWidth="75.0"
-                                                     text="Connectors"/>
-                                        <TableColumn prefWidth="75.0"
-                                                     text="Max Students"/>
-                                        <TableColumn prefWidth="75.0"
-                                                     text="Chairs"/>
-                                        <TableColumn prefWidth="75.0"
+                                        <TableColumn
+                                                fx:id="roomConnectorsColumn"
+                                                prefWidth="75.0"
+                                                text="Connectors"/>
+                                        <TableColumn
+                                                fx:id="roomMaxStudentsColumn"
+                                                prefWidth="75.0"
+                                                text="Max Students"/>
+                                        <TableColumn fx:id="roomTablesColumn"
+                                                     prefWidth="75.0"
                                                      text="Tables"/>
-                                        <TableColumn prefWidth="75.0"
-                                                     text="Can be merged"/>
+                                        <TableColumn fx:id="roomChairsColumn"
+                                                     prefWidth="75.0"
+                                                     text="Chairs"/>
+                                        <TableColumn
+                                                fx:id="roomCanBeMergedColumn"
+                                                prefWidth="75.0"
+                                                text="Can be merged"/>
                                     </columns>
                                 </TableView>
                             </content>

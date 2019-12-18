@@ -131,12 +131,12 @@ public class ClassList implements Serializable
   }
   public String toString()
   {
-    String str ="";
-    for (int i =0; i<getNumberOfClasses();i++)
+    String result = "";
+    for (int i=0; i<size();i++)
     {
-      str+=classes.get(i).toString()+" ";
+      result += classes.get(i).getName()+"\n";
     }
-    return str;
+    return result;
   }
 
 }
