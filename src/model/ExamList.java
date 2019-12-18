@@ -82,4 +82,13 @@ public class ExamList implements Serializable
     }
     return str;
   }
+  public Exam getExamByName(String name)
+  {
+    for (int i=0; i<exams.size();i++)
+    {
+      if (exams.get(i).getExamName().equals(name))
+        return exams.get(i);
+    }
+    return null;
+  }
 }

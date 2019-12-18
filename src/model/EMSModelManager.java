@@ -472,5 +472,25 @@ public class EMSModelManager implements EMSModel, Serializable
   {
     return rooms.copy();
   }
+
+  @Override public int examListSize()
+  {
+    return exams.getNumberOfExams();
+  }
+
+  @Override public Exam getExamByIndex(int index)
+  {
+    return exams.getExam(index);
+  }
+
+  @Override public Exam getExamByName(String name)
+  {
+    return exams.getExamByName(name);
+  }
+
+  @Override public void setTempExam(Exam tempExam)
+  {
+    this.tempExam = tempExam;
+  }
 }
 
