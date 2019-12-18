@@ -344,7 +344,7 @@ public class EditExamController
 
   @FXML private void backButtonPressed()
   {
-    viewHandler.openView("firstPage");
+    viewHandler.openView("displayAddedExamsPage");
   }
 }
 
