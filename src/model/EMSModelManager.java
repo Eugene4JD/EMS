@@ -1,6 +1,7 @@
 package model;
 
 import java.io.*;
+import java.util.Scanner;
 
 import mediator.Binary;
 import mediator.PersistenceBinary;
@@ -32,7 +33,7 @@ public class EMSModelManager implements EMSModel, Serializable
     BinaryModel = new Binary();
     xmlModel = new XML();
     tempClass = null;
-    secretCode = "123";
+    secretCode = getPassword();
   }
 
   @Override public boolean isLoggedIn()
@@ -510,5 +511,44 @@ public class EMSModelManager implements EMSModel, Serializable
     writeToBinary(new File("Exams.bin"));
     writeToXMl(new File("exams.xml"));
   }
-}
+
+  @Override public String getPassword()
+  {
+    try
+    {
+      Scanner in = new Scanner(new File("Password.txt"));
+
+      while (in.hasNext())
+      {
+        String line = in.nextLine().trim();
+        this.secretCode = line;
+        System.out.println(line);
+        System.out.println(secretCode);
+      }
+      in.close();
+    }
+    catch (IOException e)
+    {
+      System.out.println("Error");
+    }
+    return null;
+  }
+
+    @Override public void savePassword (String password)
+    {
+      try
+      {
+        PrintWriter out = new PrintWriter(new File("Password.txt"));
+        out.write(password);
+        out.flush();
+        out.close();
+        System.out.println("End writing data to file");
+        out.close();
+      }
+      catch (IOException e)
+      {
+        System.out.println("Error");
+      }
+    }
+  }
 
