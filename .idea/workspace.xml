@@ -3,24 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="33dbbb7f-ee0f-4bcd-b5bf-7d49dde8e023" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exams.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Exams.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Password.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Password.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exams.xml" beforeDir="false" afterPath="$PROJECT_DIR$/exams.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/ClassList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/EMSModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/RoomList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/RoomList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/TeacherList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/model/TeacherList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ChangeSecretCodeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ChangeSecretCodeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/EditExamController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/EditExamController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ViewHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ClassList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ClassList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/EMSModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EMSModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/RoomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/RoomList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TeacherList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TeacherList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChangeSecretCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChangeSecretCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/EditExamView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/EditExamView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ExamDetailsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExaminationManagementSystem/view/ExamDetailsView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/EditExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EditExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/EditExamView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EditExamView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ExamDetailsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ExamDetailsView.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
