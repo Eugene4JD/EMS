@@ -67,17 +67,19 @@
                     <children>
                         <ScrollPane prefHeight="414.0" prefWidth="740.0">
                             <content>
-                                <TableView prefHeight="412.0" prefWidth="737.0" fx:id="examListTable">
+                                <TableView fx:id="examListTable"
+                                           prefHeight="412.0" prefWidth="737.0">
                                     <columns>
+                                        <TableColumn fx:id="examNameColumn"
+                                                     prefWidth="234.40003049373627"
+                                                     text="Name of the exam"/>
                                         <TableColumn
-                                                prefWidth="234.40003049373627"
-                                                text="Name of the exam" fx:id="examNameColumn"/>
-                                        <TableColumn
+                                                fx:id="periodOfTheExamColumn"
                                                 prefWidth="247.99993896484375"
-                                                text="Exam period" fx:id="periodOfTheExamColumn"/>
-                                        <TableColumn
-                                                prefWidth="256.7998962402344"
-                                                text="Classes" fx:id="classNameColumn"/>
+                                                text="Exam period"/>
+                                        <TableColumn fx:id="classNameColumn"
+                                                     prefWidth="256.7998962402344"
+                                                     text="Classes"/>
                                     </columns>
                                 </TableView>
                             </content>
@@ -88,26 +90,29 @@
         </HBox>
         <HBox prefHeight="62.0" prefWidth="800.0">
             <children>
-                <Label alignment="CENTER" prefHeight="18.0" prefWidth="408.0"
-                       textFill="RED" fx:id="errorLabel">
+                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0"
+                       prefWidth="408.0" textFill="RED">
                     <HBox.margin>
-                        <Insets left="30.0"/>
+                        <Insets left="30.0" top="16.0"/>
                     </HBox.margin>
                     <font>
                         <Font name="System Italic" size="10.0"/>
                     </font>
                 </Label>
-                <Button mnemonicParsing="false" text="See details" onAction="#viewDetailsButtonPressed">
+                <Button mnemonicParsing="false"
+                        onAction="#viewDetailsButtonPressed" text="See details">
                     <HBox.margin>
                         <Insets left="140.0" top="15.0"/>
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Edit" onAction="#editExamButtonPressed">
+                <Button mnemonicParsing="false"
+                        onAction="#editExamButtonPressed" text="Edit">
                     <HBox.margin>
                         <Insets left="7.0" top="15.0"/>
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false" text="Remove" onAction="#removeExamButtonPressed">
+                <Button mnemonicParsing="false"
+                        onAction="#removeExamButtonPressed" text="Remove">
                     <HBox.margin>
                         <Insets left="7.0" top="15.0"/>
                     </HBox.margin>
