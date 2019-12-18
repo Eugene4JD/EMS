@@ -167,7 +167,7 @@
                     </VBox.margin>
                 </Text>
                 <Button mnemonicParsing="false" prefHeight="42.0"
-                        prefWidth="183.0" text="Display added exams">
+                        prefWidth="183.0" text="Display added exams" onAction="#displayAddedExamsButtonPressed">
                     <VBox.margin>
                         <Insets left="30.0" top="15.0"/>
                     </VBox.margin>

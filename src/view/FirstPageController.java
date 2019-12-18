@@ -49,4 +49,8 @@ public class FirstPageController
   {
     viewHandler.openView("addExamPage");
   }
+  public void displayAddedExamsButtonPressed()
+  {
+    viewHandler.openView("displayAddedExamsPage");
+  }
 }

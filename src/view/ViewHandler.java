@@ -21,6 +21,7 @@ public class ViewHandler
   private AddClassController addClassController;
   private ClassDetailsController classDetailsController;
   private AddExamController addExamController;
+  private DisplayAddedExamsController displayAddedExamsController;
 
   public ViewHandler(EMSModel model)
   {
@@ -66,6 +67,9 @@ public class ViewHandler
         break;
       case "addExamPage":
         root = loadAddExamView("AddExamView.fxml");
+        break;
+      case "displayAddedExamsPage":
+        root = loadDisplayAddedExamsView("DisplayAddedExamsView.fxml");
         break;
 
     }
@@ -303,5 +307,29 @@ public class ViewHandler
       addExamController.reset();
     }
     return addExamController.getRoot();
+  }
+
+  private Region loadDisplayAddedExamsView(String fxmlFile)
+  {
+    if (displayAddedExamsController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        displayAddedExamsController = loader.getController();
+        displayAddedExamsController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      displayAddedExamsController.reset();
+    }
+    return displayAddedExamsController.getRoot();
   }
 }
