@@ -33,7 +33,7 @@ public class EMSModelManager implements EMSModel, Serializable
     BinaryModel = new Binary();
     xmlModel = new XML();
     tempClass = null;
-    secretCode = getPassword();
+    secretCode = "123";
   }
 
   @Override public boolean isLoggedIn()
