@@ -1,20 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ExamList>
-  <Exam>
-    <Exam_name>adf</Exam_name>
-    <Period>
-      <Date>12/12/1999</Date>
-      <StartTime>15:00:00</StartTime>
-      <EndTime>16:00:00</EndTime>
-    </Period>
-    <Classes>
-      <Class>1Y</Class>
-    </Classes>
-    <Teachers>
-      <Teacher>Troels Mortensen</Teacher>
-    </Teachers>
-    <Rooms>
-      <Room>C.202 </Room>
-    </Rooms>
-  </Exam>
-</ExamList>
+<ExamList/>

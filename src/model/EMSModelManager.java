@@ -378,6 +378,7 @@ public class EMSModelManager implements EMSModel, Serializable
   @Override public void removeClassByName(String name)
   {
     classes.removeClassByClassName(name);
+    writeToBinary(new File("Classes.bin"));
   }
 
   @Override public TeacherList getTeacherListCopy()
@@ -495,14 +496,7 @@ public class EMSModelManager implements EMSModel, Serializable
 
   @Override public void removeFromExamsByExam(Exam exam)
   {
-    for (int i =0; i<exams.getNumberOfExams(); i++)
-    {
-      if (exams.getExam(i).equals(exam))
-      {
-        exams.removeExamByIndex(i);
-        break;
-      }
-    }
+    exams.removeExamByIndex(exams.getIndexOfExamByName(exam.getExamName()));
     writeToBinary(new File("Exams.bin"));
     writeToXMl(new File("exams.xml"));
   }
