@@ -24,8 +24,9 @@ public class Class implements Serializable
       throw  new IllegalArgumentException("wrong class name");
     else
       this.className = className;
+    if (!(students.areAllStudentsInTheSameSemester()))
+      throw new IllegalArgumentException("All students should be from the same semester");
   }
-
   public void addStudent(Student student)
   {
     students.addStudent(student);

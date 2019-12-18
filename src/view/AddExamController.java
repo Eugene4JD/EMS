@@ -239,7 +239,7 @@ public class AddExamController
       currentClassViewModel.add(class1);
       classListTable.getSelectionModel().clearSelection();
     }
-    catch (IllegalArgumentException e)
+    catch (Exception e)
     {
       errorLabel.setText("Class is not selected");
     }
@@ -259,7 +259,7 @@ public class AddExamController
       currentRoomListViewModel.add(room);
       roomListTable.getSelectionModel().clearSelection();
     }
-    catch (IllegalArgumentException e)
+    catch (Exception e)
     {
       errorLabel.setText("Room is not selected");
     }
