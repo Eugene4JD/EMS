@@ -65,4 +65,6 @@ public interface EMSModel
   void sortedByDateExams();
   void changeSC(String oldSC, String newSC);
   void removeFromExamsByExam(Exam exam);
+  void savePassword(String password);
+  String getPassword();
 }
