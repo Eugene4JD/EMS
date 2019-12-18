@@ -6,7 +6,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
+import model.ClassList;
 import model.EMSModel;
+import model.RoomList;
+import model.TeacherList;
 
 public class EditExamController
 {
@@ -50,4 +53,19 @@ public class EditExamController
   @FXML private TableView<ClassViewModel> classListTable;
   @FXML private TableColumn<ClassViewModel, String> classNameColumn;
   @FXML private TableColumn<ClassViewModel, Number> classNumberOfStudentsColumn;
+
+  private TeacherListViewArrayList teacherViewModel;
+  private TeacherListViewArrayList currentTeacherViewModel;
+  private TeacherList freeTeachers;
+  private TeacherList chosenTeachers;
+
+  private ClassListViewArrayList classViewModel;
+  private ClassListViewArrayList currentClassViewModel;
+  private ClassList freeClasses;
+  private ClassList chosenClasses;
+
+  private RoomListViewArrayList roomListViewModel;
+  private RoomListViewArrayList currentRoomListViewModel;
+  private RoomList freeRooms;
+  private RoomList chosenRooms;
 }

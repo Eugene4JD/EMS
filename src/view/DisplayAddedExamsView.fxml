@@ -12,74 +12,55 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="613.0" prefWidth="815.0"
-      userData="displayAddedExams" xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.DisplayAddedExamsController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="815.0" userData="displayAddedExams" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DisplayAddedExamsController">
     <children>
-        <HBox prefHeight="55.0" prefWidth="900.0"
-              style="-fx-background-color: #FAFAFA;">
+        <HBox prefHeight="55.0" prefWidth="900.0" style="-fx-background-color: #FAFAFA;">
             <children>
-                <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@view.png"/>
+                        <Image url="@view.png" />
                     </image>
                     <HBox.margin>
-                        <Insets left="30.0" top="13.0"/>
+                        <Insets left="30.0" top="13.0" />
                     </HBox.margin>
                 </ImageView>
-                <Label alignment="CENTER_RIGHT" prefHeight="30.0"
-                       prefWidth="229.0" text="Displaying added exams">
+                <Label prefHeight="30.0" prefWidth="229.0" text="Edit &amp; View">
                     <font>
-                        <Font name="System Bold" size="20.0"/>
+                        <Font name="System Bold" size="20.0" />
                     </font>
                     <HBox.margin>
-                        <Insets left="10.0" top="12.0"/>
+                        <Insets left="10.0" top="12.0" />
                     </HBox.margin>
                 </Label>
-                <ImageView fitHeight="41.0" fitWidth="94.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fitHeight="41.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@logo.png"/>
+                        <Image url="@logo.png" />
                     </image>
                     <HBox.margin>
-                        <Insets left="322.0" top="6.0"/>
+                        <Insets left="322.0" top="6.0" />
                     </HBox.margin>
                 </ImageView>
-                <Button mnemonicParsing="false" onAction="#backButtonPressed"
-                        prefHeight="35.0" prefWidth="49.0" text="Back">
+                <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="35.0" prefWidth="49.0" text="Back">
                     <HBox.margin>
-                        <Insets left="5.0" top="10.0"/>
+                        <Insets left="5.0" top="10.0" />
                     </HBox.margin>
                 </Button>
             </children>
         </HBox>
-        <HBox prefHeight="459.0" prefWidth="800.0"
-              style="-fx-background-color: #d9d9d9;">
+        <HBox prefHeight="459.0" prefWidth="800.0" style="-fx-background-color: #d9d9d9;">
             <children>
                 <VBox prefHeight="499.0" prefWidth="800.0">
                     <HBox.margin>
-                        <Insets bottom="15.0" left="30.0" right="30.0"
-                                top="30.0"/>
+                        <Insets bottom="15.0" left="30.0" right="30.0" top="30.0" />
                     </HBox.margin>
                     <children>
                         <ScrollPane prefHeight="414.0" prefWidth="740.0">
                             <content>
-                                <TableView fx:id="examListTable"
-                                           prefHeight="412.0" prefWidth="737.0">
+                                <TableView fx:id="examListTable" prefHeight="412.0" prefWidth="737.0">
                                     <columns>
-                                        <TableColumn fx:id="examNameColumn"
-                                                     prefWidth="234.40003049373627"
-                                                     text="Name of the exam"/>
-                                        <TableColumn
-                                                fx:id="periodOfTheExamColumn"
-                                                prefWidth="247.99993896484375"
-                                                text="Exam period"/>
-                                        <TableColumn fx:id="classNameColumn"
-                                                     prefWidth="256.7998962402344"
-                                                     text="Classes"/>
+                                        <TableColumn fx:id="examNameColumn" prefWidth="234.40003049373627" text="Name of the exam" />
+                                        <TableColumn fx:id="periodOfTheExamColumn" prefWidth="247.99993896484375" text="Exam period" />
+                                        <TableColumn fx:id="classNameColumn" prefWidth="256.7998962402344" text="Classes" />
                                     </columns>
                                 </TableView>
                             </content>
@@ -90,31 +71,27 @@
         </HBox>
         <HBox prefHeight="62.0" prefWidth="800.0">
             <children>
-                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0"
-                       prefWidth="408.0" textFill="RED">
+                <Label fx:id="errorLabel" alignment="CENTER" prefHeight="18.0" prefWidth="408.0" textFill="RED">
                     <HBox.margin>
-                        <Insets left="30.0" top="16.0"/>
+                        <Insets left="30.0" top="16.0" />
                     </HBox.margin>
                     <font>
-                        <Font name="System Italic" size="10.0"/>
+                        <Font name="System Italic" size="10.0" />
                     </font>
                 </Label>
-                <Button mnemonicParsing="false"
-                        onAction="#viewDetailsButtonPressed" text="See details">
+                <Button mnemonicParsing="false" onAction="#viewDetailsButtonPressed" text="See details">
                     <HBox.margin>
-                        <Insets left="140.0" top="15.0"/>
+                        <Insets left="140.0" top="15.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false"
-                        onAction="#editExamButtonPressed" text="Edit">
+                <Button mnemonicParsing="false" onAction="#editExamButtonPressed" text="Edit">
                     <HBox.margin>
-                        <Insets left="7.0" top="15.0"/>
+                        <Insets left="7.0" top="15.0" />
                     </HBox.margin>
                 </Button>
-                <Button mnemonicParsing="false"
-                        onAction="#removeExamButtonPressed" text="Remove">
+                <Button mnemonicParsing="false" onAction="#removeExamButtonPressed" text="Remove">
                     <HBox.margin>
-                        <Insets left="7.0" top="15.0"/>
+                        <Insets left="7.0" top="15.0" />
                     </HBox.margin>
                 </Button>
             </children>

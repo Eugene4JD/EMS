@@ -61,6 +61,6 @@ public class ChangeSecretCodeController
   }
   @FXML private void onEnter(ActionEvent event)
   {
-    cancelButtonPressed();
+    changeButtonPressed();
   }
 }
