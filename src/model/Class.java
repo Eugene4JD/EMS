@@ -3,12 +3,29 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * A class representing a Class of students
+ * @author  Group 5
+ * @version v1.1
+ */
+
 public class Class implements Serializable
 {
   private StudentList students;
   private TeacherList teachers;
   private String className;
 
+  /**
+   * Three argument-argument constructor.
+   * Initialising Class object with name, Teachers list and Student list. If teacher list is empty or Student list is empty ,or
+   * name of the class is an empty string  : this constructor will throw Illegal argument exception
+   * @param className
+   *         String which will be used as a Class name
+   * @param teachers
+   *         Teacher list will represent all teachers which are in the class.
+   * @param students
+   *         Student list will represent all students which are in the class.
+   */
   public Class(String className, TeacherList teachers, StudentList students)
   {
     if (teachers.getNumberOfTeachers() == 0)
@@ -27,75 +44,84 @@ public class Class implements Serializable
     if (!(students.areAllStudentsInTheSameSemester()))
       throw new IllegalArgumentException("All students should be from the same semester");
   }
+
+  /**
+   * Adding a student using the student list method addStudent
+   * @param student
+   *     student which will be added to the student list of the class
+   */
   public void addStudent(Student student)
   {
     students.addStudent(student);
   }
 
+  /**
+   * Returning number of students of a class of students
+   * @return
+   *       returning the size of the student list
+   */
   public int getNumberOfStudents()
   {
     return students.getNumberOfStudents();
   }
 
-  public ArrayList<Student> getAllStudents()
-  {
-    return students.getStudents();
-  }
-
-  public void removeStudentByIndex(int index)
-  {
-    students.removeStudentByIndex(index);
-  }
-
-  public void removeStudentById(int id)
-  {
-    students.removeStudentById(id);
-  }
-
-  public void addTeacher(Teacher teacher)
-  {
-    teachers.addTeacher(teacher);
-  }
-
+  /**
+   * Returning number of teachers of a class of students
+   * @return
+   *      returning the size of the teacher list
+   */
   public int getNumberOfTeachers()
   {
     return teachers.getNumberOfTeachers();
   }
 
-  public ArrayList<Teacher> getAllTeachers()
-  {
-    return teachers.getTeachers();
-  }
-
-  public void removeTeacherByIndex(int index)
-  {
-    teachers.removeTeacherByIndex(index);
-  }
-
-  public void removeTeacherById(String initials)
-  {
-    teachers.removeTeacherByInitials(initials);
-  }
-
+  /**
+   *
+   * @return
+   *    returning the class name of a class of students
+   */
   public String getClassName()
   {
     return className;
   }
 
+  /**
+   *
+   * @return
+   *    returning the String of an object Class overwriting toString method
+   */
   public String toString()
   {
     return className;
   }
 
+  /**
+   * returns the students of a class
+   * @return
+   *    student list of a class
+   */
   public StudentList getStudents()
   {
     return students;
   }
+
+  /**
+   * returns the teachers of a class
+   * @return
+   *     teachers list of a class
+   */
   public TeacherList getTeachers()
   {
     return teachers;
   }
 
+  /**
+   *
+   * @param object
+   *    accept the object
+   * @return
+   *    true if the object is the same as the object which is calling this method
+   */
   public boolean equals(Object object)
   {
     if (!(object instanceof Class))
@@ -105,6 +131,12 @@ public class Class implements Serializable
         .equals(this.teachers) && other.students.equals(this.students);
 
   }
+
+  /**
+   *
+   * @return
+   *   this class name
+   */
   public String getName()
   {
     return className;
