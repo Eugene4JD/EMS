@@ -3,15 +3,38 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * A class representing the list of exams
+ * @version v1.1
+ * @author Group 5
+ *
+ */
 public class ExamList implements Serializable
 {
 
   private ArrayList<Exam> exams;
 
+  /**
+   * zero-argument, initialising the exams array list
+   */
   public ExamList()
   {
     exams = new ArrayList<>();
   }
+
+  /**
+   * method which checks if exam is legit to be created , if exam which trying to add to the
+   * exam list is the same with any other which are already in the list wil throw the Illegal argument exception
+   * if the  argument exam period is on conflict with any exam in the list and:
+   *   - this exams have at least one same teacher
+   *   - this exams have the same rooms or at least one same room
+   *   - this exams have the at least one same class
+   *   will throw illegal argument exception
+   *
+   * @param exam
+   *   given as argument other exam
+   * @return
+   */
   public boolean isExamLegitToBeCreated(Exam exam)
   {
     for (int i =0; i<exams.size(); i++)
@@ -39,11 +62,23 @@ public class ExamList implements Serializable
     }
     return true;
   }
+
+  /**
+   * adding exam to the list which is given as argument
+   * @param exam
+   *   exam object
+   */
   public void addExam(Exam exam)
   {
     if (isExamLegitToBeCreated(exam))
       exams.add(exam);
   }
+
+  /**
+   * removing and exam from the list by given period
+   * @param period
+   *   given period object
+   */
   public void removeExam(DateAndTimePeriod period)
   {
     for (int i=0; i<exams.size(); i++)
@@ -55,6 +90,12 @@ public class ExamList implements Serializable
       }
     }
   }
+
+  /**
+   * remove exam by exam
+   * @param exam
+   *   given exam as an argument
+   */
   public void removeExamByObject(Exam exam){
     for (int i =0; i<this.exams.size();i++)
     {
@@ -65,22 +106,56 @@ public class ExamList implements Serializable
       }
     }
   }
+
+  /**
+   * removes exam with the given index
+   * @param index
+   *  int index
+   */
   public void removeExamByIndex(int index)
   {
     exams.remove(index);
   }
+
+  /**
+   * get exam by given index in the list
+   * @param index
+   *    int index
+   * @return
+   *   exam object
+   */
   public Exam getExam(int index)
   {
     return exams.get(index);
   }
+
+  /**
+   * get Date and Time Period object in the list by index of the exam in the list
+   * @param i
+   *    i index
+   * @return
+   *  Date and Time period object
+   */
   public DateAndTimePeriod getPeriodOfTheExamByIndex(int i)
   {
     return exams.get(i).getPeriodOfExam();
   }
+
+  /**
+   * get Number of Exams in the list
+   * @return
+   *   list size
+   */
   public int getNumberOfExams()
   {
     return exams.size();
   }
+
+  /**
+   *
+   * @return
+   *  String representation of the examList
+   */
   public String toString()
   {
     String str = "";
@@ -92,6 +167,14 @@ public class ExamList implements Serializable
     }
     return str;
   }
+
+  /**
+   * get the exam by the exam name
+   * @param name
+   *  String exam name
+   * @return
+   *   Exam object or null if there isn't such an object
+   */
   public Exam getExamByName(String name)
   {
     for (int i=0; i<exams.size();i++)
@@ -101,6 +184,15 @@ public class ExamList implements Serializable
     }
     return null;
   }
+
+  /**
+   * get the index of the Exam by name
+   * @param name
+   *   String name
+   * @return
+   *   index of the exam
+   *
+   */
   public int getIndexOfExamByName(String name)
   {
     for (int i=0; i<exams.size();i++)

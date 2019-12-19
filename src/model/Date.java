@@ -3,23 +3,47 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+/**
+ * A class representing the Date object
+ * @author  Group 5
+ * @version v1.1
+ */
 public class Date implements Serializable
 {
   private int day;
   private int month;
   private int year;
 
+  /**
+   * A 3 argument constructor , setting the date to the arguments
+   * @param day
+   *   int day
+   * @param month
+   *   int month
+   * @param year
+   *   int year
+   */
   public Date(int day, int month, int year)
   {
     this.set(day, month, year);
   }
 
+  /**
+   * sets this date to current date
+   */
   public Date()
   {
     LocalDate today = LocalDate.now();
     this.set(today.getDayOfMonth(), today.getMonthValue(), today.getYear());
   }
 
+  /**
+   * converts month Name into integer representation of it
+   * @param monthName
+   *   String month Name
+   * @return
+   *   int month number
+   */
   public static int convertToMonthNumber(String monthName)
   {
     switch (monthName)
@@ -53,11 +77,32 @@ public class Date implements Serializable
     }
   }
 
+  /**
+   * another 3 argument constructor which is setting Date , but instead of int monthName using String
+   * representation of it .
+   * @param day
+   *  int day
+   * @param monthName
+   *   String monthName
+   * @param year
+   *   int year
+   */
   public Date(int day, String monthName, int year)
   {
     set(day, Date.convertToMonthNumber(monthName), year);
   }
 
+  /**
+   * set method to this object , sets all three instance variables using all 3 arguments
+   * if year is less than 0 , or if month less than 1 or more than 12, or day less than 1 or more than number of days in this
+   * month throws Illegal argument exception
+   * @param day
+   * int day
+   * @param month
+   * int month
+   * @param year
+   * int year
+   */
   public void set(int day, int month, int year)
   {
     if (year < 0)
@@ -78,11 +123,22 @@ public class Date implements Serializable
       this.day = day;
   }
 
+  /**
+   *
+   * @return
+   * true if year of this date is leep
+   * and false if it is not
+   */
   public boolean isLeapYear()
   {
     return (year % 4 == 0 && year % 100 != 0);
   }
 
+  /**
+   *
+   * @return
+   * returns amount of days in this object month
+   */
   public int numberOfDaysInMonth()
   {
     if (month == 2 && this.isLeapYear())
@@ -95,113 +151,42 @@ public class Date implements Serializable
       return 31;
   }
 
-  public String getMonthName()
-  {
-    switch (month)
-    {
-      case 1:
-        return "January";
-      case 2:
-        return "February";
-      case 3:
-        return "March";
-      case 4:
-        return "April";
-      case 5:
-        return "May";
-      case 6:
-        return "June";
-      case 7:
-        return "July";
-      case 8:
-        return "August";
-      case 9:
-        return "September";
-      case 10:
-        return "October";
-      case 11:
-        return "November";
-      case 12:
-        return "December";
-    }
-
-    return "no such meaning";
-  }
-
+  /**
+   * @return
+   * this date object day number
+   */
   public int getDay()
   {
     return day;
   }
 
+  /**
+   *
+   * @return
+   *   this Date object month number
+   */
   public int getMonth()
   {
     return month;
   }
 
+  /**
+   *
+   * @return
+   *   this Date object year number
+   */
   public int getYear()
   {
     return year;
   }
 
-  public int daysBetween(Date other)
-  {
-    int counter = 0;
-    Date startDate;
-    Date endDate;
-    if (other.isBefore(this))
-    {
-      startDate = other.copy();
-      endDate = this.copy();
-    }
-    else
-    {
-      startDate = this.copy();
-      endDate = other.copy();
-    }
-    while (!(startDate.equals(endDate)))
-    {
-      counter++;
-      startDate.stepForwardOneDay();
-    }
-    return counter;
-  }
-
-  public void stepForwardOneDay()
-  {
-    if (month == 12)
-    {
-      if (day == 31)
-      {
-        this.day = 1;
-        this.month = 1;
-        this.year += 1;
-      }
-      else
-      {
-        this.day += 1;
-      }
-    }
-    else
-    {
-      if ((day == 31) || (day == 30 && this.numberOfDaysInMonth() == 30) || (
-          day == 29 && this.numberOfDaysInMonth() == 29) || (day == 28
-          && this.numberOfDaysInMonth() == 28))
-      {
-        this.day = 1;
-        this.month += 1;
-      }
-      else
-      {
-        this.day += 1;
-      }
-    }
-  }
-
-  public void setYear(int year)
-  {
-    this.year = year;
-  }
-
+  /**
+   *
+   * @param date2
+   *   another Date
+   * @return
+   *   true if the this date is before given date as an argument
+   */
   public boolean isBefore(Date date2)
   {
     if (this.getYear() != date2.getYear())
@@ -212,11 +197,10 @@ public class Date implements Serializable
       return this.getDay() <= date2.getDay();
   }
 
-  public int yearsBetween(Date date2)
-  {
-    return Math.abs(this.getYear() - date2.getYear());
-  }
-
+  /**
+   * @return
+   *  returns String representation of the date in the right format
+   */
   public String toString()
   {
     String Str = "";
@@ -239,12 +223,13 @@ public class Date implements Serializable
     return Str;
   }
 
-  public Date copy()
-  {
-    Date newDate = new Date(day, month, year);
-    return newDate;
-  }
-
+  /**
+   * equals method
+   * @param obj
+   *   given object
+   * @return
+   *   returns true if the object given is equals to this object
+   */
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Date))

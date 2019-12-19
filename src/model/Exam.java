@@ -2,6 +2,12 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * A class representing Exam
+ * @version v1.1
+ * @author Group 5
+ *
+ */
 public class Exam implements Serializable
 {
   private String examName;
@@ -11,18 +17,24 @@ public class Exam implements Serializable
   private RoomList examRooms;
   private String description;
 
-/*  public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime)
-  {
-    if (examName .equals(""))
-      throw new IllegalArgumentException("wrong Exam name");
-    this.examName = examName;
-    examClasses = new ClassList();
-    periodOfExam = new DateAndTimePeriod(dateOfTheExam, startTime, endTime);
-    examRooms = new RoomList();
-    examTeachers = new TeacherList();
-  }
-
- */
+  /**
+   * A 7 arguments constructor . If the exam name equals to empty String , or classes list is empty , or if start time is after the end time
+   * or more than one class selected for the exam, or teacher list is empty , or room list is empty it will throw Illegal argument exception
+   * @param examName
+   *   String examName
+   * @param dateOfTheExam
+   *    Date dateOfTheExam
+   * @param startTime
+   *    Time startTime
+   * @param endTime
+   *    Time endTime
+   * @param classes
+   *    ClassList classes
+   * @param teachers
+   *    TeacherList teachers
+   * @param rooms
+   *    RoomList rooms
+   */
   public Exam(String examName, Date dateOfTheExam, Time startTime, Time endTime, ClassList classes, TeacherList teachers, RoomList rooms)
   {
     if (examName.equals(""))
@@ -43,103 +55,91 @@ public class Exam implements Serializable
     examRooms = rooms;
     examTeachers = teachers;
   }
+
+  /**
+   *
+   * @return
+   *   returns the name of the exam
+   */
   public String getExamName()
   {
     return examName;
   }
-  public String getDescription()
-  {
-    return description;
-  }
-  public void setDescription(String description)
-  {
-    this.description = description;
-  }
-  public void addClasses(ClassList examClasses)
-  {
-    this.examClasses = examClasses;
-  }
-  public void setExamTeachers(TeacherList other)
-  {
-    this.examTeachers = other;
-  }
-  public void addTeacher(Teacher other)
-  {
-    this.examTeachers.addTeacher(other);
-  }
 
-  public void addClass(Class classItem)
-  {
-    examClasses.addClass(classItem);
-  }
-
-  public void removeClassByClassName(String className)
-  {
-    examClasses.removeClassByClassName(className);
-  }
-
-  public void removeClassByIndex(int index)
-  {
-    examClasses.removeClassByIndex(index);
-  }
-
-  public void removeAllClasses()
-  {
-    examClasses.removeAll();
-  }
-
-  public void addRooms(RoomList roomList)
-  {
-    examRooms = roomList;
-  }
-
-  public void addRoom(Room room)
-  {
-    examRooms.addRoom(room);
-  }
-
-  public void removeRoomByRoomName(String roomName)
-  {
-    examRooms.removeRoomByRoomName(roomName);
-  }
+  /**
+   * returns the room list of the exam
+   * @return
+   */
   public RoomList getExamRooms()
   {
     return examRooms;
   }
+
+  /**
+   *
+   * @return
+   * returns the teacher list of this exam
+   */
   public TeacherList getExamTeachers()
   {
     return examTeachers;
   }
+
+  /**
+   *
+   * @return
+   * returns the Classes list of this exam
+   */
   public ClassList getExamClasses()
   {
     return examClasses;
   }
-  public void removeRoomByIndex(int index)
-  {
-    examRooms.removeRoom(index);
-  }
 
-  public void removeAllRooms()
-  {
-    examRooms.removeAll();
-  }
-
+  /**
+   *
+   * @return
+   * return the period object  of the exam
+   */
   public DateAndTimePeriod getPeriodOfExam()
   {
     return periodOfExam;
   }
+
+  /**
+   *
+   * @return
+   * the class list of this exam
+   */
   public ClassList getClasses()
   {
     return examClasses;
   }
+
+  /**
+   *
+   * @return
+   * the teacher list of this exam
+   */
   public TeacherList getTeachers()
   {
     return examTeachers;
   }
+
+  /**
+   *
+   * @return
+   * the room list of this exam
+   */
   public RoomList getRooms()
   {
     return examRooms;
   }
+
+  /**
+   * sets all of the value of given exam like an argument
+   * @param exam
+   *   given exam object like an argument
+   */
   public void setValueSimilarToExam(Exam exam)
   {
     this.periodOfExam = exam.getPeriodOfExam();
@@ -149,6 +149,11 @@ public class Exam implements Serializable
     this.examName = exam.getExamName();
   }
 
+  /**
+   *
+   * @return
+   * returns String representation of an exam
+   */
   public String toString()
   {
     String str = "";
@@ -161,6 +166,14 @@ public class Exam implements Serializable
     return str;
   }
 
+  /**
+   * equals method
+   * @param object
+   *   given object
+   * @return
+   *   return true if the this object is the same as given
+   *   and false if is is not
+   */
   public boolean equals(Object object)
   {
     if (!(object instanceof Exam))
@@ -170,7 +183,11 @@ public class Exam implements Serializable
         .equals(this.examRooms) && other.periodOfExam.equals(this.periodOfExam);
   }
 
-
+  /**
+   *
+   * @return
+   *  return more advance String representation of the exam
+   */
   public String showScheduleElement()
   {
     String str = "";
