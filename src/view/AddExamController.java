@@ -157,7 +157,7 @@ public class AddExamController
     this.startHH.setText("");
     this.startMM.setText("");
     this.endHH.setText("");
-    this.endHH.setText("");
+    this.endMM.setText("");
     this.dateDD.setText("");
     this.dateMM.setText("");
     this.dateYY.setText("");
