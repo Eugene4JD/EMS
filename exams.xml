@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ExamList>
   <Exam>
+    <Exam_name>past</Exam_name>
+    <Period>
+      <Date>12/12/1900</Date>
+      <StartTime>14:15:00</StartTime>
+      <EndTime>16:45:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>fdds</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Mona Wendel Andersen</Teacher>
+      <Teacher>Jakob Knop Rasmussen</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.303</Room>
+      <Room>C.202 </Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>New exam</Exam_name>
+    <Period>
+      <Date>12/12/1995</Date>
+      <StartTime>12:05:00</StartTime>
+      <EndTime>16:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>adsfdas</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Troels Mortensen</Teacher>
+      <Teacher>Ib Havn</Teacher>
+      <Teacher>Io Sandberg Hess Odderskov</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.303</Room>
+      <Room>E.302 </Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>asdjfl;k</Exam_name>
+    <Period>
+      <Date>12/12/1998</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>14:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>adsfdas</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Mona Wendel Andersen</Teacher>
+      <Teacher>Io Sandberg Hess Odderskov</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>D.304</Room>
+      <Room>C.202 </Room>
+      <Room>E.303</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>dasfda</Exam_name>
+    <Period>
+      <Date>12/12/1999</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>16:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>adsfdas</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Mona Wendel Andersen</Teacher>
+      <Teacher>Ib Havn</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>D.304</Room>
+      <Room>E.303</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>asdfja</Exam_name>
+    <Period>
+      <Date>12/12/2000</Date>
+      <StartTime>12:32:00</StartTime>
+      <EndTime>23:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>adsfdas</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Troels Mortensen</Teacher>
+      <Teacher>Io Sandberg Hess Odderskov</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.302 </Room>
+      <Room>E.303</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
     <Exam_name>SecondSuccessfullExam</Exam_name>
     <Period>
       <Date>12/12/2019</Date>
@@ -20,6 +117,59 @@
       <Room>E.303</Room>
       <Room>E.201b</Room>
       <Room>E.302 </Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>FUTUREareUThere</Exam_name>
+    <Period>
+      <Date>12/12/2020</Date>
+      <StartTime>14:30:00</StartTime>
+      <EndTime>16:59:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>adsfdas</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Mona Wendel Andersen</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>C.202 </Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>TestExam1</Exam_name>
+    <Period>
+      <Date>13/12/2020</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>13:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>fdds</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Mona Wendel Andersen</Teacher>
+      <Teacher>Io Sandberg Hess Odderskov</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>E.201b</Room>
+      <Room>E.303</Room>
+    </Rooms>
+  </Exam>
+  <Exam>
+    <Exam_name>NewExam</Exam_name>
+    <Period>
+      <Date>12/12/3030</Date>
+      <StartTime>12:00:00</StartTime>
+      <EndTime>14:00:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>fdds</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>Troels Mortensen</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>C.202 </Room>
     </Rooms>
   </Exam>
 </ExamList>
