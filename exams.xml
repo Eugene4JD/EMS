@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ExamList/>
+<ExamList>
+  <Exam>
+    <Exam_name>dsadsadsa</Exam_name>
+    <Period>
+      <Date>13/12/2012</Date>
+      <StartTime>12:12:00</StartTime>
+      <EndTime>13:13:00</EndTime>
+    </Period>
+    <Classes>
+      <Class>dsadasdsa</Class>
+    </Classes>
+    <Teachers>
+      <Teacher>dasdas</Teacher>
+    </Teachers>
+    <Rooms>
+      <Room>dsadsa</Room>
+    </Rooms>
+  </Exam>
+</ExamList>
