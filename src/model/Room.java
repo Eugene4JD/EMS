@@ -2,6 +2,12 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * A class representing a room
+ *
+ * @author Group 5
+ * @version v1.1
+ */
 public class Room implements Serializable
 {
   private String roomName;
@@ -11,6 +17,15 @@ public class Room implements Serializable
   private int numberOfTables;
   private boolean canBeMerged;
 
+  /**
+   * A 6-arg constructor. Throws a mistake if the strings are empty or integers are less than 1
+   * @param roomName
+   * @param typesOfConnectorsAvailable
+   * @param maxNumberOfStudents
+   * @param numberOfChairs
+   * @param numberOfTables
+   * @param canBeMerged
+   */
   public Room(String roomName, String typesOfConnectorsAvailable,
       int maxNumberOfStudents, int numberOfChairs, int numberOfTables,
       String canBeMerged)
@@ -43,66 +58,65 @@ public class Room implements Serializable
       throw new IllegalArgumentException("Wrong state of merge");
   }
 
+  /**
+   *
+   * @return the room name
+   */
   public String getRoomName()
   {
     return roomName;
   }
 
+  /**
+   *
+   * @return the types of connectors available
+   */
   public String getTypesOfConnectorsAvailable()
   {
     return typesOfConnectorsAvailable;
   }
 
+  /**
+   *
+   * @return the max number of students in the room
+   */
   public int getMaxNumberOfStudents()
   {
     return maxNumberOfStudents;
   }
 
+  /**
+   * the max number of chairs in the room
+   * @return
+   */
   public int getNumberOfChairs()
   {
     return numberOfChairs;
   }
 
+  /**
+   *
+   * @return the max number of tables in the room
+   */
   public int getNumberOfTables()
   {
     return numberOfTables;
   }
 
+  /**
+   *
+   * @return true if the room can be merged with another room
+   */
   public boolean isCanBeMerged()
   {
     return canBeMerged;
   }
 
-  public void setRoomName(String roomName)
-  {
-    this.roomName = roomName;
-  }
-
-  public void setTypesOfConnectorsAvailable(String typesOfConnectorsAvailable)
-  {
-    this.typesOfConnectorsAvailable = typesOfConnectorsAvailable;
-  }
-
-  public void setMaxNumberOfStudents(int maxNumberOfStudents)
-  {
-    this.maxNumberOfStudents = maxNumberOfStudents;
-  }
-
-  public void setNumberOfChairs(int numberOfChairs)
-  {
-    this.numberOfChairs = numberOfChairs;
-  }
-
-  public void setNumberOfTables(int numberOfTables)
-  {
-    this.numberOfTables = numberOfTables;
-  }
-
-  public void setCanBeMerged(boolean canBeMerged)
-  {
-    this.canBeMerged = canBeMerged;
-  }
-
+  /**
+   * checks if two room objects are similar
+   * @param obj a room object
+   * @return true it the rooms are similar
+   */
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Room))
@@ -117,6 +131,10 @@ public class Room implements Serializable
         && other.canBeMerged == this.canBeMerged);
   }
 
+  /**
+   *
+   * @return the name of the room
+   */
   public String toString()
   {
     return roomName;
