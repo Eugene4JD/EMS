@@ -409,15 +409,5 @@ public class SettingsViewController
   {
     viewHandler.openView("changeSecretCodePage");
   }
-
-  @FXML private void userGuideButtonPressed()
-  {
-    getHostServices().showDocument("http://www.yahoo.com");
-  }
-
-  private HostServices getHostServices()
-  {
-    return null;
-  }
 }
 

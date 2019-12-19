@@ -280,14 +280,9 @@
                   <Insets left="30.0" top="7.0" />
                </HBox.margin>
                 </Label>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#userGuideButtonPressed" prefHeight="19.0" prefWidth="75.0" text="User guide">
-               <HBox.margin>
-                  <Insets left="20.0" top="10.0" />
-               </HBox.margin>
-            </Button>
             <Button alignment="CENTER" mnemonicParsing="false" onAction="#changeSCButtonPressed" prefHeight="19.0" prefWidth="146.0" text="Change the Secret Code">
                <HBox.margin>
-                  <Insets left="7.0" top="10.0" />
+                  <Insets left="102.0" top="10.0" />
                </HBox.margin>
             </Button>
                 <Button alignment="CENTER" mnemonicParsing="false" onAction="#resetEverythingButtonPressed" prefHeight="19.0" prefWidth="110.0" text="Reset everything">
