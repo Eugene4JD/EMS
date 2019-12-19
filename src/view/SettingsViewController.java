@@ -404,10 +404,12 @@ public class SettingsViewController
     Class theClass = model.getClassByClassName(nameOfClass);
     model.setTempClass(theClass);
   }
+
   @FXML private void changeSCButtonPressed()
   {
     viewHandler.openView("changeSecretCodePage");
   }
+
   @FXML private void userGuideButtonPressed()
   {
     getHostServices().showDocument("http://www.yahoo.com");
